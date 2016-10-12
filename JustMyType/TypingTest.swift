@@ -25,18 +25,31 @@ class TypingTest {
     var cur_word: String
     var speed: Int
     var total_words: Int
-    
-    
+    var wordArray: [String] = ["eggs", "milk", "library", "shoes", "table", "blah", "words"]
+
     init(){
         self.cur_word = "test word" //words in test
         self.speed = 0
         total_words = 0
     }
     
-    func getCurrentWord() -> String{
+    func getCurrentWord() -> String {
         return cur_word
     }
     
+    func getRandomWord() -> String {
+        let random = wordArray[Int(arc4random_uniform(UInt32(wordArray.count)))]
+        cur_word = random
+        return random
+    }
+    
+    func isCorrect(str: String) -> Bool {
+        if (str == cur_word) {
+            total_words += 1
+            return true
+        }
+        return false
+    }
     
 }
 
