@@ -26,24 +26,32 @@ class TypingTest {
     var speed: Int
     var total_words: Int
     var wordArray: [String] = ["eggs", "milk", "library", "shoes", "table", "blah", "words"]
+    //Possible Linked database for more words
 
     init(){
-        self.cur_word = "test word" //words in test
+        self.cur_word = "" //current word in test
         self.speed = 0
         total_words = 0
     }
     
-    func getCurrentWord() -> String {
+    func getCurrentWord() -> String {   //gets word
         return cur_word
     }
     
     func getRandomWord() -> String {
+        
+        //random number generation from size of the list of words
         let random = wordArray[Int(arc4random_uniform(UInt32(wordArray.count)))]
+        
         cur_word = random
         return random
     }
     
+    
     func isCorrect(str: String) -> Bool {
+        //true if user types correct word
+        //and adds to total words completed
+        
         if (str == cur_word) {
             total_words += 1
             return true
