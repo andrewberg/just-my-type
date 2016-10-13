@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
         singlePlayerButton.backgroundColor = UIColor.appColorGreen();
         multiplayerButton.backgroundColor = UIColor.appColorLightBlue();
         settingsButton.backgroundColor = UIColor.appColorPurple();
-
+        
     }
 
     override func didReceiveMemoryWarning() {
