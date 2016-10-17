@@ -10,6 +10,7 @@
 		0FFD29161D988D5500CB28D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD29151D988D5500CB28D6 /* HomeViewController.swift */; };
 		0FFD29191D988DF800CB28D6 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD29181D988DF800CB28D6 /* RoundedButton.swift */; };
 		512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A2ACA1DAED26200B818D0 /* TypingTest.swift */; };
+		8CFF5B041DB2F9B300651FA8 /* ScoreboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFF5B031DB2F9B300651FA8 /* ScoreboardViewController.swift */; };
 		AE1DF8F31D972E7C00E578C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF8F21D972E7C00E578C2 /* AppDelegate.swift */; };
 		AE1DF8F51D972E7C00E578C2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE1DF8F41D972E7C00E578C2 /* GameScene.sks */; };
 		AE1DF8F71D972E7C00E578C2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF8F61D972E7C00E578C2 /* GameScene.swift */; };
@@ -47,6 +48,7 @@
 		0FFD29151D988D5500CB28D6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Views/HomeViewController.swift; sourceTree = "<group>"; };
 		0FFD29181D988DF800CB28D6 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = Styling/RoundedButton.swift; sourceTree = "<group>"; };
 		512A2ACA1DAED26200B818D0 /* TypingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTest.swift; sourceTree = "<group>"; };
+		8CFF5B031DB2F9B300651FA8 /* ScoreboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreboardViewController.swift; sourceTree = "<group>"; };
 		AE1DF8EF1D972E7C00E578C2 /* JustMyType.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustMyType.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1DF8F21D972E7C00E578C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE1DF8F41D972E7C00E578C2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				AE1DF8F61D972E7C00E578C2 /* GameScene.swift */,
 				AE1DF8F81D972E7C00E578C2 /* GameViewController.swift */,
 				AE1DF8FA1D972E7C00E578C2 /* Main.storyboard */,
+				8CFF5B031DB2F9B300651FA8 /* ScoreboardViewController.swift */,
 				512A2ACA1DAED26200B818D0 /* TypingTest.swift */,
 				AE1DF8FD1D972E7C00E578C2 /* Assets.xcassets */,
 				AE1DF8FF1D972E7C00E578C2 /* LaunchScreen.storyboard */,
@@ -319,6 +322,7 @@
 				AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */,
 				0FFD29191D988DF800CB28D6 /* RoundedButton.swift in Sources */,
 				AE1DF92C1D97390300E578C2 /* SinglePlayerMenuViewController.swift in Sources */,
+				8CFF5B041DB2F9B300651FA8 /* ScoreboardViewController.swift in Sources */,
 				AE1DF8F71D972E7C00E578C2 /* GameScene.swift in Sources */,
 				AE1DF8F91D972E7C00E578C2 /* GameViewController.swift in Sources */,
 				AE1DF92E1D97391100E578C2 /* MultiplayerMenuViewController.swift in Sources */,
