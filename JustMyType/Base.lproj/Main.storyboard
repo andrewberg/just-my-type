@@ -327,13 +327,79 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16x-Fr-wrt">
+                                <frame key="frameInset" minX="140" minY="476" width="95" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Check Scores"/>
+                                <connections>
+                                    <segue destination="qYx-c6-EsP" kind="push" id="0cS-Sh-QF8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aN0-vx-hEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="806" y="2697"/>
+            <point key="canvasLocation" x="805.60000000000002" y="2696.4017991004498"/>
+        </scene>
+        <!--Scoreboard View Controller-->
+        <scene sceneID="tYa-bi-rEf">
+            <objects>
+                <viewController id="qYx-c6-EsP" customClass="ScoreboardViewController" customModule="JustMyType" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ITr-Yr-rEv"/>
+                        <viewControllerLayoutGuide type="bottom" id="E1A-Js-dQb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kke-Hv-rQZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Words Per Minute: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1T-5e-H1R">
+                                <frame key="frameInset" minX="93" minY="94" width="188" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best Words Per Minute: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6h-J2-rvk">
+                                <frame key="frameInset" minX="55" minY="115" width="264" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpA-p7-Uab">
+                                <frame key="frameInset" minX="152" minY="423" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Try Again"/>
+                                <connections>
+                                    <action selector="tryagainaction:" destination="qYx-c6-EsP" eventType="touchUpInside" id="pPW-uK-wVf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55T-HE-8pj">
+                                <frame key="frameInset" minX="134" minY="494" width="106" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1385708380629278" green="1" blue="0.15154134604989966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Word Test"/>
+                                <connections>
+                                    <action selector="wordtestaction:" destination="qYx-c6-EsP" eventType="touchUpInside" id="xYF-YN-5Mk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tkt-zf-ADd"/>
+                    <connections>
+                        <outlet property="bestwpmlbl" destination="r6h-J2-rvk" id="IJR-fL-ddc"/>
+                        <outlet property="tryagain" destination="NpA-p7-Uab" id="lz1-Pv-lER"/>
+                        <outlet property="wordtest" destination="55T-HE-8pj" id="OEl-0e-9ta"/>
+                        <outlet property="wpmlbl" destination="f1T-5e-H1R" id="WCT-T2-iHw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p93-ya-hs1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="805.60000000000002" y="3382.7586206896553"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cgE-OV-LUj">
