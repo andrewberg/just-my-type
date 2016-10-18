@@ -24,6 +24,7 @@
 		AE1DF92E1D97391100E578C2 /* MultiplayerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF92D1D97391100E578C2 /* MultiplayerMenuViewController.swift */; };
 		AE1DF9301D97391F00E578C2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */; };
 		AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF9311D973A4100E578C2 /* UIColorExtensions.swift */; };
+		CF3B79701DB6DF8F00A2B427 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3B796F1DB6DF8F00A2B427 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		AE1DF92D1D97391100E578C2 /* MultiplayerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiplayerMenuViewController.swift; path = Views/MultiplayerMenuViewController.swift; sourceTree = "<group>"; };
 		AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Views/SettingsViewController.swift; sourceTree = "<group>"; };
 		AE1DF9311D973A4100E578C2 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtensions.swift; path = Extensions/UIColorExtensions.swift; sourceTree = "<group>"; };
+		CF3B796F1DB6DF8F00A2B427 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 		AE1DF9331D973AF200E578C2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CF3B796F1DB6DF8F00A2B427 /* UIViewExtension.swift */,
 				AE1DF9311D973A4100E578C2 /* UIColorExtensions.swift */,
 			);
 			name = Extensions;
@@ -430,6 +433,7 @@
 				AE1DF92C1D97390300E578C2 /* SinglePlayerMenuViewController.swift in Sources */,
 				AE1DF8F71D972E7C00E578C2 /* GameScene.swift in Sources */,
 				AE1DF8F91D972E7C00E578C2 /* GameViewController.swift in Sources */,
+				CF3B79701DB6DF8F00A2B427 /* UIViewExtension.swift in Sources */,
 				AE1DF92E1D97391100E578C2 /* MultiplayerMenuViewController.swift in Sources */,
 				0FFD29161D988D5500CB28D6 /* HomeViewController.swift in Sources */,
 				AE1DF8F31D972E7C00E578C2 /* AppDelegate.swift in Sources */,
@@ -750,6 +754,7 @@
 				1130D0991DB69DDF00FBD541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1130D0A51DB69E0400FBD541 /* Build configuration list for PBXNativeTarget "JustMyTypeUITest" */ = {
 			isa = XCConfigurationList;
@@ -758,6 +763,7 @@
 				1130D0A71DB69E0400FBD541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE1DF8EA1D972E7C00E578C2 /* Build configuration list for PBXProject "JustMyType" */ = {
 			isa = XCConfigurationList;
