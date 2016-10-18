@@ -2,7 +2,7 @@
 //  ScoreboardViewController.swift
 //  JustMyType
 //
-//  Created by Richard Nelson on 10/15/16.
+//  Created by Richard Nelson and Michael Chung on 10/15/16.
 //  Copyright © 2016 Lauren Koulias. All rights reserved.
 //
 
