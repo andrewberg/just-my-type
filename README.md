@@ -14,7 +14,8 @@ b) How to run the code:
 
 c) How to run the unit test cases:
 
-    In order to run the unit test cases ...
+    In order to run the unit test cases you can compile the program as you would normally in Xcode and the
+    test will run along with the program.
 
 d) Acceptance tests for an external person to try:
 
@@ -24,3 +25,5 @@ d) Acceptance tests for an external person to try:
     up once this has been accomplished
     iii) Type an incorrect word into the typing test and see that it does not let you continue 
     onto a new word
+    iiii) Check to make sure you can reset your score to try again and make sure your high score
+    doesn't disapear on exit of the app.
