@@ -1,7 +1,7 @@
 //
 //  TypingTestViewController.swift
 //  JustMyType
-//
+//  Also edited by Asa Jenkins and Jorge Gonzalez
 //  Created by Lauren Koulias on 9/24/16.
 //  Copyright © 2016 Lauren Koulias. All rights reserved.
 //
