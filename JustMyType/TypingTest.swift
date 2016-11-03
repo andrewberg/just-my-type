@@ -22,40 +22,54 @@ import Foundation
 
 class TypingTest {
     
-    var cur_word: String
-    var speed: Int
-    var total_words: Int
-    var wordArray: [String] = ["eggs", "milk", "library", "shoes", "table", "blah", "words"]
-    //Possible Linked database for more words
-
+    var cur_word: String    // holds current word in the test
+    var speed: Int          // integer value for wpm value
+    var total_words: Int    // hold total number of words typed
+    
+    /*if let path = Bundle.main.pathForResource("WordList", ofType: "rtf"){
+        let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+        arrayOfStrings = data.components(separatedBy: "\n")
+        print(arrayOfStrings)*/
+   
+    var wordArray: [String]
+    // test array
+    // TODO -- add file to import words
+    
     init(){
-        self.cur_word = "" //current word in test
-        self.speed = 0
-        total_words = 0
+        self.cur_word = ""  // current word in test
+        self.speed = 0      // initialize wpm to 0
+        total_words = 0     // initialize total words typed to 0
+        
+        let path = Bundle.main.path(forResource: "WordList", ofType: "txt")
+        let data = try! String(contentsOfFile:path!, encoding: String.Encoding.utf8)
+        self.wordArray = data.components(separatedBy: "\n")
+        
     }
     
-    func getCurrentWord() -> String {   //gets word
+    func getCurrentWord() -> String {   // gets word currently being displayed
         return cur_word
     }
     
-    func getRandomWord() -> String {
+    func getRandomWord() -> String {    // gets a random word from the array to display
         
         //random number generation from size of the list of words
         let random = wordArray[Int(arc4random_uniform(UInt32(wordArray.count)))]
         
-        cur_word = random
-        return random
+        cur_word = random       // sets the current displayed word to the randomly chosen word from array
+        
+        return random           // returns the random word that was chosen
     }
     
     
     func isCorrect(str: String) -> Bool {
-        //true if user types correct word
-        //and adds to total words completed
+        // true if user types correct word
+        // and increments total words completed by 1
         
         if (str == cur_word) {
             total_words += 1
             return true
         }
+        
         return false
     }
     

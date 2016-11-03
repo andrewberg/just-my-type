@@ -15,7 +15,6 @@ class TypingTestViewController: UIViewController {
     
     @IBAction func textFieldAction(_ sender: AnyObject) {
         //linked to users text field
-        
         if (textFieldRef.text != "")    //error check for blank text field
         {
             if (type.isCorrect(str: textFieldRef.text!))    //if correct word moves to next word
@@ -28,6 +27,7 @@ class TypingTestViewController: UIViewController {
             } else {
                 // do nothing
                 print("not correct")
+                
             }
         }
     }

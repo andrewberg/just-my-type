@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="height" constant="30" id="vje-j6-hCW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <action selector="textFieldAction:" destination="o4N-Gg-GID" eventType="valueChanged" id="AH9-Dp-lYB"/>
                                 </connections>
