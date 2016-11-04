@@ -25,6 +25,7 @@ class TypingTest {
     var cur_word: String    // holds current word in the test
     var speed: Int          // integer value for wpm value
     var total_words: Int    // hold total number of words typed
+    var next_word: String
     
     /*if let path = Bundle.main.pathForResource("WordList", ofType: "rtf"){
         let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
@@ -33,21 +34,30 @@ class TypingTest {
    
     var wordArray: [String]
     // test array
-    // TODO -- add file to import words
     
     init(){
         self.cur_word = ""  // current word in test
+        self.next_word = ""
         self.speed = 0      // initialize wpm to 0
         total_words = 0     // initialize total words typed to 0
         
         let path = Bundle.main.path(forResource: "WordList", ofType: "txt")
         let data = try! String(contentsOfFile:path!, encoding: String.Encoding.utf8)
         self.wordArray = data.components(separatedBy: "\n")
-        
+        self.cur_word = getRandomWord()
+        self.next_word = getRandomWord()
     }
     
     func getCurrentWord() -> String {   // gets word currently being displayed
         return cur_word
+    }
+    
+    func getNextWord() -> String {
+        return next_word
+    }
+    
+    func makeCurWordNextWord() {
+        cur_word = next_word
     }
     
     func getRandomWord() -> String {    // gets a random word from the array to display
@@ -55,8 +65,7 @@ class TypingTest {
         //random number generation from size of the list of words
         let random = wordArray[Int(arc4random_uniform(UInt32(wordArray.count)))]
         
-        cur_word = random       // sets the current displayed word to the randomly chosen word from array
-        
+        next_word = random       // sets the current displayed word to the randomly chosen word from array
         return random           // returns the random word that was chosen
     }
     
