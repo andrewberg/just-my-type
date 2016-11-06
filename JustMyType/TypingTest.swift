@@ -56,6 +56,10 @@ class TypingTest {
         return next_word
     }
     
+    func getTotalWords() -> Int {
+        return total_words
+    }
+    
     func makeCurWordNextWord() {
         cur_word = next_word
     }
@@ -64,22 +68,25 @@ class TypingTest {
         
         //random number generation from size of the list of words
         let random = wordArray[Int(arc4random_uniform(UInt32(wordArray.count)))]
-        
         next_word = random       // sets the current displayed word to the randomly chosen word from array
         return random           // returns the random word that was chosen
     }
-    
     
     func isCorrect(str: String) -> Bool {
         // true if user types correct word
         // and increments total words completed by 1
         
         if (str == cur_word) {
+            print(total_words)
             total_words += 1
             return true
         }
         
         return false
+    }
+    
+    func resetTotalWords() {
+        total_words = 0
     }
     
 }

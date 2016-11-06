@@ -11,36 +11,73 @@ import UIKit
 
 class TypingTestViewController: UIViewController {
     var type = TypingTest()
+    var clockRunning = false
+    var clockDefault = 60
+    var clock = 60
+    var timer = Timer()
+    
     @IBOutlet weak var wordLabel: UILabel!
-    @IBOutlet weak var nextLabel: UILabel!
+    @IBOutlet weak var wpmLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var textFieldRef: UITextField!
     
     @IBAction func textFieldAction(_ sender: AnyObject) {
         //linked to users text field
+        
+        if (!clockRunning) {
+            timer.invalidate()
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+            clockRunning = true
+        }
+        
         if (textFieldRef.text != "")    //error check for blank text field
         {
             if (type.isCorrect(str: textFieldRef.text!))    //if correct word moves to next word
             {
-              wordLabel.fadeOut()
-              type.makeCurWordNextWord() // move next word into cur word
-              wordLabel.text = type.getCurrentWord() + " " + type.getRandomWord()   //grab new word for wordlabel
-              wordLabel.fadeIn()
-              textFieldRef.text = ""                  //clear users text field
-                
+              updateLabels() //refactored by Andrew
             } else {
                 // do nothing
                 print("not correct")
-                
             }
         }
     }
   
+    func timerAction() {
+        clock -= 1 // decrement clock
+        timeLabel.text = String(clock) // set clock value to new clock value
+        if (clock < 1) {
+            timer.invalidate() // invalidate timer
+            textFieldRef.isEnabled = false // set textfield to in-editable
+            view.endEditing(true) // close keyboard
+            clockRunning = false // reset clockRunning to false
+        }
+    }
+    
+    @IBAction func resetButton(_ sender: Any) {
+        timer.invalidate()
+        clock = clockDefault
+        timeLabel.text = String(clock)
+        clockRunning = false
+        type.resetTotalWords()
+        updateLabels()
+    }
+    
+    func updateLabels() {
+        wordLabel.fadeOut()
+        type.makeCurWordNextWord() // move next word into cur word
+        wordLabel.text = type.getCurrentWord() + " " + type.getRandomWord()   //grab new word for wordlabel
+        wpmLabel.text = String(type.getTotalWords()) // update wpmlabel text
+        wordLabel.fadeIn()
+        textFieldRef.text = ""                  //clear users text field
+    }
     
     
     override func viewDidLoad() {       //verify view is loading
         super.viewDidLoad()
         wordLabel.text = type.getCurrentWord() + " " + type.getNextWord() //set starting view label with a random word
         textFieldRef.addTarget(self, action: #selector(self.textFieldAction(_:)), for: UIControlEvents.editingChanged)
+        timeLabel.text = String(clockDefault) // set clock value to default clock value
+        wpmLabel.text = String(type.getTotalWords()) // set to zero because total words is 0
         //^ checks if users textfield has changed, if so calls function for action
         
         self.view.backgroundColor = UIColor.appColorBlue();
