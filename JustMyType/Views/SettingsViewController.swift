@@ -14,6 +14,10 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let defaults = UserDefaults.standard;
+        let selectedSeason = defaults.integer(forKey: "COLOR_SETTING");
+
+        ColorSegmentControl.selectedSegmentIndex = selectedSeason;
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +25,14 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet weak var ColorSegmentControl: UISegmentedControl!
+    @IBOutlet weak var ThemeSegmentControl: UISegmentedControl!
 
+    @IBAction func DidChangeColorSegmentControl(_ sender: UISegmentedControl) {
+        let defaults = UserDefaults.standard;
+        defaults.set(sender.selectedSegmentIndex, forKey: "COLOR_SETTING");
+    }
+    
     /*
     // MARK: - Navigation
 

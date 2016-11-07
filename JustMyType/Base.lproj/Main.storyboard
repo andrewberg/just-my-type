@@ -291,6 +291,9 @@
                                     <segment title="Fall"/>
                                     <segment title="Winter"/>
                                 </segments>
+                                <connections>
+                                    <action selector="DidChangeColorSegmentControl:" destination="G5A-cd-Uld" eventType="valueChanged" id="ZTE-sd-yVE"/>
+                                </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gwG-uL-7va">
                                 <frame key="frameInset" minX="127" minY="252" width="121" height="29"/>
@@ -303,6 +306,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="ColorSegmentControl" destination="Kbg-lv-Rhk" id="sMh-vH-93c"/>
+                        <outlet property="ThemeSegmentControl" destination="gwG-uL-7va" id="hfL-Ej-Fxb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abv-vz-woL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
