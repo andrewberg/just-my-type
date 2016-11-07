@@ -18,8 +18,8 @@ class SinglePlayerMenuViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        somethingButton.backgroundColor = UIColor.appColorBlue();
-        balloonsButton.backgroundColor = UIColor.appColorPurple();
+        somethingButton.backgroundColor = UIColor.appColorSpring1();
+        balloonsButton.backgroundColor = UIColor.appColorSpring4();
     }
 
     override func didReceiveMemoryWarning() {

@@ -80,7 +80,7 @@ class TypingTestViewController: UIViewController {
         wpmLabel.text = String(type.getTotalWords()) // set to zero because total words is 0
         //^ checks if users textfield has changed, if so calls function for action
         
-        self.view.backgroundColor = UIColor.appColorBlue();
+        self.view.backgroundColor = UIColor.appColorSpring1();
     }
     
     
