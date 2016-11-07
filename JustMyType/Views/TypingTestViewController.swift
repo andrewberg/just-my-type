@@ -42,7 +42,7 @@ class TypingTestViewController: UIViewController {
         }
     }
   
-    func timerAction() {
+    func timerAction() { // by Andrew Berg
         clock -= 1 // decrement clock
         timeLabel.text = String(clock) // set clock value to new clock value
         if (clock < 1) {
@@ -53,13 +53,13 @@ class TypingTestViewController: UIViewController {
         }
     }
     
-    @IBAction func resetButton(_ sender: Any) {
-        timer.invalidate()
-        clock = clockDefault
-        timeLabel.text = String(clock)
-        clockRunning = false
-        type.resetTotalWords()
-        updateLabels()
+    @IBAction func resetButton(_ sender: Any) {  // by Andrew Berg
+        timer.invalidate() // insures only one timer is running
+        clock = clockDefault // sets clock value to the default value
+        timeLabel.text = String(clock) // cast clock int to string and add to timeLabel
+        clockRunning = false // sets clockRuning back to false
+        type.resetTotalWords() // resets totalworld on the type object
+        updateLabels() // calls updatelabels
     }
     
     func updateLabels() {
