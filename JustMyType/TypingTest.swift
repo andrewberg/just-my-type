@@ -65,7 +65,6 @@ class TypingTest {
     }
     
     func getRandomWord() -> String {    // gets a random word from the array to display
-        
         //random number generation from size of the list of words
         let random = wordArray[Int(arc4random_uniform(UInt32(wordArray.count)))]
         next_word = random       // sets the current displayed word to the randomly chosen word from array
@@ -77,7 +76,6 @@ class TypingTest {
         // and increments total words completed by 1
         
         if (str == cur_word) {
-            print(total_words)
             total_words += 1
             return true
         }
@@ -85,10 +83,16 @@ class TypingTest {
         return false
     }
     
-    func resetTotalWords() {
+    func resetTotalWords() { // Andrew Berg
         total_words = 0
     }
     
+    func calculateWPM(time: Int) -> Double { // Andrew Berg
+        let secsInMin = 60 // constant for seconds in a minute
+        let WPM = round(100 * Double(getTotalWords())*(Double(time)/Double(secsInMin)))/100
+        // calculates WPM rounded to two digits
+        return WPM
+    }
 }
 
 

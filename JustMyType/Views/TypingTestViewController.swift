@@ -43,7 +43,7 @@ class TypingTestViewController: UIViewController {
               updateLabels() //refactored by Andrew
             } else {
                 // do nothing
-                print("not correct")
+                //print("not correct")
             }
         }
     }
@@ -83,8 +83,7 @@ class TypingTestViewController: UIViewController {
     }
     
     func updateWPMLabel() { // Andrew Berg
-        wpmLabel.text = String(round(100 * Double(type.getTotalWords())*(Double(clock)/Double(secsInMin)))/100)
-        // updates label to totalwords * (time/60)
+        wpmLabel.text = String(type.calculateWPM(time: clock)) // calls member method to calc wpm
     }
     
     override func viewDidLoad() {       //verify view is loading
