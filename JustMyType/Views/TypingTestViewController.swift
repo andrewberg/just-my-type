@@ -17,6 +17,7 @@ class TypingTestViewController: UIViewController {
     @IBOutlet weak var textFieldRef: UITextField!
     @IBOutlet weak var amountOfMinutesStepper: UIStepper!
     
+    let secsInMin = 60
     var type = TypingTest()
     var clockRunning = false
     var clockDefault = 60
@@ -30,12 +31,14 @@ class TypingTestViewController: UIViewController {
             timer.invalidate() // makes sure timer is not running
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true) // makes a timer that calls timerAction every second
             clockRunning = true // sets clockRunning to true such that it won't call until
-            // clockRunning is rest
+            // clockRunning is reset
         }
         
         if (textFieldRef.text != "")    //error check for blank text field
         {
-            if (type.isCorrect(str: textFieldRef.text!))    //if correct word moves to next word
+            let entry = textFieldRef.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            // Andrew Berg - trims the entry of any white space
+            if (type.isCorrect(str: entry!))    //if correct word moves to next word
             {
               updateLabels() //refactored by Andrew
             } else {
@@ -48,6 +51,7 @@ class TypingTestViewController: UIViewController {
     func timerAction() { // by Andrew Berg
         clock -= 1 // decrement clock
         timeLabel.text = String(clock) // set clock value to new clock value
+        updateWPMLabel() // update WPM
         if (clock < 1) {
             timer.invalidate() // invalidate timer
             textFieldRef.isEnabled = false // set textfield to in-editable
@@ -58,12 +62,13 @@ class TypingTestViewController: UIViewController {
     
     @IBAction func resetButton(_ sender: Any) {  // by Andrew Berg
         timer.invalidate() // insures only one timer is running
-        clockDefault = Int(amountOfMinutesStepper.value) * 60 // casts stepper val to Int then by 60
+        clockDefault = Int(amountOfMinutesStepper.value) * secsInMin // casts stepper val to Int then by 60
         clock = clockDefault // sets clock value to the default value
         timeLabel.text = String(clock) // cast clock int to string and add to timeLabel
         clockRunning = false // sets clockRuning back to false
         textFieldRef.isEnabled = true // allows the textField to be editted
         type.resetTotalWords() // resets totalworld on the type object
+        wpmLabel.text = "0" // reset WPMLabel to 0
         dismissKeyboard() // closes keyboard
         updateLabels() // calls updatelabels
     }
@@ -72,9 +77,14 @@ class TypingTestViewController: UIViewController {
         wordLabel.fadeOut()
         type.makeCurWordNextWord() // move next word into cur word
         wordLabel.text = type.getCurrentWord() + " " + type.getRandomWord()   //grab new word for wordlabel
-        wpmLabel.text = String(type.getTotalWords()) // update wpmlabel text
+        updateWPMLabel()
         wordLabel.fadeIn()
         textFieldRef.text = ""                  //clear users text field
+    }
+    
+    func updateWPMLabel() { // Andrew Berg
+        wpmLabel.text = String(round(100 * Double(type.getTotalWords())*(Double(clock)/Double(secsInMin)))/100)
+        // updates label to totalwords * (time/60)
     }
     
     override func viewDidLoad() {       //verify view is loading
@@ -97,6 +107,9 @@ class TypingTestViewController: UIViewController {
         view.endEditing(true) // close keyboard
     }
     
+    func calculateStepperSecs() -> Int { // Andrew Berg returns the amount of secs to run for
+        return Int(amountOfMinutesStepper.value) * secsInMin
+    }
     
     @IBAction func stepperChanged(_ sender: Any) { // by Andrew Berg
         dismissKeyboard() // close keyboard
