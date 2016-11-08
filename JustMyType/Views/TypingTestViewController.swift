@@ -81,7 +81,15 @@ class TypingTestViewController: UIViewController {
         wpmLabel.text = String(type.getTotalWords()) // set to zero because total words is 0
         //^ checks if users textfield has changed, if so calls function for action
         
+        // Andrew Berg
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TypingTestViewController.dismissKeyboard)) // when screen is tapped it will dismiss keyboard
+        view.addGestureRecognizer(tap)
+        
         self.view.backgroundColor = UIColor.appColorSpring1();
+    }
+    
+    func dismissKeyboard() { // by Andrew Berg
+        view.endEditing(true)
     }
     
     
