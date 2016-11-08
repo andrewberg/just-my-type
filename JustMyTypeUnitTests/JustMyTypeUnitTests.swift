@@ -32,6 +32,21 @@ class JustMyTypeUnitTests: XCTestCase {
         XCTAssert(xy.isCorrect(str: "Airplane"))
     }
     
+    func testCalculateWPM() { // Unit test written for calculateWPM func by Andrew Berg
+        xy.cur_word = "Airplane"
+        let _ = xy.isCorrect(str: "Airplane")
+        xy.cur_word = "Bob"
+        let _ = xy.isCorrect(str: "Bob")
+        XCTAssert(xy.calculateWPM(time: 5) == 0.17)
+    }
+    
+    func testResetTotalWords() { // Unit test written for resetTotalWords func by Andrew Berg
+        xy.cur_word = "Airplane"
+        let _ = xy.isCorrect(str: "Airplane")
+        xy.resetTotalWords()
+        XCTAssert(xy.total_words == 0)
+    }
+    
     
 //    func testPerformanceExample() {
 //        // This is an example of a performance test case.
