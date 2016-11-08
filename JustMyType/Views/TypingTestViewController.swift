@@ -10,24 +10,27 @@
 import UIKit
 
 class TypingTestViewController: UIViewController {
+    
+    @IBOutlet weak var wordLabel: UILabel!
+    @IBOutlet weak var wpmLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var textFieldRef: UITextField!
+    @IBOutlet weak var amountOfMinutesStepper: UIStepper!
+    
     var type = TypingTest()
     var clockRunning = false
     var clockDefault = 60
     var clock = 60
     var timer = Timer()
     
-    @IBOutlet weak var wordLabel: UILabel!
-    @IBOutlet weak var wpmLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var textFieldRef: UITextField!
-    
     @IBAction func textFieldAction(_ sender: AnyObject) {
         //linked to users text field
         
-        if (!clockRunning) {
-            timer.invalidate()
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-            clockRunning = true
+        if (!clockRunning) { // runs if clockRunning
+            timer.invalidate() // makes sure timer is not running
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true) // makes a timer that calls timerAction every second
+            clockRunning = true // sets clockRunning to true such that it won't call until
+            // clockRunning is rest
         }
         
         if (textFieldRef.text != "")    //error check for blank text field
@@ -55,10 +58,13 @@ class TypingTestViewController: UIViewController {
     
     @IBAction func resetButton(_ sender: Any) {  // by Andrew Berg
         timer.invalidate() // insures only one timer is running
+        clockDefault = Int(amountOfMinutesStepper.value) * 60 // casts stepper val to Int then by 60
         clock = clockDefault // sets clock value to the default value
         timeLabel.text = String(clock) // cast clock int to string and add to timeLabel
         clockRunning = false // sets clockRuning back to false
+        textFieldRef.isEnabled = true // allows the textField to be editted
         type.resetTotalWords() // resets totalworld on the type object
+        dismissKeyboard() // closes keyboard
         updateLabels() // calls updatelabels
     }
     
@@ -70,7 +76,6 @@ class TypingTestViewController: UIViewController {
         wordLabel.fadeIn()
         textFieldRef.text = ""                  //clear users text field
     }
-    
     
     override func viewDidLoad() {       //verify view is loading
         super.viewDidLoad()
@@ -89,9 +94,14 @@ class TypingTestViewController: UIViewController {
     }
     
     func dismissKeyboard() { // by Andrew Berg
-        view.endEditing(true)
+        view.endEditing(true) // close keyboard
     }
     
+    
+    @IBAction func stepperChanged(_ sender: Any) { // by Andrew Berg
+        dismissKeyboard() // close keyboard
+        resetButton(self) // if stepperChanged run the reset function
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
