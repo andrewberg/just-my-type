@@ -55,4 +55,20 @@ extension UIView {
     animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
     layer.add(animation, forKey: "shake")
   } // shake()
+  
+  
+  func slideInFromLeft(duration: TimeInterval = 0.3, completionDelegate: AnyObject? = nil) {
+    // Create a CATransition animation
+    let slideInFromLeftTransition = CATransition()
+    
+    // Customize the animation's properties
+    slideInFromLeftTransition.type = kCATransitionPush
+    slideInFromLeftTransition.subtype = kCATransitionFromRight
+    slideInFromLeftTransition.duration = duration
+    slideInFromLeftTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    slideInFromLeftTransition.fillMode = kCAFillModeRemoved
+    
+    // Add the animation to the View's layer
+    self.layer.add(slideInFromLeftTransition, forKey: "slideInFromLeftTransition")
+  } // slideInFromLeft
 }
