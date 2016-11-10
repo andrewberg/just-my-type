@@ -90,8 +90,12 @@ class TypingTest {
     
     func calculateWPM(time: Int) -> Double { // Andrew Berg
         let secsInMin = 60 // constant for seconds in a minute
-        let WPM = round(100 * Double(getTotalWords())*(Double(time)/Double(secsInMin)))/100
+        let WPM = round (100 * Double(getTotalWords())*(Double(secsInMin)/Double(secsInMin-time)))/100
         // calculates WPM rounded to two digits
+        
+        if (WPM.isNaN) {
+            return 0.00
+        }
         return WPM
     }
 }

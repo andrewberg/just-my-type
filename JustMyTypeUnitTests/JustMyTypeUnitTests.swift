@@ -37,7 +37,7 @@ class JustMyTypeUnitTests: XCTestCase {
         let _ = xy.isCorrect(str: "Airplane")
         xy.cur_word = "Bob"
         let _ = xy.isCorrect(str: "Bob")
-        XCTAssert(xy.calculateWPM(time: 5) == 0.17)
+        XCTAssert(xy.calculateWPM(time: 5) == 2.18)
     }
     
     func testResetTotalWords() { // Unit test written for resetTotalWords func by Andrew Berg
