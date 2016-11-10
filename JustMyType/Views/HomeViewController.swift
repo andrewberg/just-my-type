@@ -20,10 +20,13 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.setButtonColors();
+        self.view.backgroundColor = UIColor.themeChosen();
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.setButtonColors();
+        self.view.backgroundColor = UIColor.themeChosen();
     }
     
     func setButtonColors() {
@@ -31,6 +34,10 @@ class HomeViewController: UIViewController {
         singlePlayerButton.backgroundColor = UIColor.seasonColorTwo();
         multiplayerButton.backgroundColor = UIColor.seasonColorThree();
         settingsButton.backgroundColor = UIColor.seasonColorFour();
+    }
+    
+    func setBackground() {
+        
     }
 
     override func didReceiveMemoryWarning() {
