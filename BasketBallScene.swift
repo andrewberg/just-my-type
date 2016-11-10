@@ -9,32 +9,41 @@
 import Foundation
 import SpriteKit
 
-class BasketBallScene: SKScene{
-    
-    required init?(coder aDecoder: NSCoder){
-        fatalError("init(coder:) has not been implemented")
-        
-    }//required init
-    var viewSize:CGSize!
-    var Basketball:SKSpriteNode!
-    
-    
-    override init(size:CGSize){
-        super.init(size: size)
-        viewSize = size
-        
+class BasketBallScene: SKScene {
+    override func didMove(to view: SKView) {
+        /* Setup your scene here */
+        let viewSize:CGSize = view.bounds.size
         let BG = SKSpriteNode(imageNamed: "BG")
-        BG.position = CGPoint(x: viewSize.width/2, y: viewSize.height/2)
+        BG.position = CGPoint(x:viewSize.width/2, y:viewSize.height/2)
         self.addChild(BG)
         
-        Basketball = SKSpriteNode(imageNamed: "Basketball")
-        Basketball.position = CGPoint(x:viewSize.width/2, y:viewSize.height/8)
-        self.addChild(Basketball)
+        let myLabel = SKLabelNode(fontNamed: "Chalkduster")
+        myLabel.text = "Basketball Game"
+        myLabel.fontSize = 35
+        myLabel.position = CGPoint(x: viewSize.width/2, y: viewSize.height * (2/3))
+        self.addChild(myLabel)
         
+        let playBtn = SKSpriteNode(imageNamed: "playBtn")
+        playBtn.position = CGPoint(x: viewSize.width/2, y: viewSize.height/2)
+        self.addChild(playBtn)
+        playBtn.name = "playBtn"
+
         
-        
-        
-        
-    }//init function
+    }
     
-}//class end
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        /* Called when a touch begins */
+        
+        for touch in touches {
+           let location = touch.location(in: self)
+            let _node:SKNode = self.atPoint(location)
+            
+            if(_node.name=="playBtn"){
+            
+            let scene = GamePlayScene(size: self.size)
+            self.view?.presentScene(scene)
+            }
+                    }
+    }
+    
+}
