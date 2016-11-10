@@ -44,6 +44,7 @@ class TypingTest {
         let path = Bundle.main.path(forResource: "WordList", ofType: "txt")
         let data = try! String(contentsOfFile:path!, encoding: String.Encoding.utf8)
         self.wordArray = data.components(separatedBy: "\n")
+        self.wordArray = self.wordArray.filter{$0 != ""} // filters out empty strings
         self.cur_word = getRandomWord()
         self.next_word = getRandomWord()
     }
