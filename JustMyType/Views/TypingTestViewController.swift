@@ -16,6 +16,8 @@ class TypingTestViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var textFieldRef: UITextField!
     @IBOutlet weak var amountOfMinutesStepper: UIStepper!
+    @IBOutlet weak var RoundedLabel1: UILabel!
+    @IBOutlet weak var RoundedLabel2: UILabel!
     
     let secsInMin = 60
     var type = TypingTest()
@@ -94,11 +96,20 @@ class TypingTestViewController: UIViewController {
         wpmLabel.text = String(type.getTotalWords()) // set to zero because total words is 0
         //^ checks if users textfield has changed, if so calls function for action
         
+        RoundedLabel1.layer.masksToBounds = true;
+        RoundedLabel1.layer.cornerRadius = 8.0;
+
+        RoundedLabel2.layer.masksToBounds = true;
+        RoundedLabel2.layer.cornerRadius = 8.0;
+        
         // Andrew Berg
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TypingTestViewController.dismissKeyboard)) // when screen is tapped it will dismiss keyboard
         view.addGestureRecognizer(tap)
         
         self.view.backgroundColor = UIColor.seasonColorOne();
+        self.RoundedLabel1.backgroundColor = UIColor.seasonColorTwo();
+        self.RoundedLabel2.backgroundColor = UIColor.seasonColorThree()
+
     }
     
     func dismissKeyboard() { // by Andrew Berg

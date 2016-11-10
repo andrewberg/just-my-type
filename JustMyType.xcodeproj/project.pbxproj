@@ -192,14 +192,11 @@
 				AE1DF8F21D972E7C00E578C2 /* AppDelegate.swift */,
 				AE1DF8F41D972E7C00E578C2 /* GameScene.sks */,
 				AE1DF8F61D972E7C00E578C2 /* GameScene.swift */,
-				AE1DF8F81D972E7C00E578C2 /* GameViewController.swift */,
 				AE1DF8FA1D972E7C00E578C2 /* Main.storyboard */,
 				512A2ACA1DAED26200B818D0 /* TypingTest.swift */,
 				AE1DF8FD1D972E7C00E578C2 /* Assets.xcassets */,
 				AE1DF8FF1D972E7C00E578C2 /* LaunchScreen.storyboard */,
 				AE1DF9021D972E7C00E578C2 /* Info.plist */,
-				8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */,
-				8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */,
 			);
 			path = JustMyType;
 			sourceTree = "<group>";
@@ -213,6 +210,9 @@
 				AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */,
 				0FFD29151D988D5500CB28D6 /* HomeViewController.swift */,
 				8C4487B81DD3D75100602565 /* BasketballViewController.swift */,
+				8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */,
+				8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */,
+				AE1DF8F81D972E7C00E578C2 /* GameViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
