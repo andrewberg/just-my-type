@@ -12,6 +12,8 @@
 		1130D0931DB69DDF00FBD541 /* JustMyTypeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130D0921DB69DDF00FBD541 /* JustMyTypeUnitTests.swift */; };
 		1130D0A11DB69E0400FBD541 /* JustMyTypeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130D0A01DB69E0400FBD541 /* JustMyTypeUITest.swift */; };
 		512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A2ACA1DAED26200B818D0 /* TypingTest.swift */; };
+		8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487B81DD3D75100602565 /* BasketballViewController.swift */; };
+		8C4487BB1DD3ECBA00602565 /* GamePlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */; };
 		8C7C19D51DD293CA00F2640A /* BasketBallScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */; };
 		AE1DF8F31D972E7C00E578C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF8F21D972E7C00E578C2 /* AppDelegate.swift */; };
 		AE1DF8F51D972E7C00E578C2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE1DF8F41D972E7C00E578C2 /* GameScene.sks */; };
@@ -70,6 +72,8 @@
 		1130D0A01DB69E0400FBD541 /* JustMyTypeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustMyTypeUITest.swift; sourceTree = "<group>"; };
 		1130D0A21DB69E0400FBD541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		512A2ACA1DAED26200B818D0 /* TypingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTest.swift; sourceTree = "<group>"; };
+		8C4487B81DD3D75100602565 /* BasketballViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketballViewController.swift; path = Views/BasketballViewController.swift; sourceTree = "<group>"; };
+		8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayScene.swift; sourceTree = "<group>"; };
 		8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketBallScene.swift; path = ../BasketBallScene.swift; sourceTree = "<group>"; };
 		AE1DF8EF1D972E7C00E578C2 /* JustMyType.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustMyType.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1DF8F21D972E7C00E578C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 				AE1DF8FF1D972E7C00E578C2 /* LaunchScreen.storyboard */,
 				AE1DF9021D972E7C00E578C2 /* Info.plist */,
 				8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */,
+				8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */,
 			);
 			path = JustMyType;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				AE1DF92D1D97391100E578C2 /* MultiplayerMenuViewController.swift */,
 				AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */,
 				0FFD29151D988D5500CB28D6 /* HomeViewController.swift */,
+				8C4487B81DD3D75100602565 /* BasketballViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 				0FFD29191D988DF800CB28D6 /* RoundedButton.swift in Sources */,
 				AE1DF92C1D97390300E578C2 /* SinglePlayerMenuViewController.swift in Sources */,
 				AE1DF8F71D972E7C00E578C2 /* GameScene.swift in Sources */,
+				8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */,
 				AE1DF8F91D972E7C00E578C2 /* GameViewController.swift in Sources */,
 				CF3B79701DB6DF8F00A2B427 /* UIViewExtension.swift in Sources */,
 				8C7C19D51DD293CA00F2640A /* BasketBallScene.swift in Sources */,
@@ -447,6 +454,7 @@
 				AE1DF8F31D972E7C00E578C2 /* AppDelegate.swift in Sources */,
 				AE1DF9281D97319A00E578C2 /* TypingTestViewController.swift in Sources */,
 				AE1DF9301D97391F00E578C2 /* SettingsViewController.swift in Sources */,
+				8C4487BB1DD3ECBA00602565 /* GamePlayScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
