@@ -82,6 +82,20 @@ extension UIColor {
         }
     }
     
+    static func themeChosen() -> UIColor {
+        let defaults = UserDefaults.standard;
+        let selectedTheme = defaults.integer(forKey: "THEME_SETTING");
+        
+        switch selectedTheme {
+        case 0:
+            return UIColor.white;
+        case 1:
+            return UIColor.black;
+        default:
+            return UIColor.white;
+        }
+    }
+    
     //spring
     static func appColorSpring1() -> UIColor {
         return UIColor(red:0.44, green:0.49, blue:0.97, alpha:1.0); //Blue

@@ -99,7 +99,7 @@ class TypingTestViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TypingTestViewController.dismissKeyboard)) // when screen is tapped it will dismiss keyboard
         view.addGestureRecognizer(tap)
         
-        self.view.backgroundColor = UIColor.appColorSpring1();
+        self.view.backgroundColor = UIColor.seasonColorOne();
     }
     
     func dismissKeyboard() { // by Andrew Berg

@@ -16,13 +16,26 @@ class MultiplayerMenuViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        carRacingButton.backgroundColor = UIColor.appColorSpring3();
-        mountianClimbingButton.backgroundColor = UIColor.appColorSpring2();
+        self.setButtonColors();
+        self.view.backgroundColor = UIColor.themeChosen();
+        
+        //carRacingButton.backgroundColor = UIColor.appColorSpring3();
+        //mountianClimbingButton.backgroundColor = UIColor.appColorSpring2();
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.setButtonColors();
+        self.view.backgroundColor = UIColor.themeChosen();
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setButtonColors() {
+        carRacingButton.backgroundColor = UIColor.seasonColorThree();
+        mountianClimbingButton.backgroundColor = UIColor.seasonColorFour();
     }
     
 

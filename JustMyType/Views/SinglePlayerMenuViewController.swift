@@ -18,15 +18,25 @@ class SinglePlayerMenuViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        somethingButton.backgroundColor = UIColor.appColorSpring1();
-        balloonsButton.backgroundColor = UIColor.appColorSpring4();
+        self.setButtonColors();
+        self.view.backgroundColor = UIColor.themeChosen();
+
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        self.setButtonColors();
+        self.view.backgroundColor = UIColor.themeChosen();
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func setButtonColors() {
+        somethingButton.backgroundColor = UIColor.seasonColorOne();
+        balloonsButton.backgroundColor = UIColor.seasonColorTwo();
+    }
 
     /*
     // MARK: - Navigation
