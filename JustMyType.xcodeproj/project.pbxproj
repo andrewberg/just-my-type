@@ -28,6 +28,7 @@
 		AE1DF9301D97391F00E578C2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */; };
 		AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF9311D973A4100E578C2 /* UIColorExtensions.swift */; };
 		CF3B79701DB6DF8F00A2B427 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3B796F1DB6DF8F00A2B427 /* UIViewExtension.swift */; };
+		CFB43D551DDBC26D007C7A90 /* BalloonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB43D541DDBC26D007C7A90 /* BalloonViewController.swift */; };
 		D0ED73441DCA2F8E00E62FA7 /* WordList.txt in Resources */ = {isa = PBXBuildFile; fileRef = D0ED73431DCA2F8E00E62FA7 /* WordList.txt */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Views/SettingsViewController.swift; sourceTree = "<group>"; };
 		AE1DF9311D973A4100E578C2 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtensions.swift; path = Extensions/UIColorExtensions.swift; sourceTree = "<group>"; };
 		CF3B796F1DB6DF8F00A2B427 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
+		CFB43D541DDBC26D007C7A90 /* BalloonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonViewController.swift; sourceTree = "<group>"; };
 		D0ED73431DCA2F8E00E62FA7 /* WordList.txt */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = WordList.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,15 +206,16 @@
 		AE1DF9261D972F9600E578C2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AE1DF9271D97319A00E578C2 /* TypingTestViewController.swift */,
-				AE1DF92B1D97390300E578C2 /* SinglePlayerMenuViewController.swift */,
-				AE1DF92D1D97391100E578C2 /* MultiplayerMenuViewController.swift */,
-				AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */,
-				0FFD29151D988D5500CB28D6 /* HomeViewController.swift */,
+				CFB43D541DDBC26D007C7A90 /* BalloonViewController.swift */,
+				8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */,
 				8C4487B81DD3D75100602565 /* BasketballViewController.swift */,
 				8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */,
-				8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */,
 				AE1DF8F81D972E7C00E578C2 /* GameViewController.swift */,
+				0FFD29151D988D5500CB28D6 /* HomeViewController.swift */,
+				AE1DF92D1D97391100E578C2 /* MultiplayerMenuViewController.swift */,
+				AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */,
+				AE1DF92B1D97390300E578C2 /* SinglePlayerMenuViewController.swift */,
+				AE1DF9271D97319A00E578C2 /* TypingTestViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 			files = (
 				512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */,
 				AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */,
+				CFB43D551DDBC26D007C7A90 /* BalloonViewController.swift in Sources */,
 				0FFD29191D988DF800CB28D6 /* RoundedButton.swift in Sources */,
 				AE1DF92C1D97390300E578C2 /* SinglePlayerMenuViewController.swift in Sources */,
 				AE1DF8F71D972E7C00E578C2 /* GameScene.swift in Sources */,
