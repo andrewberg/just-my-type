@@ -15,8 +15,16 @@ class BalloonViewController: UIViewController {
   @IBOutlet weak var label2: UILabel!
   @IBOutlet weak var label3: UILabel!
   
+  var test = TypingTest()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Load 3 words from TypingTest
+    label1.text = test.getCurrentWord()
+    label2.text = test.getNextWord()
+    label3.text = test.getNextNextWord()
+    
     
 
     

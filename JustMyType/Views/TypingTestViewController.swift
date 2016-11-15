@@ -78,7 +78,7 @@ class TypingTestViewController: UIViewController {
     func updateLabels() {
         wordLabel.slideInFromLeft()
         type.makeCurWordNextWord() // move next word into cur word
-        wordLabel.text = type.getCurrentWord() + " " + type.getRandomWord()   //grab new word for wordlabel
+        wordLabel.text = type.getCurrentWord() + " " + type.getNextWord()   //grab new word for wordlabel
         updateWPMLabel()
         textFieldRef.text = ""                  //clear users text field
     }
