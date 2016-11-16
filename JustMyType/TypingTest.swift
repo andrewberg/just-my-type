@@ -79,7 +79,7 @@ class TypingTest {
     func getRandomWord() -> String {    // gets a random word from the array to display
         //random number generation from size of the list of words
         let random = wordArray[Int(arc4random_uniform(UInt32(wordArray.count)))]
-        next_word = random       // sets the current displayed word to the randomly chosen word from array
+//        next_word = random       // sets the current displayed word to the randomly chosen word from array
         return random           // returns the random word that was chosen
     }
     

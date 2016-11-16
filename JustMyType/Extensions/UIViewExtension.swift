@@ -71,4 +71,8 @@ extension UIView {
     // Add the animation to the View's layer
     self.layer.add(slideInFromLeftTransition, forKey: "slideInFromLeftTransition")
   } // slideInFromLeft
+  
 }
+
+
+
