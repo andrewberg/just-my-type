@@ -12,6 +12,9 @@
 		1130D0931DB69DDF00FBD541 /* JustMyTypeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130D0921DB69DDF00FBD541 /* JustMyTypeUnitTests.swift */; };
 		1130D0A11DB69E0400FBD541 /* JustMyTypeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130D0A01DB69E0400FBD541 /* JustMyTypeUITest.swift */; };
 		512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A2ACA1DAED26200B818D0 /* TypingTest.swift */; };
+		8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487B81DD3D75100602565 /* BasketballViewController.swift */; };
+		8C4487BB1DD3ECBA00602565 /* GamePlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */; };
+		8C7C19D51DD293CA00F2640A /* BasketBallScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */; };
 		AE1DF8F31D972E7C00E578C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF8F21D972E7C00E578C2 /* AppDelegate.swift */; };
 		AE1DF8F51D972E7C00E578C2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE1DF8F41D972E7C00E578C2 /* GameScene.sks */; };
 		AE1DF8F71D972E7C00E578C2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF8F61D972E7C00E578C2 /* GameScene.swift */; };
@@ -25,6 +28,7 @@
 		AE1DF9301D97391F00E578C2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */; };
 		AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF9311D973A4100E578C2 /* UIColorExtensions.swift */; };
 		CF3B79701DB6DF8F00A2B427 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3B796F1DB6DF8F00A2B427 /* UIViewExtension.swift */; };
+		CFB43D551DDBC26D007C7A90 /* BalloonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB43D541DDBC26D007C7A90 /* BalloonViewController.swift */; };
 		D0ED73441DCA2F8E00E62FA7 /* WordList.txt in Resources */ = {isa = PBXBuildFile; fileRef = D0ED73431DCA2F8E00E62FA7 /* WordList.txt */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,9 @@
 		1130D0A01DB69E0400FBD541 /* JustMyTypeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustMyTypeUITest.swift; sourceTree = "<group>"; };
 		1130D0A21DB69E0400FBD541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		512A2ACA1DAED26200B818D0 /* TypingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTest.swift; sourceTree = "<group>"; };
+		8C4487B81DD3D75100602565 /* BasketballViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketballViewController.swift; path = Views/BasketballViewController.swift; sourceTree = "<group>"; };
+		8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayScene.swift; sourceTree = "<group>"; };
+		8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketBallScene.swift; path = ../BasketBallScene.swift; sourceTree = "<group>"; };
 		AE1DF8EF1D972E7C00E578C2 /* JustMyType.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustMyType.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1DF8F21D972E7C00E578C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE1DF8F41D972E7C00E578C2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -86,6 +93,7 @@
 		AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Views/SettingsViewController.swift; sourceTree = "<group>"; };
 		AE1DF9311D973A4100E578C2 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtensions.swift; path = Extensions/UIColorExtensions.swift; sourceTree = "<group>"; };
 		CF3B796F1DB6DF8F00A2B427 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
+		CFB43D541DDBC26D007C7A90 /* BalloonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonViewController.swift; sourceTree = "<group>"; };
 		D0ED73431DCA2F8E00E62FA7 /* WordList.txt */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = WordList.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,7 +194,6 @@
 				AE1DF8F21D972E7C00E578C2 /* AppDelegate.swift */,
 				AE1DF8F41D972E7C00E578C2 /* GameScene.sks */,
 				AE1DF8F61D972E7C00E578C2 /* GameScene.swift */,
-				AE1DF8F81D972E7C00E578C2 /* GameViewController.swift */,
 				AE1DF8FA1D972E7C00E578C2 /* Main.storyboard */,
 				512A2ACA1DAED26200B818D0 /* TypingTest.swift */,
 				AE1DF8FD1D972E7C00E578C2 /* Assets.xcassets */,
@@ -199,11 +206,16 @@
 		AE1DF9261D972F9600E578C2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AE1DF9271D97319A00E578C2 /* TypingTestViewController.swift */,
-				AE1DF92B1D97390300E578C2 /* SinglePlayerMenuViewController.swift */,
+				CFB43D541DDBC26D007C7A90 /* BalloonViewController.swift */,
+				8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */,
+				8C4487B81DD3D75100602565 /* BasketballViewController.swift */,
+				8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */,
+				AE1DF8F81D972E7C00E578C2 /* GameViewController.swift */,
+				0FFD29151D988D5500CB28D6 /* HomeViewController.swift */,
 				AE1DF92D1D97391100E578C2 /* MultiplayerMenuViewController.swift */,
 				AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */,
-				0FFD29151D988D5500CB28D6 /* HomeViewController.swift */,
+				AE1DF92B1D97390300E578C2 /* SinglePlayerMenuViewController.swift */,
+				AE1DF9271D97319A00E578C2 /* TypingTestViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -316,7 +328,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Lauren Koulias";
 				TargetAttributes = {
 					1130D08F1DB69DDF00FBD541 = {
@@ -433,16 +445,20 @@
 			files = (
 				512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */,
 				AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */,
+				CFB43D551DDBC26D007C7A90 /* BalloonViewController.swift in Sources */,
 				0FFD29191D988DF800CB28D6 /* RoundedButton.swift in Sources */,
 				AE1DF92C1D97390300E578C2 /* SinglePlayerMenuViewController.swift in Sources */,
 				AE1DF8F71D972E7C00E578C2 /* GameScene.swift in Sources */,
+				8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */,
 				AE1DF8F91D972E7C00E578C2 /* GameViewController.swift in Sources */,
 				CF3B79701DB6DF8F00A2B427 /* UIViewExtension.swift in Sources */,
+				8C7C19D51DD293CA00F2640A /* BasketBallScene.swift in Sources */,
 				AE1DF92E1D97391100E578C2 /* MultiplayerMenuViewController.swift in Sources */,
 				0FFD29161D988D5500CB28D6 /* HomeViewController.swift in Sources */,
 				AE1DF8F31D972E7C00E578C2 /* AppDelegate.swift in Sources */,
 				AE1DF9281D97319A00E578C2 /* TypingTestViewController.swift in Sources */,
 				AE1DF9301D97391F00E578C2 /* SettingsViewController.swift in Sources */,
+				8C4487BB1DD3ECBA00602565 /* GamePlayScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,8 +607,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -637,8 +655,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -657,6 +677,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

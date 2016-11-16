@@ -27,3 +27,23 @@ d) Acceptance tests for an external person to try:
     onto a new word
     iv) Check to make sure you can reset your score to try again and make sure your high score
     doesn't disapear on exit of the app.
+
+
+#Change Log
+
+Version 0.0.3
+
+Basic Interface is still the same
+    The Single and Multi- player menus now have options in them. The options do not do anything currently.
+   
+Changed the dictionary for random words from a small array in a file to an external file to read from.
+Added a failed word animation.
+Added a scoreboard.
+Added the ability to calculate WPM.
+
+
+Version 0.0.1
+
+Basic interface created. 
+Basic Typing Test created.
+Small word list for testing only.
