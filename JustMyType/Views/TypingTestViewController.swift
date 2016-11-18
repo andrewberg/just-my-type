@@ -18,6 +18,7 @@ class TypingTestViewController: UIViewController {
     @IBOutlet weak var amountOfMinutesStepper: UIStepper!
     @IBOutlet weak var RoundedLabel1: UILabel!
     @IBOutlet weak var RoundedLabel2: UILabel!
+    @IBOutlet weak var nextWordLabel: UILabel!
     
     let secsInMin = 60
     var type = TypingTest()
@@ -76,9 +77,10 @@ class TypingTestViewController: UIViewController {
     }
     
     func updateLabels() {
-        wordLabel.slideInFromLeft()
+        // wordLabel.slideInFromLeft()
         type.makeCurWordNextWord() // move next word into cur word
-        wordLabel.text = type.getCurrentWord() + " " + type.getNextWord()   //grab new word for wordlabel
+        wordLabel.text = "Current Word: " + type.getCurrentWord()   //grab new word for wordlabel
+        nextWordLabel.text = "Next Word: " + type.getNextWord()
         updateWPMLabel()
         textFieldRef.text = ""                  //clear users text field
     }
@@ -89,7 +91,12 @@ class TypingTestViewController: UIViewController {
     
     override func viewDidLoad() {       //verify view is loading
         super.viewDidLoad()
-        wordLabel.text = type.getCurrentWord() + " " + type.getNextWord() //set starting view label with a random word
+        
+        // begin edit by Justin Duhaime
+        wordLabel.text = "Current Word: " + type.getCurrentWord() //set starting view label with a random word
+        nextWordLabel.text = "Next Word: " + type.getNextWord()
+        // end edit
+        
         textFieldRef.addTarget(self, action: #selector(self.textFieldAction(_:)), for: UIControlEvents.editingChanged)
         //^ checks if users textfield has changed, if so calls function for action
         timeLabel.text = String(clockDefault) // set clock value to default clock value
