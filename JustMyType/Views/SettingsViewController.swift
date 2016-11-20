@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    //Lauren Koulias
     override func viewDidLoad() {
         super.viewDidLoad()
 

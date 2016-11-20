@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Lauren Koulias
 extension UIColor {
     // Get selected seasons color
     static func seasonColorOne() -> UIColor {
@@ -116,11 +117,11 @@ extension UIColor {
     //summer
     //fa582b, faf191, c2ea9b, 17a992
     static func appColorSummer1() -> UIColor {
-        return UIColor(red:0.98, green:0.95, blue:0.57, alpha:1.0); //Yellow
+        return UIColor(red:0.98, green:0.35, blue:0.17, alpha:1.0); //Red
     }
     
     static func appColorSummer2() -> UIColor {
-        return UIColor(red:0.98, green:0.35, blue:0.17, alpha:1.0); //Red
+        return UIColor(red:0.98, green:0.95, blue:0.57, alpha:1.0); //Yellow
     }
     
     static func appColorSummer3() -> UIColor {

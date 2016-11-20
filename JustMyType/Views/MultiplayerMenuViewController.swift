@@ -16,14 +16,14 @@ class MultiplayerMenuViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //Lauren Koulias
         self.setButtonColors();
         self.view.backgroundColor = UIColor.themeChosen();
         
-        //carRacingButton.backgroundColor = UIColor.appColorSpring3();
-        //mountianClimbingButton.backgroundColor = UIColor.appColorSpring2();
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        //Lauren Koulias
         self.setButtonColors();
         self.view.backgroundColor = UIColor.themeChosen();
     }
@@ -34,6 +34,7 @@ class MultiplayerMenuViewController: UIViewController {
     }
     
     func setButtonColors() {
+        //Lauren Koulias
         carRacingButton.backgroundColor = UIColor.seasonColorThree();
         mountianClimbingButton.backgroundColor = UIColor.seasonColorFour();
     }

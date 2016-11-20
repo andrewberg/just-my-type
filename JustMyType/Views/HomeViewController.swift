@@ -19,17 +19,20 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //Lauren Koulias
         self.setButtonColors();
         self.view.backgroundColor = UIColor.themeChosen();
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        //Lauren Koulias
         self.setButtonColors();
         self.view.backgroundColor = UIColor.themeChosen();
     }
     
     func setButtonColors() {
+        //Lauren Koulias
         typingTestButton.backgroundColor = UIColor.seasonColorOne();
         singlePlayerButton.backgroundColor = UIColor.seasonColorTwo();
         multiplayerButton.backgroundColor = UIColor.seasonColorThree();

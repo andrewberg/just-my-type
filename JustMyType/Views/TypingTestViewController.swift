@@ -96,19 +96,20 @@ class TypingTestViewController: UIViewController {
         wpmLabel.text = String(type.getTotalWords()) // set to zero because total words is 0
         //^ checks if users textfield has changed, if so calls function for action
         
+        //Lauren Koulias
         RoundedLabel1.layer.masksToBounds = true;
         RoundedLabel1.layer.cornerRadius = 8.0;
 
         RoundedLabel2.layer.masksToBounds = true;
         RoundedLabel2.layer.cornerRadius = 8.0;
         
+        self.view.backgroundColor = UIColor.seasonColorTwo();
+        self.RoundedLabel1.backgroundColor = UIColor.seasonColorThree();
+        self.RoundedLabel2.backgroundColor = UIColor.seasonColorThree();
+        
         // Andrew Berg
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TypingTestViewController.dismissKeyboard)) // when screen is tapped it will dismiss keyboard
         view.addGestureRecognizer(tap)
-        
-        self.view.backgroundColor = UIColor.seasonColorOne();
-        self.RoundedLabel1.backgroundColor = UIColor.seasonColorTwo();
-        self.RoundedLabel2.backgroundColor = UIColor.seasonColorThree()
 
     }
     
