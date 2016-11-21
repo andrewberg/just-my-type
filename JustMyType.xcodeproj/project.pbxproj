@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F13A0EB1DE27B1A00740910 /* Chill.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F13A0EA1DE27B1A00740910 /* Chill.wav */; };
 		0F13A0ED1DE2841C00740910 /* MusicHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F13A0EC1DE2841C00740910 /* MusicHelper.swift */; };
+		0F13A0EF1DE3B79F00740910 /* JustMyTypeLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F13A0EE1DE3B79F00740910 /* JustMyTypeLogo.jpg */; };
 		0FFD29161D988D5500CB28D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD29151D988D5500CB28D6 /* HomeViewController.swift */; };
 		0FFD29191D988DF800CB28D6 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD29181D988DF800CB28D6 /* RoundedButton.swift */; };
 		1130D0931DB69DDF00FBD541 /* JustMyTypeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130D0921DB69DDF00FBD541 /* JustMyTypeUnitTests.swift */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		0F13A0EA1DE27B1A00740910 /* Chill.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Chill.wav; sourceTree = "<group>"; };
 		0F13A0EC1DE2841C00740910 /* MusicHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicHelper.swift; sourceTree = "<group>"; };
+		0F13A0EE1DE3B79F00740910 /* JustMyTypeLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = JustMyTypeLogo.jpg; sourceTree = "<group>"; };
 		0FFD29151D988D5500CB28D6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Views/HomeViewController.swift; sourceTree = "<group>"; };
 		0FFD29181D988DF800CB28D6 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = Styling/RoundedButton.swift; sourceTree = "<group>"; };
 		1130D0901DB69DDF00FBD541 /* JustMyTypeUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustMyTypeUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +207,7 @@
 				AE1DF8FF1D972E7C00E578C2 /* LaunchScreen.storyboard */,
 				0F13A0EC1DE2841C00740910 /* MusicHelper.swift */,
 				AE1DF9021D972E7C00E578C2 /* Info.plist */,
+				0F13A0EE1DE3B79F00740910 /* JustMyTypeLogo.jpg */,
 			);
 			path = JustMyType;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				D0ED73441DCA2F8E00E62FA7 /* WordList.txt in Resources */,
 				0F13A0EB1DE27B1A00740910 /* Chill.wav in Resources */,
 				AE1DF8F51D972E7C00E578C2 /* GameScene.sks in Resources */,
+				0F13A0EF1DE3B79F00740910 /* JustMyTypeLogo.jpg in Resources */,
 				AE1DF9011D972E7C00E578C2 /* LaunchScreen.storyboard in Resources */,
 				AE1DF8FE1D972E7C00E578C2 /* Assets.xcassets in Resources */,
 				AE1DF8FC1D972E7C00E578C2 /* Main.storyboard in Resources */,

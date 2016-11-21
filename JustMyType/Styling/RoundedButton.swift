@@ -17,15 +17,6 @@ class RoundedButton: UIButton {
         
     }
 }
-    
-class RoundedLabel: UILabel {
-        required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder);
-            
-            self.layer.cornerRadius = 12;
-            
-        }
-}
         
     /*
     // Only override draw() if you perform custom drawing.

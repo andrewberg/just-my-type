@@ -14,6 +14,7 @@ class SinglePlayerMenuViewController: UIViewController {
     
     @IBOutlet weak var balloonsButton: RoundedButton!
     @IBOutlet weak var somethingButton: RoundedButton!
+    @IBOutlet weak var carRacingButton: RoundedButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +40,11 @@ class SinglePlayerMenuViewController: UIViewController {
         //Lauren Koulias
         somethingButton.backgroundColor = UIColor.seasonColorOne();
         balloonsButton.backgroundColor = UIColor.seasonColorTwo();
+        carRacingButton.backgroundColor = UIColor.seasonColorThree();
         
         somethingButton.titleLabel?.textColor = UIColor.themeChosen();
         balloonsButton.titleLabel?.textColor = UIColor.themeChosen();
+        carRacingButton.titleLabel?.textColor = UIColor.themeChosen();
 
     }
 

@@ -369,55 +369,52 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S67-XG-P1y">
-                                <frame key="frameInset" minX="34" minY="349" width="306" height="211"/>
+                                <frame key="frameInset" minX="34" minY="361" width="306" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.57254904510000004" green="0.87450987099999999" blue="0.91372555489999996" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vMf-e1-9wC">
-                                <frame key="frameInset" minX="68" minY="395" width="182" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="q2e-UY-7Ug">
-                                <frame key="frameInset" minX="68" minY="487" width="182" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Background Music:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhe-kd-UBS">
-                                <frame key="frameInset" minX="50" minY="366" width="147" height="21"/>
+                                <frame key="frameInset" minX="50" minY="395" width="147" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Button Sounds:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnq-qq-gfW">
-                                <frame key="frameInset" minX="50" minY="458" width="118" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8k-H4-AkN">
                                 <frame key="frameInset" minX="255" minY="395" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="DidToggleMusic:" destination="G5A-cd-Uld" eventType="valueChanged" id="d3m-Dw-pf9"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RJn-sg-hKK">
-                                <frame key="frameInset" minX="255" minY="486" width="51" height="31"/>
+                                <frame key="frameInset" minX="255" minY="448" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="DidToggleSound:" destination="G5A-cd-Uld" eventType="valueChanged" id="Woq-Tg-C3v"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Button Sounds:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnq-qq-gfW">
+                                <frame key="frameInset" minX="50" minY="453" width="118" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="BackgroundLabel" destination="dlv-su-Mkn" id="ZNS-GM-DnI"/>
                         <outlet property="BackgroundLabel2" destination="S67-XG-P1y" id="QS7-qg-f5R"/>
+                        <outlet property="BackgroundMusicToggle" destination="e8k-H4-AkN" id="hPH-zz-NkS"/>
+                        <outlet property="ButtonSoundToggle" destination="RJn-sg-hKK" id="fEe-CD-bD9"/>
                         <outlet property="ColorSegmentControl" destination="Kbg-lv-Rhk" id="sMh-vH-93c"/>
                         <outlet property="MusicLabel" destination="uhe-kd-UBS" id="9eg-bS-5ea"/>
                         <outlet property="SoundsLabel" destination="mnq-qq-gfW" id="4kp-Hm-R4D"/>
@@ -455,11 +452,22 @@
                                 <frame key="frameInset" minX="37" minY="316" width="300" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Something Else">
+                                <state key="normal" title="Basketball">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="CSx-EP-Fiz" kind="show" id="hKg-sp-FJ9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Taz-LF-QWg" customClass="RoundedButton" customModule="JustMyType" customModuleProvider="target">
+                                <frame key="frameInset" minX="37" minY="427" width="300" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Car Racing">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="u6E-r1-fOK" kind="show" id="BC8-o6-ecz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -467,12 +475,13 @@
                     </view>
                     <connections>
                         <outlet property="balloonsButton" destination="NZ5-Mc-5v1" id="xIv-qr-4qd"/>
+                        <outlet property="carRacingButton" destination="Taz-LF-QWg" id="4sb-Iq-dwh"/>
                         <outlet property="somethingButton" destination="gI8-eX-EEY" id="aRl-1g-UHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7p-eB-xpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1506" y="1946"/>
+            <point key="canvasLocation" x="1504.8" y="1945.2773613193406"/>
         </scene>
         <!--Balloon View Controller-->
         <scene sceneID="d9m-h3-PbR">
@@ -534,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aN0-vx-hEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805.60000000000002" y="2696.4017991004498"/>
+            <point key="canvasLocation" x="188" y="2697"/>
         </scene>
         <!--Basketball View Controller-->
         <scene sceneID="cgE-OV-LUj">
@@ -552,7 +561,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLS-uR-Ibj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1505" y="2697"/>
+            <point key="canvasLocation" x="836" y="2697"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KES-b3-iJM">
+            <objects>
+                <viewController id="u6E-r1-fOK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="at6-LS-oGj"/>
+                        <viewControllerLayoutGuide type="bottom" id="lTd-AE-dL1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QNK-e2-g42">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Car Racing Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jW9-wu-fzQ">
+                                <frame key="frameInset" minX="143" minY="236" width="133" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ud8-dr-RGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1478" y="2697"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="G93-8N-zPD">

@@ -18,6 +18,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var ThemeSegmentControl: UISegmentedControl!
     @IBOutlet weak var MusicLabel: UILabel!
     @IBOutlet weak var SoundsLabel: UILabel!
+    @IBOutlet weak var BackgroundMusicToggle: UISwitch!
+    @IBOutlet weak var ButtonSoundToggle: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +58,9 @@ class SettingsViewController: UIViewController {
         
         self.MusicLabel.textColor = UIColor.themeChosen();
         self.SoundsLabel.textColor = UIColor.themeChosen();
+        
+        self.BackgroundMusicToggle.thumbTintColor = UIColor.themeChosen();
+        self.ButtonSoundToggle.thumbTintColor = UIColor.themeChosen();
     }
     
     override func didReceiveMemoryWarning() {
