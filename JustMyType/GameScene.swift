@@ -9,6 +9,8 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    var backgroundMusic: SKAudioNode!     //Lauren Koulias
+    
     override func didMove(to view: SKView) {
         /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
@@ -17,6 +19,10 @@ class GameScene: SKScene {
         myLabel.position = CGPoint(x:self.frame.midX, y:self.frame.midY)
         
         self.addChild(myLabel)
+        
+        //Lauren Koulias
+        backgroundMusic = SKAudioNode(fileNamed: "Chill.wav");
+        addChild(backgroundMusic);
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -42,4 +48,5 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
     }
+    
 }
