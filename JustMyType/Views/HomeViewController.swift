@@ -37,6 +37,12 @@ class HomeViewController: UIViewController {
         singlePlayerButton.backgroundColor = UIColor.seasonColorTwo();
         multiplayerButton.backgroundColor = UIColor.seasonColorThree();
         settingsButton.backgroundColor = UIColor.seasonColorFour();
+        
+        typingTestButton.titleLabel?.textColor = UIColor.themeChosen();
+        singlePlayerButton.titleLabel?.textColor = UIColor.themeChosen();
+        multiplayerButton.titleLabel?.textColor = UIColor.themeChosen();
+        settingsButton.titleLabel?.textColor = UIColor.themeChosen();
+
     }
     
     func setBackground() {

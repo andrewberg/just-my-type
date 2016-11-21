@@ -25,6 +25,7 @@ class SinglePlayerMenuViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        //Lauren Koulias
         self.setButtonColors();
         self.view.backgroundColor = UIColor.themeChosen();
     }
@@ -35,8 +36,13 @@ class SinglePlayerMenuViewController: UIViewController {
     }
     
     func setButtonColors() {
+        //Lauren Koulias
         somethingButton.backgroundColor = UIColor.seasonColorOne();
         balloonsButton.backgroundColor = UIColor.seasonColorTwo();
+        
+        somethingButton.titleLabel?.textColor = UIColor.themeChosen();
+        balloonsButton.titleLabel?.textColor = UIColor.themeChosen();
+
     }
 
     /*

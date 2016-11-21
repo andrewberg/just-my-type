@@ -11,33 +11,60 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     //Lauren Koulias
+    
+    @IBOutlet weak var BackgroundLabel: UILabel!
+    @IBOutlet weak var BackgroundLabel2: UILabel!
+    @IBOutlet weak var ColorSegmentControl: UISegmentedControl!
+    @IBOutlet weak var ThemeSegmentControl: UISegmentedControl!
+    @IBOutlet weak var MusicLabel: UILabel!
+    @IBOutlet weak var SoundsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         let defaults = UserDefaults.standard;
         let selectedSeason = defaults.integer(forKey: "COLOR_SETTING");
         let selectedTheme = defaults.integer(forKey: "THEME_SETTING");
-
+        
         ColorSegmentControl.selectedSegmentIndex = selectedSeason;
         ThemeSegmentControl.selectedSegmentIndex = selectedTheme;
         
         self.view.backgroundColor = UIColor.themeChosen();
+        
+        BackgroundLabel.layer.masksToBounds = true;
+        BackgroundLabel.layer.cornerRadius = 8.0;
+        
+        BackgroundLabel2.layer.masksToBounds = true;
+        BackgroundLabel2.layer.cornerRadius = 8.0;
+        
+        self.BackgroundLabel.backgroundColor = UIColor.seasonColorThree()
+        self.BackgroundLabel2.backgroundColor = UIColor.seasonColorThree()
+        
+        self.ColorSegmentControl.tintColor = UIColor.themeChosen();
+        self.ColorSegmentControl.tintColor = UIColor.themeChosen();
+        
+        self.MusicLabel.textColor = UIColor.themeChosen();
+        self.SoundsLabel.textColor = UIColor.themeChosen();
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         self.view.backgroundColor = UIColor.themeChosen();
+        
+        self.BackgroundLabel.backgroundColor = UIColor.seasonColorThree()
+        self.BackgroundLabel2.backgroundColor = UIColor.seasonColorThree()
+        
+        self.ColorSegmentControl.tintColor = UIColor.themeChosen();
+        self.ColorSegmentControl.tintColor = UIColor.themeChosen();
+        
+        self.MusicLabel.textColor = UIColor.themeChosen();
+        self.SoundsLabel.textColor = UIColor.themeChosen();
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-    @IBOutlet weak var ColorSegmentControl: UISegmentedControl!
-    @IBOutlet weak var ThemeSegmentControl: UISegmentedControl!
 
     @IBAction func DidChangeColorSegmentControl(_ sender: UISegmentedControl) {
         let defaults = UserDefaults.standard;

@@ -37,6 +37,9 @@ class MultiplayerMenuViewController: UIViewController {
         //Lauren Koulias
         carRacingButton.backgroundColor = UIColor.seasonColorThree();
         mountianClimbingButton.backgroundColor = UIColor.seasonColorFour();
+        
+        carRacingButton.titleLabel?.textColor = UIColor.themeChosen();
+        mountianClimbingButton.titleLabel?.textColor = UIColor.themeChosen();
     }
     
 
