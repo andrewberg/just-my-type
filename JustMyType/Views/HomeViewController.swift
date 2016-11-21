@@ -22,7 +22,8 @@ class HomeViewController: UIViewController {
         //Lauren Koulias
         self.setButtonColors();
         self.view.backgroundColor = UIColor.themeChosen();
-
+        
+        MusicHelper.sharedHelper.playBackgroundMusic();
     }
     
     override func viewDidAppear(_ animated: Bool) {

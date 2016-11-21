@@ -38,24 +38,21 @@ class SettingsViewController: UIViewController {
         BackgroundLabel2.layer.masksToBounds = true;
         BackgroundLabel2.layer.cornerRadius = 8.0;
         
-        self.BackgroundLabel.backgroundColor = UIColor.seasonColorThree()
-        self.BackgroundLabel2.backgroundColor = UIColor.seasonColorThree()
-        
-        self.ColorSegmentControl.tintColor = UIColor.themeChosen();
-        self.ColorSegmentControl.tintColor = UIColor.themeChosen();
-        
-        self.MusicLabel.textColor = UIColor.themeChosen();
-        self.SoundsLabel.textColor = UIColor.themeChosen();
+        self.setTheme();
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        self.setTheme();
+    }
+    
+    func setTheme() {
         self.view.backgroundColor = UIColor.themeChosen();
         
         self.BackgroundLabel.backgroundColor = UIColor.seasonColorThree()
         self.BackgroundLabel2.backgroundColor = UIColor.seasonColorThree()
         
         self.ColorSegmentControl.tintColor = UIColor.themeChosen();
-        self.ColorSegmentControl.tintColor = UIColor.themeChosen();
+        self.ThemeSegmentControl.tintColor = UIColor.themeChosen();
         
         self.MusicLabel.textColor = UIColor.themeChosen();
         self.SoundsLabel.textColor = UIColor.themeChosen();
@@ -69,14 +66,27 @@ class SettingsViewController: UIViewController {
     @IBAction func DidChangeColorSegmentControl(_ sender: UISegmentedControl) {
         let defaults = UserDefaults.standard;
         defaults.set(sender.selectedSegmentIndex, forKey: "COLOR_SETTING");
+        self.setTheme();
     }
     
     @IBAction func DidChangeThemeSegmentControl(_ sender: UISegmentedControl) {
         let defaults = UserDefaults.standard;
         defaults.set(sender.selectedSegmentIndex, forKey: "THEME_SETTING");
+        self.setTheme();
     }
     
     
+    @IBAction func DidToggleMusic(_ sender: UISwitch) {
+        if(sender.isOn) {
+            MusicHelper.sharedHelper.resumeBackgroundMusic();
+        } else {
+            MusicHelper.sharedHelper.pauseBackgroundMusic();
+        }
+    }
+    
+    @IBAction func DidToggleSound(_ sender: AnyObject) {
+
+    }
     
     /*
     // MARK: - Navigation

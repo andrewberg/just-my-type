@@ -9,7 +9,6 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    var backgroundMusic: SKAudioNode!     //Lauren Koulias
     
     override func didMove(to view: SKView) {
         /* Setup your scene here */
@@ -20,9 +19,6 @@ class GameScene: SKScene {
         
         self.addChild(myLabel)
         
-        //Lauren Koulias
-        backgroundMusic = SKAudioNode(fileNamed: "Chill.wav");
-        addChild(backgroundMusic);
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
