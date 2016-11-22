@@ -127,7 +127,8 @@ extension UIColor {
     }
     
     static func appColorSummer3() -> UIColor {
-        return UIColor(red:0.76, green:0.92, blue:0.61, alpha:1.0); //Light Green
+        //return UIColor(red:0.76, green:0.92, blue:0.61, alpha:1.0); //Light Green
+        return UIColor(red:0.65, green:0.88, blue:0.42, alpha:1.0);
     }
     
     static func appColorSummer4() -> UIColor {

@@ -91,8 +91,8 @@ class TypingTestViewController: UIViewController {
         
         let coloredWordsToDisplay = NSMutableAttributedString.init(string: wordsToDisplay)
         coloredWordsToDisplay.addAttributes(
-            [ NSBackgroundColorAttributeName: UIColor.white,
-              NSForegroundColorAttributeName: UIColor.black
+            [ //NSBackgroundColorAttributeName: UIColor.white,
+              NSForegroundColorAttributeName: UIColor.white
             ], range: range)
         wordLabel.attributedText = coloredWordsToDisplay
     }
@@ -118,7 +118,7 @@ class TypingTestViewController: UIViewController {
         RoundedLabel2.layer.masksToBounds = true;
         RoundedLabel2.layer.cornerRadius = 8.0;
         
-        self.view.backgroundColor = UIColor.seasonColorTwo();
+        self.view.backgroundColor = UIColor.themeChosen();
         self.RoundedLabel1.backgroundColor = UIColor.seasonColorThree();
         self.RoundedLabel2.backgroundColor = UIColor.seasonColorThree();
         
