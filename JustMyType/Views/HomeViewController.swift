@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class HomeViewController: UIViewController {
     
@@ -14,6 +16,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var multiplayerButton: RoundedButton!
     @IBOutlet weak var singlePlayerButton: RoundedButton!
     @IBOutlet weak var typingTestButton: RoundedButton!
+    
+    var buttonSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Button", ofType: "wav")!)
+    var audioPlayer = AVAudioPlayer()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +28,12 @@ class HomeViewController: UIViewController {
         self.setButtonColors();
         self.view.backgroundColor = UIColor.themeChosen();
         
+        //play backgound music
         MusicHelper.sharedHelper.playBackgroundMusic();
+        
+        //button clicks
+        audioPlayer = try! AVAudioPlayer(contentsOf: buttonSound as URL);
+        audioPlayer.prepareToPlay();
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,17 +55,30 @@ class HomeViewController: UIViewController {
         settingsButton.titleLabel?.textColor = UIColor.themeChosen();
 
     }
-    
-    func setBackground() {
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func TypingTestButtonSound(_ sender: RoundedButton) {
+        audioPlayer.play();
+    }
+    
+    @IBAction func SinglePlayerButtonSound(_ sender: RoundedButton) {
+        audioPlayer.play();
 
+    }
+
+    @IBAction func MulitplayerButtonSound(_ sender: RoundedButton) {
+        audioPlayer.play();
+
+    }
+
+    @IBAction func SettingsButtonSound(_ sender: RoundedButton) {
+        audioPlayer.play();
+
+    }
     /*
     // MARK: - Navigation
 

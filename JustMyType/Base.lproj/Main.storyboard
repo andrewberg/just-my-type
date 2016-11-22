@@ -230,6 +230,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="SinglePlayerButtonSound:" destination="zf3-PE-v06" eventType="touchUpInside" id="shf-zh-c4X"/>
                                     <segue destination="J2u-G6-vuE" kind="show" identifier="singlePlayerSegue" id="naF-Xr-P5F"/>
                                 </connections>
                             </button>
@@ -244,6 +245,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="MulitplayerButtonSound:" destination="zf3-PE-v06" eventType="touchUpInside" id="aJv-ai-Vb3"/>
                                     <segue destination="ugB-lu-ueo" kind="show" identifier="multiplayerSegue" id="RmM-LB-Fmi"/>
                                 </connections>
                             </button>
@@ -257,6 +259,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="SettingsButtonSound:" destination="zf3-PE-v06" eventType="touchUpInside" id="hs9-c6-KLR"/>
                                     <segue destination="G5A-cd-Uld" kind="show" identifier="settingsSegue" id="FXz-Tz-3gj"/>
                                 </connections>
                             </button>
@@ -272,6 +275,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="TypingTestButtonSound:" destination="zf3-PE-v06" eventType="touchUpInside" id="lpb-gy-Zyr"/>
                                     <segue destination="o4N-Gg-GID" kind="show" identifier="typingTestSegue" id="Yn3-0D-GgX"/>
                                 </connections>
                             </button>
@@ -430,6 +434,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="BalloonsButtonClick:" destination="J2u-G6-vuE" eventType="touchUpInside" id="xZZ-IR-zov"/>
                                     <segue destination="3re-l7-3pq" kind="show" id="fT7-Qr-SWq"/>
                                 </connections>
                             </button>
@@ -441,6 +446,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="BasketballButtonClick:" destination="J2u-G6-vuE" eventType="touchUpInside" id="cfA-UF-5K2"/>
                                     <segue destination="CSx-EP-Fiz" kind="show" id="hKg-sp-FJ9"/>
                                 </connections>
                             </button>
@@ -452,6 +458,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="CarRacingButtonClick:" destination="J2u-G6-vuE" eventType="touchUpInside" id="jCv-vP-aGp"/>
                                     <segue destination="u6E-r1-fOK" kind="show" id="BC8-o6-ecz"/>
                                 </connections>
                             </button>

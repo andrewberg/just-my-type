@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SinglePlayerMenuViewController: UIViewController {
 
@@ -16,6 +17,9 @@ class SinglePlayerMenuViewController: UIViewController {
     @IBOutlet weak var somethingButton: RoundedButton!
     @IBOutlet weak var carRacingButton: RoundedButton!
     
+    var buttonSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Button", ofType: "wav")!)
+    var audioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +27,9 @@ class SinglePlayerMenuViewController: UIViewController {
         self.setButtonColors();
         self.view.backgroundColor = UIColor.themeChosen();
 
+        //button clicks
+        audioPlayer = try! AVAudioPlayer(contentsOf: buttonSound as URL);
+        audioPlayer.prepareToPlay();
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -48,6 +55,22 @@ class SinglePlayerMenuViewController: UIViewController {
 
     }
 
+    @IBAction func BalloonsButtonClick(_ sender: RoundedButton) {
+        audioPlayer.play();
+    }
+    
+    @IBAction func BasketballButtonClick(_ sender: RoundedButton) {
+        audioPlayer.play();
+    }
+    
+    @IBAction func CarRacingButtonClick(_ sender: RoundedButton) {
+        audioPlayer.play();
+
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
