@@ -22,11 +22,10 @@ import Foundation
 
 class TypingTest {
     
-    var cur_word: String    // holds current word in the test
+    var displayedWords: [String]    // holds current word in the test
     var speed: Int          // integer value for wpm value
     var total_words: Int    // hold total number of words typed
-    var next_word: String
-    var next_next_word: String
+    var wordsToDisplayOnScreen: Int // Number of words to display on the screen
   
     /*if let path = Bundle.main.pathForResource("WordList", ofType: "rtf"){
         let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
@@ -37,57 +36,69 @@ class TypingTest {
     // test array
     
     init() {
-        self.cur_word = ""  // current word in test
-        self.next_word = ""
-        self.next_next_word = ""
-      
         self.speed = 0      // initialize wpm to 0
         total_words = 0     // initialize total words typed to 0
+        self.wordsToDisplayOnScreen = 5;
+        self.displayedWords = [];
         
         let path = Bundle.main.path(forResource: "WordList", ofType: "txt")
         let data = try! String(contentsOfFile:path!, encoding: String.Encoding.utf8)
         self.wordArray = data.components(separatedBy: "\n")
         self.wordArray = self.wordArray.filter{$0 != ""} // filters out empty strings
       
-        self.cur_word = getRandomWord()
-        self.next_word = getRandomWord()
-        self.next_next_word = getRandomWord()
+        self.setDefaultDisplayedWords()
     }
     
+    // Lauren Koulias
+    func setDefaultDisplayedWords() {
+        for _ in 1...self.wordsToDisplayOnScreen {
+            _ = self.addRandomWordAndGetValue()
+        }
+    }
+    
+    // Lauren Koulias
     func getCurrentWord() -> String {   // gets word currently being displayed
-        return cur_word
+        return self.displayedWords[0]
     }
     
-    func getNextWord() -> String {
-        return next_word
-    }
-  
-    func getNextNextWord() -> String {
-        return next_next_word
+    // Lauren Koulias
+    func getsWordsToDisplay() -> String {   // gets word currently being displayed
+        var wordsToDisplay = ""
+        for word in self.displayedWords {
+            wordsToDisplay += word + " "
+        }
+        
+        return wordsToDisplay;
     }
     
     func getTotalWords() -> Int {
         return total_words
     }
     
+    // Lauren Koulias
     func makeCurWordNextWord() {
-        cur_word = next_word
-        next_word = next_next_word
-        next_next_word = getRandomWord()
+        self.displayedWords.remove(at: 0); // Pop first word off array
+        // Add a new word on
+        _ = self.addRandomWordAndGetValue()
     }
     
-    func getRandomWord() -> String {    // gets a random word from the array to display
+    func addRandomWordAndGetValue() -> String {    // gets a random word from the array to display
         //random number generation from size of the list of words
         let random = wordArray[Int(arc4random_uniform(UInt32(wordArray.count)))]
 //        next_word = random       // sets the current displayed word to the randomly chosen word from array
-        return random           // returns the random word that was chosen
+        self.displayedWords.append(random)
+        
+        return random;
     }
     
     func isCorrect(str: String) -> Bool {
         // true if user types correct word
         // and increments total words completed by 1
         
-        if (str == cur_word) {
+        // Trim whitespace - Lauren Koulias
+        let trimmedString = str.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines);
+        
+        if (trimmedString == getCurrentWord()) {
             total_words += 1
             return true
         }

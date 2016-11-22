@@ -76,11 +76,25 @@ class TypingTestViewController: UIViewController {
     }
     
     func updateLabels() {
-        wordLabel.slideInFromLeft()
         type.makeCurWordNextWord() // move next word into cur word
-        wordLabel.text = type.getCurrentWord() + " " + type.getNextWord()   //grab new word for wordlabel
+        
+        self.setStyledText()
         updateWPMLabel()
         textFieldRef.text = ""                  //clear users text field
+    }
+    
+    func setStyledText() { // Lauren Koulias
+        // Set color of first word
+        let wordsToDisplay = type.getsWordsToDisplay()
+        let wordToColor = type.getCurrentWord()
+        let range = (wordsToDisplay as NSString).range(of: wordToColor)
+        
+        let coloredWordsToDisplay = NSMutableAttributedString.init(string: wordsToDisplay)
+        coloredWordsToDisplay.addAttributes(
+            [ NSBackgroundColorAttributeName: UIColor.white,
+              NSForegroundColorAttributeName: UIColor.black
+            ], range: range)
+        wordLabel.attributedText = coloredWordsToDisplay
     }
     
     func updateWPMLabel() { // Andrew Berg
@@ -89,7 +103,8 @@ class TypingTestViewController: UIViewController {
     
     override func viewDidLoad() {       //verify view is loading
         super.viewDidLoad()
-        wordLabel.text = type.getCurrentWord() + " " + type.getNextWord() //set starting view label with a random word
+        
+        self.setStyledText() //set starting view label with a random word
         textFieldRef.addTarget(self, action: #selector(self.textFieldAction(_:)), for: UIControlEvents.editingChanged)
         //^ checks if users textfield has changed, if so calls function for action
         timeLabel.text = String(clockDefault) // set clock value to default clock value

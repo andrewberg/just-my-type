@@ -102,9 +102,9 @@ class BalloonViewController: UIViewController {
     }
     
     func getNewWords() {
-        label1.text = test.getRandomWord()
-        label2.text = test.getRandomWord()
-        label3.text = test.getRandomWord()
+        label1.text = test.addRandomWordAndGetValue()
+        label2.text = test.addRandomWordAndGetValue()
+        label3.text = test.addRandomWordAndGetValue()
     }
     
     func main() {
