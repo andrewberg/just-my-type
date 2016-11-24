@@ -16,8 +16,7 @@ class TypingTestLeaderboardViewController: UITableViewController {
         super.viewDidLoad()
         
         // grabs from leaderboard
-        let leader = Leaderboard(mode: "tt")
-        leader.getLeaderboard()
+        Leaderboard.sharedInstance.getLeaderboard()
             {(scores: [(name: String, score: Double)]) -> (Void) in
                 self.scores = scores
                 self.tableView.reloadData()
@@ -27,13 +26,13 @@ class TypingTestLeaderboardViewController: UITableViewController {
     
     // returns proper size for tableivew
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return scores.count
+        return Leaderboard.sharedInstance.scores.count
     }
     
     // creates cell for each prototype
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row+1). \(scores[indexPath.row].name) \(scores[indexPath.row].score)"
+        cell.textLabel?.text = "\(indexPath.row+1). \(Leaderboard.sharedInstance.scores[indexPath.row].name) \(Leaderboard.sharedInstance.scores[indexPath.row].score)"
         
         return cell
     }

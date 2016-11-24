@@ -15,6 +15,12 @@ enum GameMode: String {
 }
 
 class Leaderboard {
+    
+    static let sharedInstance: Leaderboard = {
+        let instance = Leaderboard(mode: "tt")
+        return instance
+    }()
+    
     var scores:[(name: String, score: Double)]
     var curMode: String
     var returnString: String
@@ -53,7 +59,6 @@ class Leaderboard {
         let config = URLSessionConfiguration.default // Session Configuration
         let session = URLSession(configuration: config) // Load configuration into Session
         let url = URL(string: "http://104.131.38.84/jmt/\(curMode)/list")
-        
         let task = session.dataTask(with: url!, completionHandler: { // creates task to pickup json
             (data, response, error) in
             if error != nil {
@@ -64,6 +69,7 @@ class Leaderboard {
                     // grabs json data from data
                     {
                         if let pairs = json["score_list"] as? [[String: AnyObject]] { // accesses score_list dict
+                            self.scores = []
                             for pair in pairs { // loops through pairs and then adds to scores
                                 let name = pair["name"]!
                                 let score = pair["score"]!
