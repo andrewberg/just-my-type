@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+// Andrew Berg
 enum GameMode: String {
     case typingtest = "typingtest"
     case basketball = "basketballleaderboard"
