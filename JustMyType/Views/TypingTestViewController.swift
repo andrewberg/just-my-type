@@ -103,7 +103,6 @@ class TypingTestViewController: UIViewController {
     
     override func viewDidLoad() {       //verify view is loading
         super.viewDidLoad()
-        
         self.setStyledText() //set starting view label with a random word
         textFieldRef.addTarget(self, action: #selector(self.textFieldAction(_:)), for: UIControlEvents.editingChanged)
         //^ checks if users textfield has changed, if so calls function for action

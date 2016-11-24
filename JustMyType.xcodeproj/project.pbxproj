@@ -15,6 +15,7 @@
 		0FFD29191D988DF800CB28D6 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD29181D988DF800CB28D6 /* RoundedButton.swift */; };
 		1130D0931DB69DDF00FBD541 /* JustMyTypeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130D0921DB69DDF00FBD541 /* JustMyTypeUnitTests.swift */; };
 		1130D0A11DB69E0400FBD541 /* JustMyTypeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130D0A01DB69E0400FBD541 /* JustMyTypeUITest.swift */; };
+		49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */; };
 		512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A2ACA1DAED26200B818D0 /* TypingTest.swift */; };
 		8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487B81DD3D75100602565 /* BasketballViewController.swift */; };
 		8C4487BB1DD3ECBA00602565 /* GamePlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */; };
@@ -80,6 +81,7 @@
 		1130D09E1DB69E0400FBD541 /* JustMyTypeUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustMyTypeUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1130D0A01DB69E0400FBD541 /* JustMyTypeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustMyTypeUITest.swift; sourceTree = "<group>"; };
 		1130D0A21DB69E0400FBD541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardHelper.swift; sourceTree = "<group>"; };
 		512A2ACA1DAED26200B818D0 /* TypingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTest.swift; sourceTree = "<group>"; };
 		8C4487B81DD3D75100602565 /* BasketballViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketballViewController.swift; path = Views/BasketballViewController.swift; sourceTree = "<group>"; };
 		8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayScene.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				AE1DF8F41D972E7C00E578C2 /* GameScene.sks */,
 				AE1DF8F61D972E7C00E578C2 /* GameScene.swift */,
 				0F13A0EC1DE2841C00740910 /* MusicHelper.swift */,
+				49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */,
 				AE1DF8FA1D972E7C00E578C2 /* Main.storyboard */,
 				512A2ACA1DAED26200B818D0 /* TypingTest.swift */,
 				0F13A0EA1DE27B1A00740910 /* Chill.wav */,
@@ -459,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */,
+				49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */,
 				AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */,
 				CFB43D551DDBC26D007C7A90 /* BalloonViewController.swift in Sources */,
 				0FFD29191D988DF800CB28D6 /* RoundedButton.swift in Sources */,
