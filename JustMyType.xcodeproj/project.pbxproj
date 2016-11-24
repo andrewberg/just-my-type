@@ -172,6 +172,14 @@
 			path = JustMyTypeUITest;
 			sourceTree = "<group>";
 		};
+		4953A0D11DE7650B00482015 /* Leaderboards */ = {
+			isa = PBXGroup;
+			children = (
+				49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */,
+			);
+			name = Leaderboards;
+			sourceTree = "<group>";
+		};
 		AE1DF8E61D972E7C00E578C2 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +206,7 @@
 		AE1DF8F11D972E7C00E578C2 /* JustMyType */ = {
 			isa = PBXGroup;
 			children = (
+				4953A0D11DE7650B00482015 /* Leaderboards */,
 				0FFD29171D988DCA00CB28D6 /* Styling */,
 				AE1DF9331D973AF200E578C2 /* Extensions */,
 				AE1DF9261D972F9600E578C2 /* Views */,
@@ -205,7 +214,6 @@
 				AE1DF8F41D972E7C00E578C2 /* GameScene.sks */,
 				AE1DF8F61D972E7C00E578C2 /* GameScene.swift */,
 				0F13A0EC1DE2841C00740910 /* MusicHelper.swift */,
-				49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */,
 				AE1DF8FA1D972E7C00E578C2 /* Main.storyboard */,
 				512A2ACA1DAED26200B818D0 /* TypingTest.swift */,
 				0F13A0EA1DE27B1A00740910 /* Chill.wav */,
