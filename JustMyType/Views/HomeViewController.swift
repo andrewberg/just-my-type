@@ -35,9 +35,6 @@ class HomeViewController: UIViewController {
         audioPlayer = try! AVAudioPlayer(contentsOf: buttonSound as URL);
         audioPlayer.prepareToPlay();
         
-        Leaderboard.sharedInstance.getLeaderboard()
-            {(scores: [(name: String, score: Double)]) -> (Void) in
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

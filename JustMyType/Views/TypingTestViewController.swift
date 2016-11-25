@@ -21,7 +21,7 @@ class TypingTestViewController: UIViewController {
     
     let secsInMin = 60
     var type = TypingTest()
-    var leader = Leaderboard(mode: "tt")
+    var leader = Leaderboard()
     var clockRunning = false
     var clockDefault = 60
     var clock = 60
@@ -60,7 +60,7 @@ class TypingTestViewController: UIViewController {
             textFieldRef.isEnabled = false // set textfield to in-editable
             view.endEditing(true) // close keyboard
             clockRunning = false // reset clockRunning to false
-            leader.enterScore(name: "bob", score: type.calculateWPM(time: clock))
+            leader.enterScore(mode: "tt", name: "bob", score: type.calculateWPM(time: clock))
             // uses Leaderboard class to write to the leaderboards when the time is up
         }
     }

@@ -14,25 +14,27 @@ enum GameMode: String {
     case ballon = "ballonleader"
 }
 
+// Andrew Berg
 class Leaderboard {
     
     static let sharedInstance: Leaderboard = {
-        let instance = Leaderboard(mode: "tt")
-        return instance
+        let instanceTT = Leaderboard()
+        return instanceTT
     }()
-    
-    var scores:[(name: String, score: Double)]
-    var curMode: String
-    var returnString: String
+
+    // init individual lists
+    var ttScores:[(name: String, score: Double)]
+    var blScores:[(name: String, score: Double)]
+    var bbScores:[(name: String, score: Double)]
    
-    init(mode: String) {
-        scores = []
-        returnString = ""
-        curMode = Leaderboard.getMode(val: mode)
+    init() {
+        ttScores = []
+        blScores = []
+        bbScores = []
     }
     
     // sets the mode
-    private class func getMode(val: String) -> String {
+    func getMode(val: String) -> String {
         switch val {
         case "tt":
             return GameMode.typingtest.rawValue
@@ -55,10 +57,10 @@ class Leaderboard {
     */
 
     // gets leaderboard html data for the given mode
-    func getLeaderboard(completionHandler:@escaping ([(name: String, score: Double)]) -> ()) {
+    func getLeaderboard(mode: String, completionHandler:@escaping ([(name: String, score: Double)]) -> ()) {
         let config = URLSessionConfiguration.default // Session Configuration
         let session = URLSession(configuration: config) // Load configuration into Session
-        let url = URL(string: "http://104.131.38.84/jmt/\(curMode)/list")
+        let url = URL(string: "http://104.131.38.84/jmt/typingtest/list")
         let task = session.dataTask(with: url!, completionHandler: { // creates task to pickup json
             (data, response, error) in
             if error != nil {
@@ -69,15 +71,22 @@ class Leaderboard {
                     // grabs json data from data
                     {
                         if let pairs = json["score_list"] as? [[String: AnyObject]] { // accesses score_list dict
-                            self.scores = []
+                            self.resetArray(val: mode) // reset array to []
                             for pair in pairs { // loops through pairs and then adds to scores
                                 let name = pair["name"]!
                                 let score = pair["score"]!
-                                
-                                self.scores.append((name: name as! String, score: score as! Double))
+                                self.addToArray(val: mode, name: name as! String, score: score as! Double)
                             }
                         }
-                        completionHandler(self.scores) // calls completionHandler when done adding values
+                        
+                        // calls completionHandler when done adding values
+                        if (self.getMode(val: mode) == GameMode.typingtest.rawValue) {
+                            completionHandler(self.ttScores)
+                        } else if (self.getMode(val: mode) == GameMode.ballon.rawValue) {
+                            completionHandler(self.blScores)
+                        } else if (self.getMode(val: mode) == GameMode.basketball.rawValue) {
+                            completionHandler(self.bbScores)
+                        }
                         return
                     }
                 } catch {
@@ -89,8 +98,8 @@ class Leaderboard {
     }
     
     // enters score by post method to given database
-    func enterScore(name: String, score: Double) {
-        var request = URLRequest(url: URL(string: "http://104.131.38.84/jmt/\(curMode)/enter")!)
+    func enterScore(mode: String, name: String, score: Double) {
+        var request = URLRequest(url: URL(string: "http://104.131.38.84/jmt/\(self.getMode(val: mode))/enter")!)
         request.httpMethod = "POST" // sets method to post
         let sent = "name=\(name)&score=\(score)" // sets the parameters
         request.httpBody = sent.data(using: .utf8)
@@ -104,5 +113,27 @@ class Leaderboard {
             }
         }
         task.resume()
+    }
+    
+    // reset the list to an empty array
+    func resetArray(val: String) {
+        if (getMode(val: val) == GameMode.typingtest.rawValue) {
+            ttScores = []
+        } else if (getMode(val: val) == GameMode.ballon.rawValue) {
+            blScores = []
+        } else if (getMode(val: val) == GameMode.basketball.rawValue) {
+            bbScores = []
+        }
+    }
+    
+    // grabs the necessary array based on mode
+    func addToArray(val: String, name: String, score: Double) {
+        if (getMode(val: val) == GameMode.typingtest.rawValue) {
+            ttScores.append((name: name, score: score))
+        } else if (getMode(val: val) == GameMode.ballon.rawValue) {
+            blScores.append((name: name, score: score))
+        } else if (getMode(val: val) == GameMode.basketball.rawValue) {
+            bbScores.append((name: name, score: score))
+        }
     }
 }
