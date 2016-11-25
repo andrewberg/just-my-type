@@ -23,20 +23,13 @@ import Foundation
 class TypingTest {
     
     var displayedWords: [String]    // holds current word in the test
-    var speed: Int          // integer value for wpm value
     var total_words: Int    // hold total number of words typed
     var wordsToDisplayOnScreen: Int // Number of words to display on the screen
-  
-    /*if let path = Bundle.main.pathForResource("WordList", ofType: "rtf"){
-        let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
-        arrayOfStrings = data.components(separatedBy: "\n")
-        print(arrayOfStrings)*/
-   
+
     var wordArray: [String]
     // test array
     
     init() {
-        self.speed = 0      // initialize wpm to 0
         total_words = 0     // initialize total words typed to 0
         self.wordsToDisplayOnScreen = 5;
         self.displayedWords = [];
@@ -82,6 +75,7 @@ class TypingTest {
         _ = self.addRandomWordAndGetValue()
     }
     
+    // Andre and Andrew
     func addRandomWordAndGetValue() -> String {    // gets a random word from the array to display
         //random number generation from size of the list of words
         let random = wordArray[Int(arc4random_uniform(UInt32(wordArray.count)))]
@@ -91,6 +85,7 @@ class TypingTest {
         return random;
     }
     
+    // Andre and Andrew
     func isCorrect(str: String) -> Bool {
         // true if user types correct word
         // and increments total words completed by 1
@@ -110,9 +105,9 @@ class TypingTest {
         total_words = 0
     }
     
-    func calculateWPM(time: Int) -> Double { // Andrew Berg
+    func calculateWPM(time: Int, totalSecs: Int) -> Double { // Andrew Berg
         let secsInMin = 60 // constant for seconds in a minute
-        let WPM = round (100 * Double(getTotalWords())*(Double(secsInMin)/Double(secsInMin-time)))/100
+        let WPM = round (100 * Double(getTotalWords())*(Double(secsInMin)/Double(totalSecs-time)))/100
         // calculates WPM rounded to two digits
         
         if (WPM.isNaN) {

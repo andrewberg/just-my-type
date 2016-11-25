@@ -38,7 +38,7 @@ class Leaderboard {
         let userDefaults = UserDefaults.standard
         let username = userDefaults.string(forKey: "username")
         
-        if (username == "") {
+        if (username == nil) {
             Leaderboard.setUserName(username: "Default")
             return userDefaults.string(forKey: "username")!
         }
@@ -48,7 +48,7 @@ class Leaderboard {
     // set username in userdefaults
     class func setUserName(username: String) {
         let userDefaults = UserDefaults.standard
-        userDefaults.value(forKey: "username")
+        userDefaults.setValue(username, forKey: "username")
     }
     
     // sets the mode
@@ -78,7 +78,7 @@ class Leaderboard {
     func getLeaderboard(mode: String, completionHandler:@escaping ([(name: String, score: Double)]) -> ()) {
         let config = URLSessionConfiguration.default // Session Configuration
         let session = URLSession(configuration: config) // Load configuration into Session
-        let url = URL(string: "http://104.131.38.84/jmt/typingtest/list")
+        let url = URL(string: "http://bergcode.com/jmt/\(getMode(val: mode))/list")
         let task = session.dataTask(with: url!, completionHandler: { // creates task to pickup json
             (data, response, error) in
             if error != nil {
@@ -117,7 +117,7 @@ class Leaderboard {
     
     // enters score by post method to given database
     func enterScore(mode: String, name: String, score: Double) {
-        var request = URLRequest(url: URL(string: "http://104.131.38.84/jmt/\(self.getMode(val: mode))/enter")!)
+        var request = URLRequest(url: URL(string: "http://bergcode.com/jmt/\(getMode(val: mode))/enter")!)
         request.httpMethod = "POST" // sets method to post
         let sent = "name=\(name)&score=\(score)" // sets the parameters
         request.httpBody = sent.data(using: .utf8)

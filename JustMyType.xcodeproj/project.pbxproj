@@ -18,6 +18,7 @@
 		4953A0D51DE7819A00482015 /* TypingTestLeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A0D41DE7819A00482015 /* TypingTestLeaderboardViewController.swift */; };
 		4953A0F61DE7D00400482015 /* HighscoresHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A0F51DE7D00400482015 /* HighscoresHelper.swift */; };
 		4953A0F81DE7D02A00482015 /* HighscoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A0F71DE7D02A00482015 /* HighscoresViewController.swift */; };
+		4953A0FE1DE7F38800482015 /* LeaderboardUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A0FD1DE7F38800482015 /* LeaderboardUnitTests.swift */; };
 		49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */; };
 		512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A2ACA1DAED26200B818D0 /* TypingTest.swift */; };
 		8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487B81DD3D75100602565 /* BasketballViewController.swift */; };
@@ -87,6 +88,7 @@
 		4953A0D41DE7819A00482015 /* TypingTestLeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTestLeaderboardViewController.swift; sourceTree = "<group>"; };
 		4953A0F51DE7D00400482015 /* HighscoresHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoresHelper.swift; sourceTree = "<group>"; };
 		4953A0F71DE7D02A00482015 /* HighscoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoresViewController.swift; sourceTree = "<group>"; };
+		4953A0FD1DE7F38800482015 /* LeaderboardUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardUnitTests.swift; sourceTree = "<group>"; };
 		49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardHelper.swift; sourceTree = "<group>"; };
 		512A2ACA1DAED26200B818D0 /* TypingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTest.swift; sourceTree = "<group>"; };
 		8C4487B81DD3D75100602565 /* BasketballViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketballViewController.swift; path = Views/BasketballViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				1130D0921DB69DDF00FBD541 /* JustMyTypeUnitTests.swift */,
 				1130D0941DB69DDF00FBD541 /* Info.plist */,
+				4953A0FD1DE7F38800482015 /* LeaderboardUnitTests.swift */,
 			);
 			path = JustMyTypeUnitTests;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1130D0931DB69DDF00FBD541 /* JustMyTypeUnitTests.swift in Sources */,
+				4953A0FE1DE7F38800482015 /* LeaderboardUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

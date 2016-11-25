@@ -60,10 +60,10 @@ class TypingTestViewController: UIViewController {
             textFieldRef.isEnabled = false // set textfield to in-editable
             view.endEditing(true) // close keyboard
             clockRunning = false // reset clockRunning to false
-            leader.enterScore(mode: "tt", name: "bob", score: type.calculateWPM(time: clock))
+            leader.enterScore(mode: "tt", name: "bob", score: type.calculateWPM(time: clock, totalSecs: calculateStepperSecs()))
             // uses Leaderboard class to write to the leaderboards when the time is up
-            Highscores.sharedInstance.ttUpdateAverage(score: type.calculateWPM(time: clock)) // update average storage
-            Highscores.sharedInstance.ttUpdateHighscore(score: type.calculateWPM(time: clock))
+            Highscores.sharedInstance.ttUpdateAverage(score: type.calculateWPM(time: clock, totalSecs: calculateStepperSecs())) // update average storage
+            Highscores.sharedInstance.ttUpdateHighscore(score: type.calculateWPM(time: clock, totalSecs: calculateStepperSecs()))
         }
     }
     
@@ -103,7 +103,7 @@ class TypingTestViewController: UIViewController {
     }
     
     func updateWPMLabel() { // Andrew Berg
-        wpmLabel.text = String(type.calculateWPM(time: clock)) // calls member method to calc wpm
+        wpmLabel.text = String(type.calculateWPM(time: clock, totalSecs: calculateStepperSecs())) // calls member method to calc wpm
     }
     
     override func viewDidLoad() {       //verify view is loading
