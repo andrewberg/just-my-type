@@ -132,6 +132,14 @@
                                     <segue destination="JOd-mC-GCq" kind="show" id="VzE-KM-EvJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ara-ez-ODi">
+                                <rect key="frame" x="148" y="629" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Highscores"/>
+                                <connections>
+                                    <segue destination="VGh-5i-V9h" kind="show" id="joW-wb-oi3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -252,6 +260,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Bd-HJ-d8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2194" y="1940"/>
+        </scene>
+        <!--Highscores-->
+        <scene sceneID="Kl0-Et-FA7">
+            <objects>
+                <viewController id="VGh-5i-V9h" customClass="HighscoresViewController" customModule="JustMyType" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BEX-vU-cMM"/>
+                        <viewControllerLayoutGuide type="bottom" id="4gX-YN-rGf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xTd-RP-epC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-oA-yY0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Highscores" id="qi5-6B-ziH"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Typing Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lg-Ou-ef1">
+                                <rect key="frame" x="143" y="83" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIW-Xn-MfW">
+                                <rect key="frame" x="16" y="122" width="119" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpF-F0-lrA">
+                                <rect key="frame" x="138" y="117" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset Average"/>
+                                <connections>
+                                    <action selector="resetAverage:" destination="VGh-5i-V9h" eventType="touchUpInside" id="ZW6-gy-jvn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6g-k8-16P">
+                                <rect key="frame" x="264" y="117" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Leaderboards"/>
+                                <connections>
+                                    <segue destination="JOd-mC-GCq" kind="show" id="HOn-6p-gL6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Highest WPM: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc4-Gs-7ru">
+                                <rect key="frame" x="109" y="151" width="156" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Highscores" id="2d9-nP-PfI"/>
+                    <connections>
+                        <outlet property="averageLabel" destination="tIW-Xn-MfW" id="h9s-w6-vX5"/>
+                        <outlet property="highestWPMLabel" destination="Fc4-Gs-7ru" id="kbp-an-SPe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bK5-jR-hjm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2940" y="1932.6836581709147"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="yQY-k9-mH4">
@@ -705,4 +782,7 @@
         <image name="keyboard" width="128" height="128"/>
         <image name="stopwatch" width="64" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="HOn-6p-gL6"/>
+    </inferredMetricsTieBreakers>
 </document>

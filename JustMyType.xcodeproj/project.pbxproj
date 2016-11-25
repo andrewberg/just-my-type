@@ -16,6 +16,8 @@
 		1130D0931DB69DDF00FBD541 /* JustMyTypeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130D0921DB69DDF00FBD541 /* JustMyTypeUnitTests.swift */; };
 		1130D0A11DB69E0400FBD541 /* JustMyTypeUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130D0A01DB69E0400FBD541 /* JustMyTypeUITest.swift */; };
 		4953A0D51DE7819A00482015 /* TypingTestLeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A0D41DE7819A00482015 /* TypingTestLeaderboardViewController.swift */; };
+		4953A0F61DE7D00400482015 /* HighscoresHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A0F51DE7D00400482015 /* HighscoresHelper.swift */; };
+		4953A0F81DE7D02A00482015 /* HighscoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A0F71DE7D02A00482015 /* HighscoresViewController.swift */; };
 		49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */; };
 		512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A2ACA1DAED26200B818D0 /* TypingTest.swift */; };
 		8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487B81DD3D75100602565 /* BasketballViewController.swift */; };
@@ -83,6 +85,8 @@
 		1130D0A01DB69E0400FBD541 /* JustMyTypeUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustMyTypeUITest.swift; sourceTree = "<group>"; };
 		1130D0A21DB69E0400FBD541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4953A0D41DE7819A00482015 /* TypingTestLeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTestLeaderboardViewController.swift; sourceTree = "<group>"; };
+		4953A0F51DE7D00400482015 /* HighscoresHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoresHelper.swift; sourceTree = "<group>"; };
+		4953A0F71DE7D02A00482015 /* HighscoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoresViewController.swift; sourceTree = "<group>"; };
 		49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardHelper.swift; sourceTree = "<group>"; };
 		512A2ACA1DAED26200B818D0 /* TypingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTest.swift; sourceTree = "<group>"; };
 		8C4487B81DD3D75100602565 /* BasketballViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketballViewController.swift; path = Views/BasketballViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +186,14 @@
 			name = Leaderboards;
 			sourceTree = "<group>";
 		};
+		4953A0F41DE7CFCA00482015 /* Highscores */ = {
+			isa = PBXGroup;
+			children = (
+				4953A0F51DE7D00400482015 /* HighscoresHelper.swift */,
+			);
+			name = Highscores;
+			sourceTree = "<group>";
+		};
 		AE1DF8E61D972E7C00E578C2 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +220,7 @@
 		AE1DF8F11D972E7C00E578C2 /* JustMyType */ = {
 			isa = PBXGroup;
 			children = (
+				4953A0F41DE7CFCA00482015 /* Highscores */,
 				4953A0D11DE7650B00482015 /* Leaderboards */,
 				0FFD29171D988DCA00CB28D6 /* Styling */,
 				AE1DF9331D973AF200E578C2 /* Extensions */,
@@ -242,6 +255,7 @@
 				AE1DF92B1D97390300E578C2 /* SinglePlayerMenuViewController.swift */,
 				AE1DF9271D97319A00E578C2 /* TypingTestViewController.swift */,
 				4953A0D41DE7819A00482015 /* TypingTestLeaderboardViewController.swift */,
+				4953A0F71DE7D02A00482015 /* HighscoresViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -472,7 +486,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4953A0F61DE7D00400482015 /* HighscoresHelper.swift in Sources */,
 				512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */,
+				4953A0F81DE7D02A00482015 /* HighscoresViewController.swift in Sources */,
 				49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */,
 				AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */,
 				CFB43D551DDBC26D007C7A90 /* BalloonViewController.swift in Sources */,

@@ -62,6 +62,8 @@ class TypingTestViewController: UIViewController {
             clockRunning = false // reset clockRunning to false
             leader.enterScore(mode: "tt", name: "bob", score: type.calculateWPM(time: clock))
             // uses Leaderboard class to write to the leaderboards when the time is up
+            Highscores.sharedInstance.ttUpdateAverage(score: type.calculateWPM(time: clock)) // update average storage
+            Highscores.sharedInstance.ttUpdateHighscore(score: type.calculateWPM(time: clock))
         }
     }
     

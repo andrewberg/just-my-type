@@ -17,20 +17,38 @@ enum GameMode: String {
 // Andrew Berg
 class Leaderboard {
     
-    static let sharedInstance: Leaderboard = {
-        let instanceTT = Leaderboard()
-        return instanceTT
-    }()
-
     // init individual lists
     var ttScores:[(name: String, score: Double)]
     var blScores:[(name: String, score: Double)]
     var bbScores:[(name: String, score: Double)]
+    
+    static let sharedInstance: Leaderboard = {
+        let instance = Leaderboard()
+        return instance
+    }()
    
     init() {
         ttScores = []
         blScores = []
         bbScores = []
+    }
+    
+    // get username in userdefaults
+    class func getUserName() -> String {
+        let userDefaults = UserDefaults.standard
+        let username = userDefaults.string(forKey: "username")
+        
+        if (username == "") {
+            Leaderboard.setUserName(username: "Default")
+            return userDefaults.string(forKey: "username")!
+        }
+        return username!
+    }
+    
+    // set username in userdefaults
+    class func setUserName(username: String) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.value(forKey: "username")
     }
     
     // sets the mode
