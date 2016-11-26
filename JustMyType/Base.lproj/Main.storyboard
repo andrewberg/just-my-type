@@ -10,24 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
-        <scene sceneID="tXr-a1-R10">
-            <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="JustMyType" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
-                        <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
-                    </layoutGuides>
-                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1099" y="393"/>
-        </scene>
         <!--Typing Test-->
         <scene sceneID="X1L-bt-LvX">
             <objects>
@@ -581,8 +563,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="CarRacingButtonClick:" destination="J2u-G6-vuE" eventType="touchUpInside" id="jCv-vP-aGp"/>
-                                    <segue destination="u6E-r1-fOK" kind="show" id="BC8-o6-ecz"/>
+                                    <segue destination="R4N-fr-zx9" kind="show" id="UfN-3f-o7J"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -679,33 +660,6 @@
             <point key="canvasLocation" x="836" y="2697"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="KES-b3-iJM">
-            <objects>
-                <viewController id="u6E-r1-fOK" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="at6-LS-oGj"/>
-                        <viewControllerLayoutGuide type="bottom" id="lTd-AE-dL1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QNK-e2-g42">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Car Racing Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jW9-wu-fzQ">
-                                <rect key="frame" x="143" y="236" width="133" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ud8-dr-RGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1478" y="2697"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="G93-8N-zPD">
             <objects>
                 <viewController id="guu-3z-ynk" sceneMemberID="viewController">
@@ -776,6 +730,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOt-SN-QoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="654" y="1102"/>
+        </scene>
+        <!--Racing Game View Controller-->
+        <scene sceneID="H6V-1r-ciU">
+            <objects>
+                <viewController id="R4N-fr-zx9" customClass="RacingGameViewController" customModule="JustMyType" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="72s-ba-Kw4"/>
+                        <viewControllerLayoutGuide type="bottom" id="0uA-iC-zab"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="avy-4J-T9D" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="69I-p0-FyN" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1505" y="2696"/>
         </scene>
     </scenes>
     <resources>

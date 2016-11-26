@@ -24,6 +24,9 @@
 		8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487B81DD3D75100602565 /* BasketballViewController.swift */; };
 		8C4487BB1DD3ECBA00602565 /* GamePlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */; };
 		8C7C19D51DD293CA00F2640A /* BasketBallScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */; };
+		AE1982091DE8F83A005AD007 /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1982081DE8F83A005AD007 /* RacingGame.swift */; };
+		AE19820C1DE8F962005AD007 /* RacingGame.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE19820B1DE8F962005AD007 /* RacingGame.sks */; };
+		AE1982101DE8FE2B005AD007 /* RacingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE19820F1DE8FE2B005AD007 /* RacingGameViewController.swift */; };
 		AE1DF8F31D972E7C00E578C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF8F21D972E7C00E578C2 /* AppDelegate.swift */; };
 		AE1DF8F51D972E7C00E578C2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE1DF8F41D972E7C00E578C2 /* GameScene.sks */; };
 		AE1DF8F71D972E7C00E578C2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF8F61D972E7C00E578C2 /* GameScene.swift */; };
@@ -94,6 +97,9 @@
 		8C4487B81DD3D75100602565 /* BasketballViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketballViewController.swift; path = Views/BasketballViewController.swift; sourceTree = "<group>"; };
 		8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayScene.swift; sourceTree = "<group>"; };
 		8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketBallScene.swift; path = ../BasketBallScene.swift; sourceTree = "<group>"; };
+		AE1982081DE8F83A005AD007 /* RacingGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RacingGame.swift; path = Games/RacingGame.swift; sourceTree = "<group>"; };
+		AE19820B1DE8F962005AD007 /* RacingGame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RacingGame.sks; sourceTree = "<group>"; };
+		AE19820F1DE8FE2B005AD007 /* RacingGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RacingGameViewController.swift; path = Games/RacingGameViewController.swift; sourceTree = "<group>"; };
 		AE1DF8EF1D972E7C00E578C2 /* JustMyType.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustMyType.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1DF8F21D972E7C00E578C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE1DF8F41D972E7C00E578C2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -197,6 +203,16 @@
 			name = Highscores;
 			sourceTree = "<group>";
 		};
+		AE19820A1DE8F845005AD007 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				AE19820F1DE8FE2B005AD007 /* RacingGameViewController.swift */,
+				AE1982081DE8F83A005AD007 /* RacingGame.swift */,
+				AE19820B1DE8F962005AD007 /* RacingGame.sks */,
+			);
+			name = Games;
+			sourceTree = "<group>";
+		};
 		AE1DF8E61D972E7C00E578C2 = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +239,7 @@
 		AE1DF8F11D972E7C00E578C2 /* JustMyType */ = {
 			isa = PBXGroup;
 			children = (
+				AE19820A1DE8F845005AD007 /* Games */,
 				4953A0F41DE7CFCA00482015 /* Highscores */,
 				4953A0D11DE7650B00482015 /* Leaderboards */,
 				0FFD29171D988DCA00CB28D6 /* Styling */,
@@ -442,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0ED73441DCA2F8E00E62FA7 /* WordList.txt in Resources */,
+				AE19820C1DE8F962005AD007 /* RacingGame.sks in Resources */,
 				0F13A0EB1DE27B1A00740910 /* Chill.wav in Resources */,
 				AE1DF8F51D972E7C00E578C2 /* GameScene.sks in Resources */,
 				0F13A0EF1DE3B79F00740910 /* JustMyTypeLogo.jpg in Resources */,
@@ -495,6 +513,7 @@
 				4953A0F81DE7D02A00482015 /* HighscoresViewController.swift in Sources */,
 				49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */,
 				AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */,
+				AE1982091DE8F83A005AD007 /* RacingGame.swift in Sources */,
 				CFB43D551DDBC26D007C7A90 /* BalloonViewController.swift in Sources */,
 				0FFD29191D988DF800CB28D6 /* RoundedButton.swift in Sources */,
 				AE1DF92C1D97390300E578C2 /* SinglePlayerMenuViewController.swift in Sources */,
@@ -504,6 +523,7 @@
 				0F13A0ED1DE2841C00740910 /* MusicHelper.swift in Sources */,
 				CF3B79701DB6DF8F00A2B427 /* UIViewExtension.swift in Sources */,
 				8C7C19D51DD293CA00F2640A /* BasketBallScene.swift in Sources */,
+				AE1982101DE8FE2B005AD007 /* RacingGameViewController.swift in Sources */,
 				AE1DF92E1D97391100E578C2 /* MultiplayerMenuViewController.swift in Sources */,
 				0FFD29161D988D5500CB28D6 /* HomeViewController.swift in Sources */,
 				AE1DF8F31D972E7C00E578C2 /* AppDelegate.swift in Sources */,
