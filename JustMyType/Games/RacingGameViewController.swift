@@ -2,7 +2,7 @@
 //  RacingGameViewController.swift
 //  JustMyType
 //
-//  Created by Justin Block on 11/25/16.
+//  Created by Lauren Koulias on 11/25/16.
 //  Copyright © 2016 Lauren Koulias. All rights reserved.
 //
 
@@ -28,8 +28,6 @@ class RacingGameViewController: UIViewController {
             scene.scaleMode = .aspectFill
             
             skView.presentScene(scene)
-            
-            self.view.backgroundColor = UIColor.themeChosen()
         }
     }
     
