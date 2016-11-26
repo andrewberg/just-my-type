@@ -11,24 +11,34 @@ import UIKit
 import SpriteKit
 
 class RacingGameViewController: UIViewController {
+    @IBOutlet weak var wordToType: UILabel!
+    @IBOutlet weak var usersWord: UITextField!
+    var type = TypingTest()
+    let scene = RacingGame(fileNamed:"RacingGame")
     
+    // Lauren Koulias
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let scene = RacingGame(fileNamed:"RacingGame") {
-            // Configure the view.
-            let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
+        
+        // Configure the view.
+        let skView = self.view as! SKView
+        //skView.showsFPS = true
+        //skView.showsNodeCount = true
             
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
+        /* Sprite Kit applies additional optimizations to improve rendering performance */
+        skView.ignoresSiblingOrder = true
             
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .aspectFill
+        /* Set the scale mode to scale to fit the window */
+        scene?.scaleMode = .aspectFill
+        scene?.viewController = self
             
-            skView.presentScene(scene)
-        }
+        skView.presentScene(scene)
+        
+        // Set default word
+        self.setStyledText()
+        
+        usersWord.addTarget(self, action: #selector(self.textFieldAction(_:)), for: UIControlEvents.editingChanged)
     }
     
     override var shouldAutorotate : Bool {
@@ -51,5 +61,51 @@ class RacingGameViewController: UIViewController {
     override var prefersStatusBarHidden : Bool {
         return true
     }
+    
+    func setStyledText() { // Lauren Koulias
+        // Set color of first word
+        let wordsToDisplay = type.getsWordsToDisplay()
+        let wordToColor = type.getCurrentWord()
+        let range = (wordsToDisplay as NSString).range(of: wordToColor)
+        
+        let coloredWordsToDisplay = NSMutableAttributedString.init(string: wordsToDisplay)
+        coloredWordsToDisplay.addAttributes(
+            [ //NSBackgroundColorAttributeName: UIColor.white,
+                NSForegroundColorAttributeName: UIColor.white
+            ], range: range)
+        wordToType.attributedText = coloredWordsToDisplay
+    }
+    
+    func updateLabels() {
+        type.makeCurWordNextWord() // move next word into cur word
+        
+        self.setStyledText()
+        usersWord.text = ""                  //clear users text field
+    }
+    
+    // Lauren Koulias
+    func gameOverAndWonBy(carName: String) {
+        let alert = UIAlertController(title: "Game Over!", message: "The game has been won by " + carName, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // Lauren Koulias
+    @IBAction func restartButtonClicked(_ sender: Any) {
+        // IMPLEMENT ME
+    }
+    
+    // Lauren Koulias
+    @IBAction func textFieldAction(_ sender: Any) {
+        if (usersWord.text != "") {
+            let entry = usersWord.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            // Andrew Berg - trims the entry of any white space
+            if (type.isCorrect(str: entry!)) {
+                self.scene?.moveCarTwoForward()
+                updateLabels()
+            }
+        }
+    }
+
 }
 
