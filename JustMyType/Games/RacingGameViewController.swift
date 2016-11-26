@@ -28,6 +28,8 @@ class RacingGameViewController: UIViewController {
             scene.scaleMode = .aspectFill
             
             skView.presentScene(scene)
+            
+            self.view.backgroundColor = UIColor.themeChosen()
         }
     }
     
