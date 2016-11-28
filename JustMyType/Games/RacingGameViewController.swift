@@ -83,17 +83,10 @@ class RacingGameViewController: UIViewController {
         self.setStyledText()
         usersWord.text = ""                  //clear users text field
     }
-    
-    // Lauren Koulias
-    // Refactor to implement gameOver logic in RacingGame.swift
-    func gameOver() {
-        self.gameOver = true
-    }
-    
+
     // Lauren Koulias
     @IBAction func resetButtonClicked(_ sender: Any) {
-        // IMPLEMENT ME
-        self.gameOver = false
+        self.scene?.startGame()
     }
     
     // Lauren Koulias

@@ -13,8 +13,9 @@ import SpriteKit
 let carOneName = "Computer 1"
 let carTwoName = "Player 1"
 let carThreeName = "Computer 2"
+let carNames = [carOneName, carTwoName, carThreeName]
 let backgroundName = "background"
-let totalNumberOfCars = 3
+let totalNumberOfCars = carNames.count
 
 // Lauren Koulias
 class RacingGame: SKScene {
@@ -23,11 +24,18 @@ class RacingGame: SKScene {
     var timerCarThree: Timer?
     var carsLeftInMatch: Int?
     var carsThatHaveFinished: Array<String>!
+    var startingCarXPos: CGFloat!
+    var nodesToRemoveOnGameReset: Array<SKLabelNode>!
     
     // Setup
     // Lauren Koulias
     override func didMove(to view: SKView) {
         super.didMove(to: view)
+        
+        // Get the cars x position
+        let car = childNode(withName: carOneName) as! SKSpriteNode
+        self.startingCarXPos = car.position.x
+        self.nodesToRemoveOnGameReset = []
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -39,6 +47,18 @@ class RacingGame: SKScene {
         // Set everytime a match starts
         self.carsLeftInMatch = 3
         self.carsThatHaveFinished = []
+        self.stopCarsMovingForward()
+        
+        for nodeToRemove in self.nodesToRemoveOnGameReset {
+            nodeToRemove.run(SKAction.hide())
+        }
+        self.nodesToRemoveOnGameReset.removeAll()
+        
+        // Set the cars at the starting position
+        for carName in carNames {
+            let car = childNode(withName: carName) as! SKSpriteNode
+            car.position.x = self.startingCarXPos
+        }
         
         // Shows the start text on the screen
         let background = childNode(withName: backgroundName) as! SKSpriteNode
@@ -99,11 +119,11 @@ class RacingGame: SKScene {
             // If all cars have finished stop them from moving forward
             if self.carsLeftInMatch == 0 {
                 self.stopCarsMovingForward()
-                self.viewController.gameOver()
             }
         }
     }
     
+    // Lauren Koulias
     func carFinishedMatch(carName: String) {
         self.carsLeftInMatch! -= 1
         self.carsThatHaveFinished.append(carName)
@@ -117,8 +137,11 @@ class RacingGame: SKScene {
         startLabel.zPosition = 1
         startLabel.position = CGPoint(x: background.position.x * (1/2), y: car.position.y - 40)
         self.addChild(startLabel)
+        
+        self.nodesToRemoveOnGameReset.append(startLabel)
     }
     
+    // Lauren Koulias
     func getPlaceString(place: Int) -> String {
         switch place {
         case 1:
