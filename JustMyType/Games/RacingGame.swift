@@ -14,6 +14,8 @@ let carOneName = "Computer 1"
 let carTwoName = "Player 1"
 let carThreeName = "Computer 2"
 
+let backgroundName = "background"
+
 // Lauren Koulias
 class RacingGame: SKScene {
     var viewController: RacingGameViewController!
@@ -32,9 +34,19 @@ class RacingGame: SKScene {
     
     // Lauren Koulias
     public func startGame() {
+        // Shows the start text on the screen
+        let background = childNode(withName: backgroundName) as! SKSpriteNode
+        let startLabel = SKLabelNode(fontNamed: "IowanOldStyle-Bold")
+        startLabel.text = "Start!"
+        startLabel.fontSize = 60
+        startLabel.zPosition = 1
+        startLabel.position = CGPoint(x: background.position.x * (1/2), y: background.position.y * (1/2))
+        self.addChild(startLabel)
+        startLabel.run(SKAction.fadeOut(withDuration: 1))
+        
         // Set random timer to move each car forward
-        self.timerCarOne = Timer.scheduledTimer(timeInterval: TimeInterval(self.randRange(lower: 1, upper: 3)), target: self, selector: #selector(RacingGame.moveCarOneForward), userInfo: nil, repeats: true)
-        self.timerCarThree = Timer.scheduledTimer(timeInterval: TimeInterval(self.randRange(lower: 1, upper: 3)), target: self, selector: #selector(RacingGame.moveCarThreeForward), userInfo: nil, repeats: true)
+        self.timerCarOne = Timer.scheduledTimer(timeInterval: TimeInterval(self.randRange(lower: 1, upper: 2)), target: self, selector: #selector(RacingGame.moveCarOneForward), userInfo: nil, repeats: true)
+        self.timerCarThree = Timer.scheduledTimer(timeInterval: TimeInterval(self.randRange(lower: 1, upper: 2)), target: self, selector: #selector(RacingGame.moveCarThreeForward), userInfo: nil, repeats: true)
     }
     
     /*
@@ -71,8 +83,11 @@ class RacingGame: SKScene {
         let action = SKAction.moveBy(x: 60, y: 0, duration: 1.5)
         car.run(action)
         
-        // If the node goes off the screen the games over
-        if !car.intersects(car.parent!) {
+        let background = childNode(withName: backgroundName) as! SKSpriteNode
+
+        // If the node hits the finish line
+        // (background.size.width / 2) is used because the car x position starts as negative half the backgrounds x
+        if car.position.x + (background.size.width / 2) >= background.size.width - 35 {
             self.stopCarsMovingForward()
             viewController.gameOverAndWonBy(carName: carName)
         }
