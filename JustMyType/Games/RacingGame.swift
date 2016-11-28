@@ -13,14 +13,16 @@ import SpriteKit
 let carOneName = "Computer 1"
 let carTwoName = "Player 1"
 let carThreeName = "Computer 2"
-
 let backgroundName = "background"
+let totalNumberOfCars = 3
 
 // Lauren Koulias
 class RacingGame: SKScene {
     var viewController: RacingGameViewController!
     var timerCarOne: Timer?
     var timerCarThree: Timer?
+    var carsLeftInMatch: Int?
+    var carsThatHaveFinished: Array<String>!
     
     // Setup
     // Lauren Koulias
@@ -34,6 +36,10 @@ class RacingGame: SKScene {
     
     // Lauren Koulias
     public func startGame() {
+        // Set everytime a match starts
+        self.carsLeftInMatch = 3
+        self.carsThatHaveFinished = []
+        
         // Shows the start text on the screen
         let background = childNode(withName: backgroundName) as! SKSpriteNode
         let startLabel = SKLabelNode(fontNamed: "IowanOldStyle-Bold")
@@ -85,11 +91,44 @@ class RacingGame: SKScene {
         
         let background = childNode(withName: backgroundName) as! SKSpriteNode
 
-        // If the node hits the finish line
+        // If the node hits the finish line and it hasn't finished yet
         // (background.size.width / 2) is used because the car x position starts as negative half the backgrounds x
-        if car.position.x + (background.size.width / 2) >= background.size.width - 35 {
-            self.stopCarsMovingForward()
-            viewController.gameOverAndWonBy(carName: carName)
+        if(car.position.x + (background.size.width / 2) >= background.size.width - 35 && (self.carsThatHaveFinished == nil || !self.carsThatHaveFinished.contains(carName)) ) {
+            self.carFinishedMatch(carName: carName)
+            
+            // If all cars have finished stop them from moving forward
+            if self.carsLeftInMatch == 0 {
+                self.stopCarsMovingForward()
+                self.viewController.gameOver()
+            }
+        }
+    }
+    
+    func carFinishedMatch(carName: String) {
+        self.carsLeftInMatch! -= 1
+        self.carsThatHaveFinished.append(carName)
+        let car = childNode(withName: carName) as! SKSpriteNode
+
+        // Shows the start text on the screen
+        let background = childNode(withName: backgroundName) as! SKSpriteNode
+        let startLabel = SKLabelNode(fontNamed: "IowanOldStyle-Bold")
+        startLabel.text = self.getPlaceString(place: (totalNumberOfCars - self.carsLeftInMatch!)) + " place!"
+        startLabel.fontSize = 60
+        startLabel.zPosition = 1
+        startLabel.position = CGPoint(x: background.position.x * (1/2), y: car.position.y - 40)
+        self.addChild(startLabel)
+    }
+    
+    func getPlaceString(place: Int) -> String {
+        switch place {
+        case 1:
+            return "First"
+        case 2:
+            return "Second"
+        case 3:
+            return "Third"
+        default:
+            return ""
         }
     }
     
