@@ -83,19 +83,10 @@ class RacingGameViewController: UIViewController {
         self.setStyledText()
         usersWord.text = ""                  //clear users text field
     }
-    
-    // Lauren Koulias
-    func gameOverAndWonBy(carName: String) {
-        let alert = UIAlertController(title: "Game Over!", message: "The game has been won by " + carName, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-        self.gameOver = true
-    }
-    
+
     // Lauren Koulias
     @IBAction func resetButtonClicked(_ sender: Any) {
-        // IMPLEMENT ME
-        self.gameOver = false
+        self.scene?.startGame()
     }
     
     // Lauren Koulias
