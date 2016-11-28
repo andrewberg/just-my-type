@@ -15,6 +15,7 @@ class RacingGameViewController: UIViewController {
     @IBOutlet weak var usersWord: UITextField!
     var type = TypingTest()
     let scene = RacingGame(fileNamed:"RacingGame")
+    var gameOver = true
     
     // Lauren Koulias
     override func viewDidLoad() {
@@ -88,15 +89,22 @@ class RacingGameViewController: UIViewController {
         let alert = UIAlertController(title: "Game Over!", message: "The game has been won by " + carName, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        self.gameOver = true
     }
     
     // Lauren Koulias
-    @IBAction func restartButtonClicked(_ sender: Any) {
+    @IBAction func resetButtonClicked(_ sender: Any) {
         // IMPLEMENT ME
+        self.gameOver = false
     }
     
     // Lauren Koulias
     @IBAction func textFieldAction(_ sender: Any) {
+        if(self.gameOver) {
+            scene?.startGame()
+            self.gameOver = false
+        }
+        
         if (usersWord.text != "") {
             let entry = usersWord.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             // Andrew Berg - trims the entry of any white space

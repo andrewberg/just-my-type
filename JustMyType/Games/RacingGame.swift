@@ -24,15 +24,17 @@ class RacingGame: SKScene {
     // Lauren Koulias
     override func didMove(to view: SKView) {
         super.didMove(to: view)
-        
-        // Set random timer to move each car forward
-        self.timerCarOne = Timer.scheduledTimer(timeInterval: TimeInterval(self.randRange(lower: 1, upper: 3)), target: self, selector: #selector(RacingGame.moveCarOneForward), userInfo: nil, repeats: true)
-        self.timerCarThree = Timer.scheduledTimer(timeInterval: TimeInterval(self.randRange(lower: 1, upper: 3)), target: self, selector: #selector(RacingGame.moveCarThreeForward), userInfo: nil, repeats: true)
-
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
+    }
+    
+    // Lauren Koulias
+    public func startGame() {
+        // Set random timer to move each car forward
+        self.timerCarOne = Timer.scheduledTimer(timeInterval: TimeInterval(self.randRange(lower: 1, upper: 3)), target: self, selector: #selector(RacingGame.moveCarOneForward), userInfo: nil, repeats: true)
+        self.timerCarThree = Timer.scheduledTimer(timeInterval: TimeInterval(self.randRange(lower: 1, upper: 3)), target: self, selector: #selector(RacingGame.moveCarThreeForward), userInfo: nil, repeats: true)
     }
     
     /*
