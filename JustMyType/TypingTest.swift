@@ -25,26 +25,45 @@ class TypingTest {
     var displayedWords: [String]    // holds current word in the test
     var total_words: Int    // hold total number of words typed
     var wordsToDisplayOnScreen: Int // Number of words to display on the screen
+    var currentIndex: Int
 
+    var sentenceArray: [String]
     var wordArray: [String]
+    var wordMode: String
     // test array
     
     init() {
         total_words = 0     // initialize total words typed to 0
         self.wordsToDisplayOnScreen = 5;
         self.displayedWords = [];
+        self.wordMode = "word"
+        self.wordArray = []
+        self.sentenceArray = []
+        self.currentIndex = 0
         
-        let path = Bundle.main.path(forResource: "WordList", ofType: "txt")
-        let data = try! String(contentsOfFile:path!, encoding: String.Encoding.utf8)
-        self.wordArray = data.components(separatedBy: "\n")
-        self.wordArray = self.wordArray.filter{$0 != ""} // filters out empty strings
-      
-        self.setDefaultDisplayedWords()
+        if (wordMode == "word") {
+            let path = Bundle.main.path(forResource: "WordList", ofType: "txt")
+            let data = try! String(contentsOfFile:path!, encoding: String.Encoding.utf8)
+            self.wordArray = data.components(separatedBy: "\n")
+            self.wordArray = self.wordArray.filter{$0 != ""} // filters out empty strings
+            self.setDefaultDisplayedWords()
+        } else if (wordMode == "shake") { // Andrew Berg
+            let path = Bundle.main.path(forResource: "ShakeExcerpt", ofType: "txt")
+            let data = try! String(contentsOfFile:path!, encoding: String.Encoding.utf8)
+            self.sentenceArray = data.components(separatedBy: "\n")
+            self.sentenceArray = self.sentenceArray.filter{$0 != ""} // filters out empty strings
+            for x in sentenceArray {
+                for y in x.components(separatedBy: " ") {
+                    wordArray.append(y)
+                }
+            }
+            self.setDefaultDisplayedWords()
+        }
     }
     
     // Lauren Koulias
     func setDefaultDisplayedWords() {
-        for _ in 1...self.wordsToDisplayOnScreen {
+        for _ in 0...self.wordsToDisplayOnScreen {
             _ = self.addRandomWordAndGetValue()
         }
     }
@@ -77,10 +96,16 @@ class TypingTest {
     
     // Andre and Andrew
     func addRandomWordAndGetValue() -> String {    // gets a random word from the array to display
-        //random number generation from size of the list of words
-        let random = wordArray[Int(arc4random_uniform(UInt32(wordArray.count)))]
-//        next_word = random       // sets the current displayed word to the randomly chosen word from array
-        self.displayedWords.append(random)
+        var random = ""
+        
+        if (wordMode == "word") {
+            random = wordArray[Int(arc4random_uniform(UInt32(wordArray.count)))]
+            self.displayedWords.append(random)
+        } else if (wordMode == "shake") { // Andrew Berg
+            random = wordArray[currentIndex]
+            self.displayedWords.append(random)
+            currentIndex += 1
+        }
         
         return random;
     }
@@ -114,6 +139,11 @@ class TypingTest {
             return 0.00
         }
         return WPM
+    }
+    
+    // Andrew Berg
+    func setMode(mode: String) {
+        wordMode = mode
     }
 }
 

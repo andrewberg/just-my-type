@@ -10,8 +10,8 @@ import Foundation
 // Andrew Berg
 enum GameMode: String {
     case typingtest = "typingtest"
-    case basketball = "basketballleaderboard"
-    case ballon = "ballonleader"
+    case basketball = "basketball"
+    case ballon = "balloon"
 }
 
 // Andrew Berg

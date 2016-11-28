@@ -21,6 +21,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var BackgroundMusicToggle: UISwitch!
     @IBOutlet weak var ButtonSoundToggle: UISwitch!
     
+    // Andrew Berg
+    @IBOutlet weak var UsernameLabel: UILabel!
+    var AlertField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +45,9 @@ class SettingsViewController: UIViewController {
         BackgroundLabel2.layer.cornerRadius = 8.0;
         
         self.setTheme();
+        
+        // Andrew Berg
+        UsernameLabel.text = "Username: \(Leaderboard.getUserName())"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -93,6 +100,35 @@ class SettingsViewController: UIViewController {
 
     }
     
+    // Andrew Berg
+    func ConfigureText(textField: UITextField!) {
+        textField.placeholder = "Enter a username"
+        AlertField = textField
+    }
+    
+    // Andrew Berg
+    func CancelAlert(AlertView: UIAlertAction!) {
+        // do nothing
+    }
+    
+    // Andrew Berg
+    @IBAction func ChangeUsername(_ sender: Any) {
+        let alert = UIAlertController(title: "Username", message: "", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: ConfigureText)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: CancelAlert))
+        alert.addAction(UIAlertAction(title: "Done", style: .default, handler:{ (UIAlertAction) in
+            if (self.AlertField.text != "") {
+                Leaderboard.setUserName(username: self.AlertField.text!)
+                self.UsernameLabel.text = "Username: \(Leaderboard.getUserName())"
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: { // completion block
+            // nothing
+        })
+    }
+
+
     /*
     // MARK: - Navigation
 
