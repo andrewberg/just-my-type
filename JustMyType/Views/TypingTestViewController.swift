@@ -18,6 +18,7 @@ class TypingTestViewController: UIViewController {
     @IBOutlet weak var amountOfMinutesStepper: UIStepper!
     @IBOutlet weak var RoundedLabel1: UILabel!
     @IBOutlet weak var RoundedLabel2: UILabel!
+    @IBOutlet weak var segmentedMode: UISegmentedControl!
     
     let secsInMin = 60
     var type = TypingTest()
@@ -140,9 +141,23 @@ class TypingTestViewController: UIViewController {
         return Int(amountOfMinutesStepper.value) * secsInMin
     }
     
-    @IBAction func stepperChanged(_ sender: Any) { // by Andrew Berg
+    // Andrew Berg
+    @IBAction func stepperChanged(_ sender: Any) {
         dismissKeyboard() // close keyboard
         resetButton(self) // if stepperChanged run the reset function
+    }
+    
+    // Andrew Berg
+    @IBAction func modeChanged(_ sender: Any) {
+        if (segmentedMode.selectedSegmentIndex == 0) { // word
+            type.setup(mode: "word")
+            dismissKeyboard() // close keyboard
+            resetButton(self) // if stepperChanged run the reset function
+        } else if (segmentedMode.selectedSegmentIndex == 1) { // shake
+            type.setup(mode: "shake")
+            dismissKeyboard() // close keyboard
+            resetButton(self) // if stepperChanged run the reset function
+        }
     }
     
     override func didReceiveMemoryWarning() {

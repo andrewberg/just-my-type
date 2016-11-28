@@ -41,13 +41,24 @@ class TypingTest {
         self.sentenceArray = []
         self.currentIndex = 0
         
-        if (wordMode == "word") {
+        setup(mode: wordMode) // refactor by Andrew Berg
+    }
+    
+    // refactored by Andrew Berg
+    func setup(mode: String) {
+        wordArray = []
+        sentenceArray = []
+        self.displayedWords = []
+        self.currentIndex = 0
+        self.wordMode = mode
+        
+        if (mode == "word") {
             let path = Bundle.main.path(forResource: "WordList", ofType: "txt")
             let data = try! String(contentsOfFile:path!, encoding: String.Encoding.utf8)
             self.wordArray = data.components(separatedBy: "\n")
             self.wordArray = self.wordArray.filter{$0 != ""} // filters out empty strings
             self.setDefaultDisplayedWords()
-        } else if (wordMode == "shake") { // Andrew Berg
+        } else if (mode == "shake") { // Andrew Berg
             let path = Bundle.main.path(forResource: "ShakeExcerpt", ofType: "txt")
             let data = try! String(contentsOfFile:path!, encoding: String.Encoding.utf8)
             self.sentenceArray = data.components(separatedBy: "\n")
@@ -145,6 +156,7 @@ class TypingTest {
     func setMode(mode: String) {
         wordMode = mode
     }
+    
 }
 
 
