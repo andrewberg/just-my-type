@@ -35,52 +35,80 @@ class BalloonViewController: UIViewController {
         label2.text = ""
         label3.text = ""
         textField.text = "Pop the balloons!"
+        
     }
+    
     
     func initStyle() {
-        // Still trying to figure out how to make these circles
-        drawBalloon(label: label1, move: 80, down: 160)
-        drawBalloon(label: label2, move: 180, down: 110)
-        drawBalloon(label: label3, move: 290, down: 160)
+        // draws 3 balloons at x,y positions
+        addBalloon(move: 80, down: 160)
+        addBalloon(move: 180, down: 110)
+        addBalloon(move: 290, down: 160)
         
     }
     
-    // draw the balloon - Asa
-    func drawBalloon(label: UILabel, move: Int, down: Int){
+    // adds a single balloon at x,y positions - Asa
+    func addBalloon(move: Int, down: Int){
+        let color = randomColor().cgColor // set balloon colors
+        drawBalloon(move: move, down: down, color: color)
+    }
+    
+    // draws the balloon - Asa
+    func drawBalloon(move: Int, down: Int, color: CGColor){
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: move,y: down), radius: CGFloat(35), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
-        
-        let trianglePath = UIBezierPath()
-        
-        //1 move the (top) point
-        trianglePath.move(to: CGPoint(x:move,y:down+30))
-        
-        //2 add point (left)
-        trianglePath.addLine(to: CGPoint(x:move+15,y:down+60))
-        
-        //3 add point (right)
-        trianglePath.addLine(to: CGPoint(x:move-15,y:down+60))
-        
-        let handle = CAShapeLayer()
-        handle.path = trianglePath.cgPath
         
         let label = CAShapeLayer()
         label.path = circlePath.cgPath
         
-        let color = randomColor().cgColor
-        
-        //change the fill color
         label.fillColor =  color
-        handle.fillColor = color
-        //you can change the stroke color
         label.strokeColor = color
-        handle.strokeColor = color
-        //you can change the line width
         label.lineWidth = 0.5
-        handle.lineWidth = 0.5
-        
+        addText(circleLayer: label, move: move, down: down) // add text layer to label
+        addHandle(circleLayer: label ,move: move, down: down, color: color) // add handle to label
         view.layer.addSublayer(label)
-        view.layer.addSublayer(handle)
+        
     }
+    
+    // add text to layer - Asa
+    func addText(circleLayer: CAShapeLayer, move: Int, down: Int){
+        let txtLyr = CATextLayer()
+        txtLyr.bounds = CGRect(x:0,y: 0,width: 50,height: 25)
+        txtLyr.position = CGPoint(x:move,y: down)
+        txtLyr.font = UIFont(name: "Baskerville-Bold", size: 20.0)
+        txtLyr.fontSize = 14.0
+        txtLyr.alignmentMode = kCAAlignmentCenter
+        txtLyr.string = test.addRandomWordAndGetValue()
+        txtLyr.isWrapped = true
+        txtLyr.shadowColor = UIColor.black.cgColor
+        txtLyr.shadowRadius = 2.0
+        txtLyr.shadowOffset = CGSize(width:2,height: 2)
+        txtLyr.shadowOpacity = 1.0
+        circleLayer.addSublayer(txtLyr)
+    }
+    
+    // draws the handle - Asa
+    func addHandle(circleLayer: CAShapeLayer, move: Int, down: Int, color: CGColor){
+        let trianglePath = UIBezierPath()
+        
+        //1 move the (top) point
+        trianglePath.move(to: CGPoint(x:move-1,y:down+35))
+        
+        //2 add point (left)
+        trianglePath.addLine(to: CGPoint(x:move+15,y:down+40))
+        
+        //3 add point (right)
+        trianglePath.addLine(to: CGPoint(x:move-15,y:down+40))
+        
+        let handle = CAShapeLayer()
+        
+        handle.path = trianglePath.cgPath
+        handle.fillColor = color
+        handle.strokeColor = color
+        handle.lineWidth = 0.5
+        circleLayer.addSublayer(handle)
+        
+    }
+    
     
     // returns a random color - Asa
     func randomColor() -> UIColor{
@@ -103,19 +131,11 @@ class BalloonViewController: UIViewController {
     
     func getNewWords() {
         label1.text = test.addRandomWordAndGetValue()
-        label2.text = test.addRandomWordAndGetValue()
-        label3.text = test.addRandomWordAndGetValue()
     }
     
     func main() {
         textField.text = ""
         initStyle()
-        getNewWords()
-        //    for _ in 1 ... 14 {
-        //      updateUI()
-        //    }
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
