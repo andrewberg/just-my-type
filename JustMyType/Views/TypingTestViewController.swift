@@ -18,10 +18,15 @@ class TypingTestViewController: UIViewController {
     @IBOutlet weak var amountOfMinutesStepper: UIStepper!
     @IBOutlet weak var RoundedLabel1: UILabel!
     @IBOutlet weak var RoundedLabel2: UILabel!
+<<<<<<< HEAD
     @IBOutlet weak var nextWordLabel: UILabel!
+=======
+    @IBOutlet weak var segmentedMode: UISegmentedControl!
+>>>>>>> master
     
     let secsInMin = 60
     var type = TypingTest()
+    var leader = Leaderboard()
     var clockRunning = false
     var clockDefault = 60
     var clock = 60
@@ -60,6 +65,10 @@ class TypingTestViewController: UIViewController {
             textFieldRef.isEnabled = false // set textfield to in-editable
             view.endEditing(true) // close keyboard
             clockRunning = false // reset clockRunning to false
+            leader.enterScore(mode: "tt", name: Leaderboard.getUserName(), score: type.calculateWPM(time: clock, totalSecs: calculateStepperSecs()))
+            // uses Leaderboard class to write to the leaderboards when the time is up
+            Highscores.sharedInstance.ttUpdateAverage(score: type.calculateWPM(time: clock, totalSecs: calculateStepperSecs())) // update average storage
+            Highscores.sharedInstance.ttUpdateHighscore(score: type.calculateWPM(time: clock, totalSecs: calculateStepperSecs()))
         }
     }
     
@@ -77,45 +86,70 @@ class TypingTestViewController: UIViewController {
     }
     
     func updateLabels() {
+<<<<<<< HEAD
         // wordLabel.slideInFromLeft()
         type.makeCurWordNextWord() // move next word into cur word
         wordLabel.text = "Current Word: " + type.getCurrentWord()   //grab new word for wordlabel
         nextWordLabel.text = "Next Word: " + type.getNextWord()
+=======
+        type.makeCurWordNextWord() // move next word into cur word
+        
+        self.setStyledText()
+>>>>>>> master
         updateWPMLabel()
         textFieldRef.text = ""                  //clear users text field
     }
     
+    func setStyledText() { // Lauren Koulias
+        // Set color of first word
+        let wordsToDisplay = type.getsWordsToDisplay()
+        let wordToColor = type.getCurrentWord()
+        let range = (wordsToDisplay as NSString).range(of: wordToColor)
+        
+        let coloredWordsToDisplay = NSMutableAttributedString.init(string: wordsToDisplay)
+        coloredWordsToDisplay.addAttributes(
+            [ //NSBackgroundColorAttributeName: UIColor.white,
+              NSForegroundColorAttributeName: UIColor.white
+            ], range: range)
+        wordLabel.attributedText = coloredWordsToDisplay
+    }
+    
     func updateWPMLabel() { // Andrew Berg
-        wpmLabel.text = String(type.calculateWPM(time: clock)) // calls member method to calc wpm
+        wpmLabel.text = String(type.calculateWPM(time: clock, totalSecs: calculateStepperSecs())) // calls member method to calc wpm
     }
     
     override func viewDidLoad() {       //verify view is loading
         super.viewDidLoad()
+<<<<<<< HEAD
         
         // begin edit by Justin Duhaime
         wordLabel.text = "Current Word: " + type.getCurrentWord() //set starting view label with a random word
         nextWordLabel.text = "Next Word: " + type.getNextWord()
         // end edit
         
+=======
+        self.setStyledText() //set starting view label with a random word
+>>>>>>> master
         textFieldRef.addTarget(self, action: #selector(self.textFieldAction(_:)), for: UIControlEvents.editingChanged)
         //^ checks if users textfield has changed, if so calls function for action
         timeLabel.text = String(clockDefault) // set clock value to default clock value
         wpmLabel.text = String(type.getTotalWords()) // set to zero because total words is 0
         //^ checks if users textfield has changed, if so calls function for action
         
+        //Lauren Koulias
         RoundedLabel1.layer.masksToBounds = true;
         RoundedLabel1.layer.cornerRadius = 8.0;
 
         RoundedLabel2.layer.masksToBounds = true;
         RoundedLabel2.layer.cornerRadius = 8.0;
         
+        self.view.backgroundColor = UIColor.themeChosen();
+        self.RoundedLabel1.backgroundColor = UIColor.seasonColorThree();
+        self.RoundedLabel2.backgroundColor = UIColor.seasonColorThree();
+        
         // Andrew Berg
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TypingTestViewController.dismissKeyboard)) // when screen is tapped it will dismiss keyboard
         view.addGestureRecognizer(tap)
-        
-        self.view.backgroundColor = UIColor.seasonColorOne();
-        self.RoundedLabel1.backgroundColor = UIColor.seasonColorTwo();
-        self.RoundedLabel2.backgroundColor = UIColor.seasonColorThree()
 
     }
     
@@ -127,9 +161,23 @@ class TypingTestViewController: UIViewController {
         return Int(amountOfMinutesStepper.value) * secsInMin
     }
     
-    @IBAction func stepperChanged(_ sender: Any) { // by Andrew Berg
+    // Andrew Berg
+    @IBAction func stepperChanged(_ sender: Any) {
         dismissKeyboard() // close keyboard
         resetButton(self) // if stepperChanged run the reset function
+    }
+    
+    // Andrew Berg
+    @IBAction func modeChanged(_ sender: Any) {
+        if (segmentedMode.selectedSegmentIndex == 0) { // word
+            type.setup(mode: "word")
+            dismissKeyboard() // close keyboard
+            resetButton(self) // if stepperChanged run the reset function
+        } else if (segmentedMode.selectedSegmentIndex == 1) { // shake
+            type.setup(mode: "shake")
+            dismissKeyboard() // close keyboard
+            resetButton(self) // if stepperChanged run the reset function
+        }
     }
     
     override func didReceiveMemoryWarning() {

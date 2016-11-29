@@ -15,7 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Andrew Berg
+        Leaderboard.sharedInstance.getLeaderboard(mode: "tt")
+            {(scores: [(name: String, score: Double)]) -> (Void) in
+        }
+        Leaderboard.sharedInstance.getLeaderboard(mode: "bl")
+        {(scores: [(name: String, score: Double)]) -> (Void) in
+        }
+        Leaderboard.sharedInstance.getLeaderboard(mode: "bb")
+        {(scores: [(name: String, score: Double)]) -> (Void) in
+        }
+        Leaderboard.sharedInstance.getLeaderboard(mode: "rc")
+        {(scores: [(name: String, score: Double)]) -> (Void) in
+        }
         return true
     }
 

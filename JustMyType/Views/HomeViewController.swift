@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class HomeViewController: UIViewController {
     
@@ -14,30 +16,48 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var multiplayerButton: RoundedButton!
     @IBOutlet weak var singlePlayerButton: RoundedButton!
     @IBOutlet weak var typingTestButton: RoundedButton!
+    
+    var buttonSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Button", ofType: "wav")!)
+    var audioPlayer = AVAudioPlayer()
    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.setButtonColors();
-        self.view.backgroundColor = UIColor.themeChosen();
-
+        //Lauren Koulias
+        self.setButtonColors()
+        self.view.backgroundColor = UIColor.themeChosen()
+        
+        //play backgound music
+        let defaults = UserDefaults.standard;
+        if(!defaults.bool(forKey: "BACKGROUND_SOUND_OFF")) {
+            MusicHelper.sharedHelper.playBackgroundMusic()
+        }
+        
+        //button clicks
+        audioPlayer = try! AVAudioPlayer(contentsOf: buttonSound as URL)
+        audioPlayer.prepareToPlay()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        //Lauren Koulias
         self.setButtonColors();
         self.view.backgroundColor = UIColor.themeChosen();
     }
     
     func setButtonColors() {
+        //Lauren Koulias
         typingTestButton.backgroundColor = UIColor.seasonColorOne();
         singlePlayerButton.backgroundColor = UIColor.seasonColorTwo();
         multiplayerButton.backgroundColor = UIColor.seasonColorThree();
         settingsButton.backgroundColor = UIColor.seasonColorFour();
-    }
-    
-    func setBackground() {
         
+        typingTestButton.titleLabel?.textColor = UIColor.themeChosen();
+        singlePlayerButton.titleLabel?.textColor = UIColor.themeChosen();
+        multiplayerButton.titleLabel?.textColor = UIColor.themeChosen();
+        settingsButton.titleLabel?.textColor = UIColor.themeChosen();
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +65,34 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func TypingTestButtonSound(_ sender: RoundedButton) {
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
+    }
+    
+    @IBAction func SinglePlayerButtonSound(_ sender: RoundedButton) {
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
+    }
 
+    @IBAction func MulitplayerButtonSound(_ sender: RoundedButton) {
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
+    }
+
+    @IBAction func SettingsButtonSound(_ sender: RoundedButton) {
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

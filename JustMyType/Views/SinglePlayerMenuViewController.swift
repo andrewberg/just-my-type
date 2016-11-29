@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SinglePlayerMenuViewController: UIViewController {
 
-
+    //Lauren Koulias
+    
     @IBOutlet weak var balloonsButton: RoundedButton!
     @IBOutlet weak var somethingButton: RoundedButton!
+    @IBOutlet weak var carRacingButton: RoundedButton!
+    
+    var buttonSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Button", ofType: "wav")!)
+    var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +27,13 @@ class SinglePlayerMenuViewController: UIViewController {
         self.setButtonColors();
         self.view.backgroundColor = UIColor.themeChosen();
 
+        //button clicks
+        audioPlayer = try! AVAudioPlayer(contentsOf: buttonSound as URL);
+        audioPlayer.prepareToPlay();
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        //Lauren Koulias
         self.setButtonColors();
         self.view.backgroundColor = UIColor.themeChosen();
     }
@@ -34,10 +44,41 @@ class SinglePlayerMenuViewController: UIViewController {
     }
     
     func setButtonColors() {
+        //Lauren Koulias
         somethingButton.backgroundColor = UIColor.seasonColorOne();
         balloonsButton.backgroundColor = UIColor.seasonColorTwo();
+        carRacingButton.backgroundColor = UIColor.seasonColorThree();
+        
+        somethingButton.titleLabel?.textColor = UIColor.themeChosen();
+        balloonsButton.titleLabel?.textColor = UIColor.themeChosen();
+        carRacingButton.titleLabel?.textColor = UIColor.themeChosen();
+
     }
 
+    @IBAction func BalloonsButtonClick(_ sender: RoundedButton) {
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
+    }
+    
+    @IBAction func BasketballButtonClick(_ sender: RoundedButton) {
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
+    }
+    
+    @IBAction func CarRacingButtonClick(_ sender: RoundedButton) {
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

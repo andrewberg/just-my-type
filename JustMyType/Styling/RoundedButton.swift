@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Lauren Koulias
 class RoundedButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
@@ -15,15 +16,6 @@ class RoundedButton: UIButton {
         self.layer.cornerRadius = 12;
         
     }
-}
-    
-class RoundedLabel: UILabel {
-        required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder);
-            
-            self.layer.cornerRadius = 12;
-            
-        }
 }
         
     /*

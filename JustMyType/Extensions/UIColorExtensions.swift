@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Lauren Koulias
 extension UIColor {
     // Get selected seasons color
     static func seasonColorOne() -> UIColor {
@@ -116,15 +117,18 @@ extension UIColor {
     //summer
     //fa582b, faf191, c2ea9b, 17a992
     static func appColorSummer1() -> UIColor {
-        return UIColor(red:0.98, green:0.95, blue:0.57, alpha:1.0); //Yellow
-    }
-    
-    static func appColorSummer2() -> UIColor {
         return UIColor(red:0.98, green:0.35, blue:0.17, alpha:1.0); //Red
     }
     
+    static func appColorSummer2() -> UIColor {
+        //return UIColor(red:0.98, green:0.95, blue:0.57, alpha:1.0); //Yellow
+        return UIColor(red:0.97, green:0.93, blue:0.43, alpha:1.0);
+        //return UIColor(red:0.97, green:0.91, blue:0.33, alpha:1.0);
+    }
+    
     static func appColorSummer3() -> UIColor {
-        return UIColor(red:0.76, green:0.92, blue:0.61, alpha:1.0); //Light Green
+        //return UIColor(red:0.76, green:0.92, blue:0.61, alpha:1.0); //Light Green
+        return UIColor(red:0.65, green:0.88, blue:0.42, alpha:1.0);
     }
     
     static func appColorSummer4() -> UIColor {
@@ -152,7 +156,9 @@ extension UIColor {
     //winter
     //bdf2ed, 8f91bf, 80b4bf, 033e8c
     static func appColorWinter1() -> UIColor {
-        return UIColor(red:0.74, green:0.95, blue:0.93, alpha:1.0); //Light Blue
+        //return UIColor(red:0.74, green:0.95, blue:0.93, alpha:1.0); //Light Blue
+        return UIColor(red:0.67, green:0.93, blue:0.91, alpha:1.0);
+        //return UIColor(red:0.58, green:0.92, blue:0.88, alpha:1.0);
     }
     
     static func appColorWinter2() -> UIColor {
@@ -164,6 +170,8 @@ extension UIColor {
     }
     
     static func appColorWinter4() -> UIColor {
-        return UIColor(red:0.01, green:0.24, blue:0.55, alpha:1.0); //Dark Blue
+        //return UIColor(red:0.01, green:0.24, blue:0.55, alpha:1.0); //Dark Blue
+        return UIColor(red:0.01, green:0.26, blue:0.59, alpha:1.0);
+        //return UIColor(red:0.02, green:0.35, blue:0.78, alpha:1.0);
     }
 }
