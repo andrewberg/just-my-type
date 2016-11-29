@@ -12,6 +12,7 @@ enum GameMode: String {
     case typingtest = "typingtest"
     case basketball = "basketball"
     case ballon = "balloon"
+    case racecar = "racecar"
 }
 
 // Andrew Berg
@@ -21,6 +22,7 @@ class Leaderboard {
     var ttScores:[(name: String, score: Double)]
     var blScores:[(name: String, score: Double)]
     var bbScores:[(name: String, score: Double)]
+    var rcScores:[(name: String, score: Double)]
     
     static let sharedInstance: Leaderboard = {
         let instance = Leaderboard()
@@ -31,6 +33,7 @@ class Leaderboard {
         ttScores = []
         blScores = []
         bbScores = []
+        rcScores = []
     }
     
     // get username in userdefaults
@@ -60,6 +63,8 @@ class Leaderboard {
             return GameMode.ballon.rawValue
         case "bb":
             return GameMode.basketball.rawValue
+        case "rc":
+            return GameMode.racecar.rawValue
         default:
             return GameMode.typingtest.rawValue
         }
@@ -104,6 +109,8 @@ class Leaderboard {
                             completionHandler(self.blScores)
                         } else if (self.getMode(val: mode) == GameMode.basketball.rawValue) {
                             completionHandler(self.bbScores)
+                        } else if (self.getMode(val: mode) == GameMode.racecar.rawValue) {
+                            completionHandler(self.rcScores)
                         }
                         return
                     }
@@ -133,6 +140,23 @@ class Leaderboard {
         task.resume()
     }
     
+    func rcUpdateScore(name: String) {
+        var request = URLRequest(url: URL(string: "http://bergcode.com/jmt/\(getMode(val: "rc"))/updatescore")!)
+        request.httpMethod = "POST" // sets method to post
+        let sent = "name=\(name)" // sets the parameters
+        request.httpBody = sent.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) {data, response, error in // establishes request
+            guard let _ = data, error == nil else {
+                return
+            }
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 { // handles the invalid response
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+        }
+        task.resume()
+    }
+    
     // reset the list to an empty array
     func resetArray(val: String) {
         if (getMode(val: val) == GameMode.typingtest.rawValue) {
@@ -141,6 +165,8 @@ class Leaderboard {
             blScores = []
         } else if (getMode(val: val) == GameMode.basketball.rawValue) {
             bbScores = []
+        } else if (getMode(val: val) == GameMode.racecar.rawValue) {
+            rcScores = []
         }
     }
     
@@ -152,6 +178,8 @@ class Leaderboard {
             blScores.append((name: name, score: score))
         } else if (getMode(val: val) == GameMode.basketball.rawValue) {
             bbScores.append((name: name, score: score))
+        } else if (getMode(val: val) == GameMode.racecar.rawValue) {
+            rcScores.append((name: name, score: score))
         }
     }
 }
