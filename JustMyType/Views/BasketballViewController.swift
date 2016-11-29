@@ -111,6 +111,7 @@ class BasketballViewController: UIViewController {
             userInput.isEnabled = false // set textfield to in-editable
             view.endEditing(true) // close keyboard
             clockRunning = false // reset clockRunning to false
+            Leaderboard.sharedInstance.enterScore(mode: "bb", name: Leaderboard.getUserName(), score: Double(score))
         }
         
         

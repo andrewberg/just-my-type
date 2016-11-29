@@ -120,6 +120,7 @@
 		4953A1C71DED109200482015 /* frame_96_delay-0.04s.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4953A1641DED109100482015 /* frame_96_delay-0.04s.gif */; };
 		4953A1C81DED109200482015 /* frame_97_delay-0.04s.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4953A1651DED109100482015 /* frame_97_delay-0.04s.gif */; };
 		4953A1C91DED109200482015 /* frame_98_delay-0.04s.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4953A1661DED109100482015 /* frame_98_delay-0.04s.gif */; };
+		4953A1CC1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A1CB1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift */; };
 		49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */; };
 		512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A2ACA1DAED26200B818D0 /* TypingTest.swift */; };
 		8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487B81DD3D75100602565 /* BasketballViewController.swift */; };
@@ -294,6 +295,7 @@
 		4953A1641DED109100482015 /* frame_96_delay-0.04s.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame_96_delay-0.04s.gif"; sourceTree = "<group>"; };
 		4953A1651DED109100482015 /* frame_97_delay-0.04s.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame_97_delay-0.04s.gif"; sourceTree = "<group>"; };
 		4953A1661DED109100482015 /* frame_98_delay-0.04s.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame_98_delay-0.04s.gif"; sourceTree = "<group>"; };
+		4953A1CB1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballLeaderboardTableViewController.swift; sourceTree = "<group>"; };
 		49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardHelper.swift; sourceTree = "<group>"; };
 		512A2ACA1DAED26200B818D0 /* TypingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTest.swift; sourceTree = "<group>"; };
 		8C4487B81DD3D75100602565 /* BasketballViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketballViewController.swift; path = Views/BasketballViewController.swift; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 				AE1DF9271D97319A00E578C2 /* TypingTestViewController.swift */,
 				4953A0D41DE7819A00482015 /* TypingTestLeaderboardViewController.swift */,
 				4953A0F71DE7D02A00482015 /* HighscoresViewController.swift */,
+				4953A1CB1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -932,6 +935,7 @@
 				4953A0F81DE7D02A00482015 /* HighscoresViewController.swift in Sources */,
 				49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */,
 				AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */,
+				4953A1CC1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift in Sources */,
 				AE1982091DE8F83A005AD007 /* RacingGame.swift in Sources */,
 				4953A1031DECF2BF00482015 /* RacecarLeaderboardViewController.swift in Sources */,
 				CFB43D551DDBC26D007C7A90 /* BalloonViewController.swift in Sources */,
