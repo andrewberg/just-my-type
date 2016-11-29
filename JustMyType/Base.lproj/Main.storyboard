@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wLs-Lw-lW5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wLs-Lw-lW5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -245,10 +245,22 @@
                                     <segue destination="NvV-aq-1De" kind="show" id="QpX-ZH-jUF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddh-fB-0sb" customClass="RoundedButton" customModule="JustMyType" customModuleProvider="target">
+                                <rect key="frame" x="37" y="106" width="301" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Balloon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="3qt-VH-rcJ" kind="show" id="7te-XY-jEi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="balloonGame" destination="ddh-fB-0sb" id="345-Ul-x04"/>
                         <outlet property="basketballButton" destination="sYm-hE-vpC" id="UJE-7A-fG7"/>
                         <outlet property="carRacingButton" destination="m6e-Dy-1OK" id="Uok-e0-TXc"/>
                         <outlet property="typingTestButton" destination="q4X-sQ-JcX" id="1Le-4a-ejU"/>
@@ -859,6 +871,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69I-p0-FyN" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1504.8" y="2695.5022488755626"/>
+        </scene>
+        <!--Balloon Game Leaderboard-->
+        <scene sceneID="8ne-sZ-UdG">
+            <objects>
+                <tableViewController id="3qt-VH-rcJ" customClass="BalloonLeaderboardTableViewController" customModule="JustMyType" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="H6s-9H-Uym">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BalloonCell" rowHeight="35" id="dah-rT-G20">
+                                <rect key="frame" x="0.0" y="28" width="375" height="35"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dah-rT-G20" id="den-jF-IH0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="34"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3qt-VH-rcJ" id="NYy-JR-c0H"/>
+                            <outlet property="delegate" destination="3qt-VH-rcJ" id="z0B-bM-H0n"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Balloon Game Leaderboard" id="Ppn-LG-nvE"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0bB-KA-aEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="159" y="3406"/>
         </scene>
         <!--Basketball Leaderboard-->
         <scene sceneID="eIH-fJ-d4u">

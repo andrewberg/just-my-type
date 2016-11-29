@@ -122,6 +122,8 @@
 		4953A1C81DED109200482015 /* frame_97_delay-0.04s.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4953A1651DED109100482015 /* frame_97_delay-0.04s.gif */; };
 		4953A1C91DED109200482015 /* frame_98_delay-0.04s.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4953A1661DED109100482015 /* frame_98_delay-0.04s.gif */; };
 		4953A1CC1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A1CB1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift */; };
+		4953A1CE1DEE23C100482015 /* BalloonLeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A1CD1DEE23C100482015 /* BalloonLeaderboardTableViewController.swift */; };
+		4953A1D11DEE2A0E00482015 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4953A1D01DEE2A0E00482015 /* AVFoundation.framework */; };
 		49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */; };
 		512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A2ACA1DAED26200B818D0 /* TypingTest.swift */; };
 		8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487B81DD3D75100602565 /* BasketballViewController.swift */; };
@@ -298,6 +300,8 @@
 		4953A1651DED109100482015 /* frame_97_delay-0.04s.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame_97_delay-0.04s.gif"; sourceTree = "<group>"; };
 		4953A1661DED109100482015 /* frame_98_delay-0.04s.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame_98_delay-0.04s.gif"; sourceTree = "<group>"; };
 		4953A1CB1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballLeaderboardTableViewController.swift; sourceTree = "<group>"; };
+		4953A1CD1DEE23C100482015 /* BalloonLeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonLeaderboardTableViewController.swift; sourceTree = "<group>"; };
+		4953A1D01DEE2A0E00482015 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardHelper.swift; sourceTree = "<group>"; };
 		512A2ACA1DAED26200B818D0 /* TypingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTest.swift; sourceTree = "<group>"; };
 		8C4487B81DD3D75100602565 /* BasketballViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketballViewController.swift; path = Views/BasketballViewController.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4953A1D11DEE2A0E00482015 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +530,14 @@
 			name = BasketballGameAnimation;
 			sourceTree = "<group>";
 		};
+		4953A1CF1DEE2A0D00482015 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4953A1D01DEE2A0E00482015 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AE19820A1DE8F845005AD007 /* Games */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +556,7 @@
 				1130D0911DB69DDF00FBD541 /* JustMyTypeUnitTests */,
 				1130D09F1DB69E0400FBD541 /* JustMyTypeUITest */,
 				AE1DF8F01D972E7C00E578C2 /* Products */,
+				4953A1CF1DEE2A0D00482015 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -601,6 +615,7 @@
 				4953A0D41DE7819A00482015 /* TypingTestLeaderboardViewController.swift */,
 				4953A0F71DE7D02A00482015 /* HighscoresViewController.swift */,
 				4953A1CB1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift */,
+				4953A1CD1DEE23C100482015 /* BalloonLeaderboardTableViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -950,6 +965,7 @@
 				8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */,
 				AE1DF8F91D972E7C00E578C2 /* GameViewController.swift in Sources */,
 				0F13A0ED1DE2841C00740910 /* MusicHelper.swift in Sources */,
+				4953A1CE1DEE23C100482015 /* BalloonLeaderboardTableViewController.swift in Sources */,
 				CF3B79701DB6DF8F00A2B427 /* UIViewExtension.swift in Sources */,
 				8C7C19D51DD293CA00F2640A /* BasketBallScene.swift in Sources */,
 				AE1982101DE8FE2B005AD007 /* RacingGameViewController.swift in Sources */,
@@ -1187,6 +1203,7 @@
 		AE1DF91C1D972E7C00E578C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S37L96K8RG;
 				INFOPLIST_FILE = JustMyType/Info.plist;
@@ -1202,6 +1219,7 @@
 		AE1DF91D1D972E7C00E578C2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S37L96K8RG;
 				INFOPLIST_FILE = JustMyType/Info.plist;

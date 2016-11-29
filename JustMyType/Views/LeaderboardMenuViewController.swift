@@ -13,6 +13,7 @@ class LeaderboardMenuViewController: UIViewController {
     @IBOutlet weak var typingTestButton: RoundedButton!
     @IBOutlet weak var basketballButton: RoundedButton!
     @IBOutlet weak var carRacingButton: RoundedButton!
+    @IBOutlet weak var balloonGame: RoundedButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +41,13 @@ class LeaderboardMenuViewController: UIViewController {
         typingTestButton.backgroundColor = UIColor.seasonColorThree();
         basketballButton.backgroundColor = UIColor.seasonColorFour();
         carRacingButton.backgroundColor = UIColor.seasonColorTwo();
+        balloonGame.backgroundColor = UIColor.seasonColorFour();
         
         carRacingButton.titleLabel?.textColor = UIColor.themeChosen();
         basketballButton.titleLabel?.textColor = UIColor.themeChosen();
         typingTestButton.titleLabel?.textColor = UIColor.themeChosen();
+        balloonGame.titleLabel?.textColor = UIColor.themeChosen()
+        
     }
     
 
