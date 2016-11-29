@@ -1,7 +1,7 @@
 //
 //  BasketballViewController.swift
 //  JustMyType
-//
+//  Richard Nelson
 //  Created by Bradley Close on 11/9/16.
 //  Copyright © 2016 Lauren Koulias. All rights reserved.
 //
@@ -24,8 +24,15 @@ class BasketballViewController: UIViewController {
     @IBOutlet weak var threeTimes: UILabel!
     @IBOutlet weak var shotClock: UIImageView!
     @IBOutlet weak var gameAnimation: UIImageView!
+    //https://dribbble.com/shots/1256215-Jump-Shot-Animated-GIF?list=popular&offset=0  
+    //Basketball gif created by Frasier Davidson
     
-    
+    @IBAction func playAgain(_ sender: Any) {
+      self.viewDidLoad()
+        clock = 30
+        counter = 1
+        score = 0
+    }
     @IBAction func textField(_ sender: Any) {
         if (!clockRunning) { // runs if clockRunning
             timer.invalidate() // makes sure timer is not running
@@ -42,9 +49,10 @@ class BasketballViewController: UIViewController {
             {
                 if isAnimating{
                     animationTimer.invalidate()
+                    counter = 0
                     isAnimating = false
                 }
-                animationTimer = Timer.scheduledTimer(timeInterval: 0.04, target: self, selector: #selector(animate), userInfo: nil, repeats: true)
+                animationTimer = Timer.scheduledTimer(timeInterval: 0.00004, target: self, selector: #selector(animate), userInfo: nil, repeats: true)
                 isAnimating = true
                 if (clock > 5){
                 score += 1
@@ -71,9 +79,11 @@ class BasketballViewController: UIViewController {
     
     func animate(){
         
+        isAnimating = true
         gameAnimation.image = UIImage(named: "frame_\(counter)_delay-0.04s.gif")
         counter += 1
-        if counter == 38 {
+        if counter == 98 {
+            counter = 0
             isAnimating = false
             animationTimer.invalidate()
         }
@@ -111,6 +121,8 @@ class BasketballViewController: UIViewController {
             userInput.isEnabled = false // set textfield to in-editable
             view.endEditing(true) // close keyboard
             clockRunning = false // reset clockRunning to false
+            gameAnimation.image = UIImage(named: "frame_0_delay-0.04s.gif")
+            threeTimes.text = ""
             Leaderboard.sharedInstance.enterScore(mode: "bb", name: Leaderboard.getUserName(), score: Double(score))
         }
         
@@ -121,6 +133,8 @@ class BasketballViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userInput.isEnabled = true
+        userInput.text = ""
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "Court")
         self.view.insertSubview(backgroundImage, at: 0)

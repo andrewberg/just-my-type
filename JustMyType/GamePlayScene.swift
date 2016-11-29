@@ -1,7 +1,7 @@
 //
 //  GamePlayScene.swift
 //  JustMyType
-//
+//  Richard Nelson
 //  Created by Bradley Close on 11/9/16.
 //  Copyright © 2016 Lauren Koulias. All rights reserved.
 //
