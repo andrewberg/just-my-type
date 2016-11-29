@@ -200,10 +200,10 @@
             </objects>
             <point key="canvasLocation" x="2972" y="1075.4122938530736"/>
         </scene>
-        <!--Multiplayer-->
+        <!--Leaderboards-->
         <scene sceneID="m3W-Ri-RGe">
             <objects>
-                <viewController title="Multiplayer" id="ugB-lu-ueo" customClass="MultiplayerMenuViewController" customModule="JustMyType" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Leaderboards" id="ugB-lu-ueo" customClass="MultiplayerMenuViewController" customModule="JustMyType" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qjr-cK-uEL"/>
                         <viewControllerLayoutGuide type="bottom" id="MPJ-yG-nap"/>
@@ -374,7 +374,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="81" id="VnW-tf-6EQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Multiplayer">
+                                <state key="normal" title="Leaderboards">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -607,6 +607,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="CarRacingButtonClick:" destination="J2u-G6-vuE" eventType="touchUpInside" id="Muu-XZ-tmB"/>
                                     <segue destination="R4N-fr-zx9" kind="show" id="UfN-3f-o7J"/>
                                 </connections>
                             </button>

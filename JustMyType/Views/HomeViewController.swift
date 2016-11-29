@@ -25,15 +25,18 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         //Lauren Koulias
-        self.setButtonColors();
-        self.view.backgroundColor = UIColor.themeChosen();
+        self.setButtonColors()
+        self.view.backgroundColor = UIColor.themeChosen()
         
         //play backgound music
-        MusicHelper.sharedHelper.playBackgroundMusic();
+        let defaults = UserDefaults.standard;
+        if(!defaults.bool(forKey: "BACKGROUND_SOUND_OFF")) {
+            MusicHelper.sharedHelper.playBackgroundMusic()
+        }
         
         //button clicks
-        audioPlayer = try! AVAudioPlayer(contentsOf: buttonSound as URL);
-        audioPlayer.prepareToPlay();
+        audioPlayer = try! AVAudioPlayer(contentsOf: buttonSound as URL)
+        audioPlayer.prepareToPlay()
         
     }
     
@@ -64,25 +67,32 @@ class HomeViewController: UIViewController {
     
     @IBAction func TypingTestButtonSound(_ sender: RoundedButton) {
         let defaults = UserDefaults.standard
-        if (defaults.bool(forKey: "SOUND_ON")) {
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
             audioPlayer.play();
         }
     }
     
     @IBAction func SinglePlayerButtonSound(_ sender: RoundedButton) {
-        audioPlayer.play();
-
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
     }
 
     @IBAction func MulitplayerButtonSound(_ sender: RoundedButton) {
-        audioPlayer.play();
-
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
     }
 
     @IBAction func SettingsButtonSound(_ sender: RoundedButton) {
-        audioPlayer.play();
-
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
     }
+    
     /*
     // MARK: - Navigation
 

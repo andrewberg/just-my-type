@@ -56,16 +56,24 @@ class SinglePlayerMenuViewController: UIViewController {
     }
 
     @IBAction func BalloonsButtonClick(_ sender: RoundedButton) {
-        audioPlayer.play();
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
     }
     
     @IBAction func BasketballButtonClick(_ sender: RoundedButton) {
-        audioPlayer.play();
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
     }
     
     @IBAction func CarRacingButtonClick(_ sender: RoundedButton) {
-        audioPlayer.play();
-
+        let defaults = UserDefaults.standard
+        if (!defaults.bool(forKey: "SOUND_OFF")) {
+            audioPlayer.play();
+        }
     }
     
     

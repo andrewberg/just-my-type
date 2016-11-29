@@ -28,6 +28,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Lauren Koulias
         // Do any additional setup after loading the view.
         let defaults = UserDefaults.standard;
         let selectedSeason = defaults.integer(forKey: "COLOR_SETTING");
@@ -46,8 +47,14 @@ class SettingsViewController: UIViewController {
         
         self.setTheme();
         
+        // Set the default value for the music/sound
+        self.BackgroundMusicToggle.isOn = !defaults.bool(forKey: "BACKGROUND_SOUND_OFF")
+        self.ButtonSoundToggle.isOn = !defaults.bool(forKey: "SOUND_OFF")
+        
         // Andrew Berg
         UsernameLabel.text = "Username: \(Leaderboard.getUserName())"
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,8 +97,11 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func DidToggleMusic(_ sender: UISwitch) {
+        let defaults = UserDefaults.standard;
+        defaults.set(!sender.isOn, forKey: "BACKGROUND_SOUND_OFF");
+        
         if(sender.isOn) {
-            MusicHelper.sharedHelper.resumeBackgroundMusic();
+            MusicHelper.sharedHelper.playBackgroundMusic();
         } else {
             MusicHelper.sharedHelper.pauseBackgroundMusic();
         }
@@ -99,7 +109,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func DidToggleSound(_ sender: UISwitch) {
         let defaults = UserDefaults.standard;
-        defaults.set(sender.isOn, forKey: "SOUND_ON");
+        defaults.set(!sender.isOn, forKey: "SOUND_OFF");
     }
     
     // Andrew Berg
