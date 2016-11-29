@@ -158,6 +158,8 @@ class TypingTestViewController: UIViewController {
         resetButton(self)       // if stepperChanged run the reset function
     }
     
+    
+    
     // Andrew Berg
     @IBAction func modeChanged(_ sender: Any) {
         if (segmentedMode.selectedSegmentIndex == 0) { // word
