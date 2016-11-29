@@ -12,7 +12,6 @@ import AVFoundation
 class SinglePlayerMenuViewController: UIViewController {
 
     //Lauren Koulias
-    
     @IBOutlet weak var balloonsButton: RoundedButton!
     @IBOutlet weak var somethingButton: RoundedButton!
     @IBOutlet weak var carRacingButton: RoundedButton!
@@ -75,8 +74,6 @@ class SinglePlayerMenuViewController: UIViewController {
             audioPlayer.play();
         }
     }
-    
-    
     
     
     /*
