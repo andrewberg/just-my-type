@@ -63,7 +63,10 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func TypingTestButtonSound(_ sender: RoundedButton) {
-        audioPlayer.play();
+        let defaults = UserDefaults.standard
+        if (defaults.bool(forKey: "SOUND_ON")) {
+            audioPlayer.play();
+        }
     }
     
     @IBAction func SinglePlayerButtonSound(_ sender: RoundedButton) {

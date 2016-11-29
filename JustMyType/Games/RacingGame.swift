@@ -44,8 +44,7 @@ class RacingGame: SKScene {
         /* Called when a touch begins */
     }
     
-    // Lauren Koulias
-    public func startGame() {
+    public func restartGame() {
         // Set everytime a match starts
         self.carsLeftInMatch = 3
         self.carsThatHaveFinished = []
@@ -61,6 +60,11 @@ class RacingGame: SKScene {
             let car = childNode(withName: carName) as! SKSpriteNode
             car.position.x = self.startingCarXPos
         }
+    }
+    
+    // Lauren Koulias
+    public func startGame() {
+        self.restartGame()
         
         // Shows the start text on the screen
         let background = childNode(withName: backgroundName) as! SKSpriteNode
@@ -103,6 +107,11 @@ class RacingGame: SKScene {
     func stopCarsMovingForward() {
         self.timerCarOne?.invalidate()
         self.timerCarThree?.invalidate()
+        
+        for carName in carNames {
+            let car = childNode(withName: carName) as! SKSpriteNode
+            car.removeAllActions()
+        }
     }
     
     // Lauren Koulias

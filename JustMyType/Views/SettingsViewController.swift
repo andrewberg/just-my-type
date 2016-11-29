@@ -65,6 +65,7 @@ class SettingsViewController: UIViewController {
         
         self.MusicLabel.textColor = UIColor.themeChosen();
         self.SoundsLabel.textColor = UIColor.themeChosen();
+        self.UsernameLabel.textColor = UIColor.themeChosen();
         
         self.BackgroundMusicToggle.thumbTintColor = UIColor.themeChosen();
         self.ButtonSoundToggle.thumbTintColor = UIColor.themeChosen();
@@ -96,8 +97,9 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBAction func DidToggleSound(_ sender: AnyObject) {
-
+    @IBAction func DidToggleSound(_ sender: UISwitch) {
+        let defaults = UserDefaults.standard;
+        defaults.set(sender.isOn, forKey: "SOUND_ON");
     }
     
     // Andrew Berg

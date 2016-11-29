@@ -86,7 +86,8 @@ class RacingGameViewController: UIViewController {
 
     // Lauren Koulias
     @IBAction func resetButtonClicked(_ sender: Any) {
-        self.scene?.startGame()
+        self.gameOver = true
+        self.scene?.restartGame()
     }
     
     // Lauren Koulias
