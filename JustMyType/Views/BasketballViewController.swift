@@ -42,6 +42,7 @@ class BasketballViewController: UIViewController {
             {
                 if isAnimating{
                     animationTimer.invalidate()
+                    isAnimating = false
                 }
                 animationTimer = Timer.scheduledTimer(timeInterval: 0.04, target: self, selector: #selector(animate), userInfo: nil, repeats: true)
                 isAnimating = true
@@ -73,6 +74,7 @@ class BasketballViewController: UIViewController {
         gameAnimation.image = UIImage(named: "frame_\(counter)_delay-0.04s.gif")
         counter += 1
         if counter == 38 {
+            isAnimating = false
             animationTimer.invalidate()
         }
     }
@@ -99,11 +101,12 @@ class BasketballViewController: UIViewController {
     func timerAction(){
         clock -= 1
         timeLabel.text = String(clock)
-        if(clock<6)
+        if(clock < 6)
         {
             threeTimes.text = "3X Score"
         }
         if (clock < 1) {
+            animationTimer.invalidate()
             timer.invalidate() // invalidate timer
             userInput.isEnabled = false // set textfield to in-editable
             view.endEditing(true) // close keyboard
