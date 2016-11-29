@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Andrew
+// Andrew Berg
 class Highscores {
     
     // singleton for data for highscores

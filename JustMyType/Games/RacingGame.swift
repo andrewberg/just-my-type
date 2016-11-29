@@ -141,6 +141,11 @@ class RacingGame: SKScene {
             leader.rcUpdateScore(name: Leaderboard.getUserName())
         }
         
+        // Andrew Berg
+        Leaderboard.sharedInstance.getLeaderboard(mode: "rc")
+        {(scores: [(name: String, score: Double)]) -> (Void) in
+        }
+        
         startLabel.fontSize = 60
         startLabel.zPosition = 1
         startLabel.position = CGPoint(x: background.position.x * (1/2), y: car.position.y - 40)
