@@ -27,6 +27,8 @@ class RacingGame: SKScene {
     var startingCarXPos: CGFloat!
     var nodesToRemoveOnGameReset: Array<SKLabelNode>!
     
+    var leader = Leaderboard()
+    
     // Setup
     // Lauren Koulias
     override func didMove(to view: SKView) {
@@ -133,6 +135,12 @@ class RacingGame: SKScene {
         let background = childNode(withName: backgroundName) as! SKSpriteNode
         let startLabel = SKLabelNode(fontNamed: "IowanOldStyle-Bold")
         startLabel.text = self.getPlaceString(place: (totalNumberOfCars - self.carsLeftInMatch!)) + " place!"
+        
+        // check if player two won by Andrew Berg
+        if (self.carsLeftInMatch == 2 && carName == carTwoName) { // inc the wins
+            leader.rcUpdateScore(name: Leaderboard.getUserName())
+        }
+        
         startLabel.fontSize = 60
         startLabel.zPosition = 1
         startLabel.position = CGPoint(x: background.position.x * (1/2), y: car.position.y - 40)

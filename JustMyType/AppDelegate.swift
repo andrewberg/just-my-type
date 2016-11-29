@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Leaderboard.sharedInstance.getLeaderboard(mode: "bb")
         {(scores: [(name: String, score: Double)]) -> (Void) in
         }
+        Leaderboard.sharedInstance.getLeaderboard(mode: "rc")
+        {(scores: [(name: String, score: Double)]) -> (Void) in
+        }
         return true
     }
 

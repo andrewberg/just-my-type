@@ -20,6 +20,7 @@
 		4953A0F81DE7D02A00482015 /* HighscoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A0F71DE7D02A00482015 /* HighscoresViewController.swift */; };
 		4953A0FE1DE7F38800482015 /* LeaderboardUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A0FD1DE7F38800482015 /* LeaderboardUnitTests.swift */; };
 		4953A1001DEC85B100482015 /* ShakeExcerpt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4953A0FF1DEC85B100482015 /* ShakeExcerpt.txt */; };
+		4953A1031DECF2BF00482015 /* RacecarLeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A1021DECF2BF00482015 /* RacecarLeaderboardViewController.swift */; };
 		49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */; };
 		512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A2ACA1DAED26200B818D0 /* TypingTest.swift */; };
 		8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487B81DD3D75100602565 /* BasketballViewController.swift */; };
@@ -94,6 +95,7 @@
 		4953A0F71DE7D02A00482015 /* HighscoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoresViewController.swift; sourceTree = "<group>"; };
 		4953A0FD1DE7F38800482015 /* LeaderboardUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardUnitTests.swift; sourceTree = "<group>"; };
 		4953A0FF1DEC85B100482015 /* ShakeExcerpt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ShakeExcerpt.txt; path = ../ShakeExcerpt.txt; sourceTree = "<group>"; };
+		4953A1021DECF2BF00482015 /* RacecarLeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RacecarLeaderboardViewController.swift; path = Views/RacecarLeaderboardViewController.swift; sourceTree = "<group>"; };
 		49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardHelper.swift; sourceTree = "<group>"; };
 		512A2ACA1DAED26200B818D0 /* TypingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTest.swift; sourceTree = "<group>"; };
 		8C4487B81DD3D75100602565 /* BasketballViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketballViewController.swift; path = Views/BasketballViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				AE19820F1DE8FE2B005AD007 /* RacingGameViewController.swift */,
 				AE1982081DE8F83A005AD007 /* RacingGame.swift */,
 				AE19820B1DE8F962005AD007 /* RacingGame.sks */,
+				4953A1021DECF2BF00482015 /* RacecarLeaderboardViewController.swift */,
 			);
 			name = Games;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */,
 				AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */,
 				AE1982091DE8F83A005AD007 /* RacingGame.swift in Sources */,
+				4953A1031DECF2BF00482015 /* RacecarLeaderboardViewController.swift in Sources */,
 				CFB43D551DDBC26D007C7A90 /* BalloonViewController.swift in Sources */,
 				0FFD29191D988DF800CB28D6 /* RoundedButton.swift in Sources */,
 				AE1DF92C1D97390300E578C2 /* SinglePlayerMenuViewController.swift in Sources */,
