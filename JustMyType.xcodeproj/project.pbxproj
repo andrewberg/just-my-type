@@ -139,7 +139,7 @@
 		AE1DF9011D972E7C00E578C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE1DF8FF1D972E7C00E578C2 /* LaunchScreen.storyboard */; };
 		AE1DF9281D97319A00E578C2 /* TypingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF9271D97319A00E578C2 /* TypingTestViewController.swift */; };
 		AE1DF92C1D97390300E578C2 /* SinglePlayerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF92B1D97390300E578C2 /* SinglePlayerMenuViewController.swift */; };
-		AE1DF92E1D97391100E578C2 /* LeaderboardsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF92D1D97391100E578C2 /* LeaderboardsMenuViewController.swift */; };
+		AE1DF92E1D97391100E578C2 /* LeaderboardMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF92D1D97391100E578C2 /* LeaderboardMenuViewController.swift */; };
 		AE1DF9301D97391F00E578C2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */; };
 		AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DF9311D973A4100E578C2 /* UIColorExtensions.swift */; };
 		CF3B79701DB6DF8F00A2B427 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3B796F1DB6DF8F00A2B427 /* UIViewExtension.swift */; };
@@ -319,7 +319,7 @@
 		AE1DF9121D972E7C00E578C2 /* JustMyTypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustMyTypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1DF9271D97319A00E578C2 /* TypingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypingTestViewController.swift; path = Views/TypingTestViewController.swift; sourceTree = "<group>"; };
 		AE1DF92B1D97390300E578C2 /* SinglePlayerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SinglePlayerMenuViewController.swift; path = Views/SinglePlayerMenuViewController.swift; sourceTree = "<group>"; };
-		AE1DF92D1D97391100E578C2 /* LeaderboardsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeaderboardsMenuViewController.swift; path = Views/LeaderboardsMenuViewController.swift; sourceTree = "<group>"; };
+		AE1DF92D1D97391100E578C2 /* LeaderboardMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeaderboardMenuViewController.swift; path = Views/LeaderboardMenuViewController.swift; sourceTree = "<group>"; };
 		AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Views/SettingsViewController.swift; sourceTree = "<group>"; };
 		AE1DF9311D973A4100E578C2 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtensions.swift; path = Extensions/UIColorExtensions.swift; sourceTree = "<group>"; };
 		CF3B796F1DB6DF8F00A2B427 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
@@ -594,7 +594,7 @@
 				8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */,
 				AE1DF8F81D972E7C00E578C2 /* GameViewController.swift */,
 				0FFD29151D988D5500CB28D6 /* HomeViewController.swift */,
-				AE1DF92D1D97391100E578C2 /* LeaderboardsMenuViewController.swift */,
+				AE1DF92D1D97391100E578C2 /* LeaderboardMenuViewController.swift */,
 				AE1DF92F1D97391F00E578C2 /* SettingsViewController.swift */,
 				AE1DF92B1D97390300E578C2 /* SinglePlayerMenuViewController.swift */,
 				AE1DF9271D97319A00E578C2 /* TypingTestViewController.swift */,
@@ -953,7 +953,7 @@
 				CF3B79701DB6DF8F00A2B427 /* UIViewExtension.swift in Sources */,
 				8C7C19D51DD293CA00F2640A /* BasketBallScene.swift in Sources */,
 				AE1982101DE8FE2B005AD007 /* RacingGameViewController.swift in Sources */,
-				AE1DF92E1D97391100E578C2 /* LeaderboardsMenuViewController.swift in Sources */,
+				AE1DF92E1D97391100E578C2 /* LeaderboardMenuViewController.swift in Sources */,
 				0FFD29161D988D5500CB28D6 /* HomeViewController.swift in Sources */,
 				AE1DF8F31D972E7C00E578C2 /* AppDelegate.swift in Sources */,
 				AE1DF9281D97319A00E578C2 /* TypingTestViewController.swift in Sources */,

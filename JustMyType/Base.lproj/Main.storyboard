@@ -203,7 +203,7 @@
         <!--Leaderboards-->
         <scene sceneID="m3W-Ri-RGe">
             <objects>
-                <viewController title="Leaderboards" id="ugB-lu-ueo" customClass="MultiplayerMenuViewController" customModule="JustMyType" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Leaderboards" id="ugB-lu-ueo" customClass="LeaderboardMenuViewController" customModule="JustMyType" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qjr-cK-uEL"/>
                         <viewControllerLayoutGuide type="bottom" id="MPJ-yG-nap"/>
@@ -212,49 +212,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4X-sQ-JcX" customClass="RoundedButton" customModule="JustMyType" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4X-sQ-JcX" customClass="RoundedButton" customModule="JustMyType" customModuleProvider="target">
                                 <rect key="frame" x="37" y="214" width="301" height="81"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="81" id="Q98-HD-gp6"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Typing Test">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="JOd-mC-GCq" kind="show" id="YZT-DR-3P5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6e-Dy-1OK" customClass="RoundedButton" customModule="JustMyType" customModuleProvider="target">
+                                <rect key="frame" x="37" y="433" width="301" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Car Racing">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="guu-3z-ynk" kind="show" id="Pzw-OY-cZS"/>
+                                    <segue destination="Gu3-tv-QKc" kind="show" id="ZmE-st-gcl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYm-hE-vpC" customClass="RoundedButton" customModule="JustMyType" customModuleProvider="target">
-                                <rect key="frame" x="37" y="323" width="301" height="81"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYm-hE-vpC" customClass="RoundedButton" customModule="JustMyType" customModuleProvider="target">
+                                <rect key="frame" x="37" y="325" width="301" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Mountain Climbing">
+                                <state key="normal" title="Basketball">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="E8B-t3-GvG" kind="show" id="eTy-ht-uQr"/>
+                                    <segue destination="NvV-aq-1De" kind="show" id="QpX-ZH-jUF"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="MPJ-yG-nap" firstAttribute="top" secondItem="sYm-hE-vpC" secondAttribute="bottom" constant="263" id="9dc-n4-3pi"/>
-                            <constraint firstItem="q4X-sQ-JcX" firstAttribute="leading" secondItem="sYm-hE-vpC" secondAttribute="leading" id="BkK-5i-fVw"/>
-                            <constraint firstItem="q4X-sQ-JcX" firstAttribute="centerX" secondItem="kXc-wZ-wD7" secondAttribute="centerX" id="MQd-r9-Osl"/>
-                            <constraint firstItem="q4X-sQ-JcX" firstAttribute="trailing" secondItem="sYm-hE-vpC" secondAttribute="trailing" id="jd4-41-k15"/>
-                            <constraint firstItem="q4X-sQ-JcX" firstAttribute="top" secondItem="qjr-cK-uEL" secondAttribute="bottom" constant="150" id="tQx-CM-80e"/>
-                            <constraint firstItem="q4X-sQ-JcX" firstAttribute="leading" secondItem="kXc-wZ-wD7" secondAttribute="leadingMargin" constant="21" id="vwR-ma-0i2"/>
-                            <constraint firstItem="sYm-hE-vpC" firstAttribute="top" secondItem="q4X-sQ-JcX" secondAttribute="bottom" constant="28" id="zj1-Bz-fY7"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="CarRacingButton" destination="q4X-sQ-JcX" id="Wle-fe-NRt"/>
-                        <outlet property="mountianClimbingButton" destination="sYm-hE-vpC" id="OV3-Cm-CpQ"/>
+                        <outlet property="basketballButton" destination="sYm-hE-vpC" id="UJE-7A-fG7"/>
+                        <outlet property="carRacingButton" destination="m6e-Dy-1OK" id="Uok-e0-TXc"/>
+                        <outlet property="typingTestButton" destination="q4X-sQ-JcX" id="1Le-4a-ejU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Bd-HJ-d8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2194" y="1940"/>
+            <point key="canvasLocation" x="2192.8000000000002" y="1939.8800599700151"/>
         </scene>
         <!--Highscores-->
         <scene sceneID="Kl0-Et-FA7">
@@ -378,8 +380,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="MulitplayerButtonSound:" destination="zf3-PE-v06" eventType="touchUpInside" id="aJv-ai-Vb3"/>
-                                    <segue destination="ugB-lu-ueo" kind="show" identifier="multiplayerSegue" id="RmM-LB-Fmi"/>
+                                    <segue destination="ugB-lu-ueo" kind="show" id="jYs-CG-TYB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4O-mG-t8s" customClass="RoundedButton" customModule="JustMyType" customModuleProvider="target">
@@ -771,60 +772,6 @@
             </objects>
             <point key="canvasLocation" x="831.20000000000005" y="2694.6026986506749"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="G93-8N-zPD">
-            <objects>
-                <viewController id="guu-3z-ynk" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ogl-qB-i5O"/>
-                        <viewControllerLayoutGuide type="bottom" id="chf-u1-dJE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tVp-gc-e8P">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Car Racing Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyg-Es-L0F">
-                                <rect key="frame" x="121" y="323" width="133" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IQE-n5-cEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2193" y="2698"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="eEw-B7-UOC">
-            <objects>
-                <viewController id="E8B-t3-GvG" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jTC-ge-z4H"/>
-                        <viewControllerLayoutGuide type="bottom" id="CnN-5U-98j"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bWp-Jn-dOS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mountain Climbing Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5P-UT-26p">
-                                <rect key="frame" x="91" y="323" width="193" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mtj-v6-USD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2898" y="2698"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Tv-c4-2e1">
             <objects>
@@ -976,6 +923,8 @@
         <image name="stopwatch" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VzE-KM-EvJ"/>
+        <segue reference="YZT-DR-3P5"/>
+        <segue reference="ZmE-st-gcl"/>
+        <segue reference="QpX-ZH-jUF"/>
     </inferredMetricsTieBreakers>
 </document>

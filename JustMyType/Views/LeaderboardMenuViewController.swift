@@ -8,9 +8,11 @@
 
 import UIKit
 
-class MultiplayerMenuViewController: UIViewController {
+class LeaderboardMenuViewController: UIViewController {
+
+    @IBOutlet weak var typingTestButton: RoundedButton!
+    @IBOutlet weak var basketballButton: RoundedButton!
     @IBOutlet weak var carRacingButton: RoundedButton!
-    @IBOutlet weak var mountianClimbingButton: RoundedButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +37,13 @@ class MultiplayerMenuViewController: UIViewController {
     
     func setButtonColors() {
         //Lauren Koulias
-        carRacingButton.backgroundColor = UIColor.seasonColorThree();
-        mountianClimbingButton.backgroundColor = UIColor.seasonColorFour();
+        typingTestButton.backgroundColor = UIColor.seasonColorThree();
+        basketballButton.backgroundColor = UIColor.seasonColorFour();
+        carRacingButton.backgroundColor = UIColor.seasonColorTwo();
         
         carRacingButton.titleLabel?.textColor = UIColor.themeChosen();
-        mountianClimbingButton.titleLabel?.textColor = UIColor.themeChosen();
+        basketballButton.titleLabel?.textColor = UIColor.themeChosen();
+        typingTestButton.titleLabel?.textColor = UIColor.themeChosen();
     }
     
 
