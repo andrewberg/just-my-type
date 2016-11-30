@@ -15,6 +15,11 @@ enum GameMode: String {
     case racecar = "racecar"
 }
 
+//var site = "http://127.0.0.1:5000"
+// to test your own backend, to point to main server use
+// http://bergcode.com
+var site = "http://bergcode.com"
+
 // Andrew Berg
 class Leaderboard {
     
@@ -83,7 +88,7 @@ class Leaderboard {
     func getLeaderboard(mode: String, completionHandler:@escaping ([(name: String, score: Double)]) -> ()) {
         let config = URLSessionConfiguration.default // Session Configuration
         let session = URLSession(configuration: config) // Load configuration into Session
-        let url = URL(string: "http://bergcode.com/jmt/\(getMode(val: mode))/list")
+        let url = URL(string: "\(site)/jmt/\(getMode(val: mode))/list")
         let task = session.dataTask(with: url!, completionHandler: { // creates task to pickup json
             (data, response, error) in
             if error != nil {
@@ -124,7 +129,7 @@ class Leaderboard {
     
     // enters score by post method to given database
     func enterScore(mode: String, name: String, score: Double) {
-        var request = URLRequest(url: URL(string: "http://bergcode.com/jmt/\(getMode(val: mode))/enter")!)
+        var request = URLRequest(url: URL(string: "\(site)/jmt/\(getMode(val: mode))/enter")!)
         request.httpMethod = "POST" // sets method to post
         let sent = "name=\(name)&score=\(score)" // sets the parameters
         request.httpBody = sent.data(using: .utf8)
@@ -141,7 +146,7 @@ class Leaderboard {
     }
     
     func rcUpdateScore(name: String) {
-        var request = URLRequest(url: URL(string: "http://bergcode.com/jmt/\(getMode(val: "rc"))/updatescore")!)
+        var request = URLRequest(url: URL(string: "\(site)/jmt/\(getMode(val: "rc"))/updatescore")!)
         request.httpMethod = "POST" // sets method to post
         let sent = "name=\(name)" // sets the parameters
         request.httpBody = sent.data(using: .utf8)
