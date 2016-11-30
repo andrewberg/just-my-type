@@ -43,9 +43,6 @@ class JustMyTypeUnitTests: XCTestCase {
         XCTAssert(test.total_words == 0)
     }
     
-    func testCheckWord() {
-        
-    }
 //    func testPerformanceExample() {
 //        // This is an example of a performance test case.
 //        self.measure {
