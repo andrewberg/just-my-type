@@ -31,6 +31,36 @@ d) Acceptance tests for an external person to try:
 
 #Change Log
 
+Version 0.1.0
+
+Updates of previous versions:
+Changes to the layout of the typing test, the format for the main menu and added more mores to the dictionary.
+Multiplayer is no longer available as an option on the main menu. To implement it required having developer access to the App Store.
+TypingTest now has the option to pick from a random set of works or an exerpt from Shakespeare.
+
+New to Version 0.1.0
+
+Sound effects and music have been added to the app. These can be disabled in the settings menu. Not sure if they are different options or not though.
+
+Three - Four games added:
+    Basketball
+    Racing
+    Balloons
+    
+    
+Basketball - Type the word to make the shot. If you miss, you dont get the points. The last few seconds give addtional points.
+
+Racing - A three-way race between 2 AI. You have to type the words as fast as you can. There is no time limit, but the goal is to win.
+
+Balloons - Words don't have to be typed in sequence. Pop as many balloons as you can in the time limit.
+
+The games are basically, functionally, the same. However, the goal for them is to make your words per minute higher.
+
+Leaderboards have also been added. The leaderboards store local high scores and high scores of the other users of the app. 
+
+
+
+
 Version 0.0.3
 
 Basic Interface is still the same
