@@ -103,7 +103,7 @@ class BalloonViewController: UIViewController {
         word3.text = checkWord()
         
         addBalloon(move: 60, down: 160, color: color1, word: word1.text!)
-        addBalloon(move: 190, down: 160, color: color2, word: word2.text!)
+        addBalloon(move: 185, down: 160, color: color2, word: word2.text!)
         addBalloon(move: 310, down: 160, color: color3, word: word3.text!)
         
     }
