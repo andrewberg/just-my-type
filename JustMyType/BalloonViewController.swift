@@ -28,6 +28,13 @@ class BalloonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initStyle()
+        word1.text = test.getCurrentWord()
+        word2.text = test.displayedWords[1]
+        word3.text = test.displayedWords[2]
+        
+        word1.layer.zPosition = 1;
+        word2.layer.zPosition = 1;
+        word3.layer.zPosition = 1;
 
         
         input.addTarget(self, action: #selector(self.textField(_:)), for: UIControlEvents.editingChanged)
@@ -37,19 +44,7 @@ class BalloonViewController: UIViewController {
         if input.text != "" {
             let entry = input.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             
-            if entry == word1.text{
-                gameScore += 5
-                score.text = String(gameScore)
-                test.makeCurWordNextWord()
-                updateStyle()
-                input.text = ""
-            }else if entry == word2.text{
-                gameScore += 5
-                score.text = String(gameScore)
-                test.makeCurWordNextWord()
-                updateStyle()
-                input.text = ""
-            }else if entry == word3.text{
+            if test.isCorrect(str: entry!) {
                 gameScore += 5
                 score.text = String(gameScore)
                 test.makeCurWordNextWord()
@@ -61,36 +56,12 @@ class BalloonViewController: UIViewController {
     
     func initStyle() {
         // draws 3 balloons at x,y positions
-        word1.text = checkWord()
-        word2.text = checkWord()
-        word3.text = checkWord()
-
-        word1.layer.zPosition = 1;
-        word2.layer.zPosition = 1;
-        word3.layer.zPosition = 1;
         
-        word1.isHidden = true;
-        word2.isHidden = true;
-        word3.isHidden = true;
-        
-        addBalloon(move: 60, down: 160, color: color1,word: word1.text!)
-        addBalloon(move: 185, down: 160, color: color2, word: word2.text!)
-        addBalloon(move: 310, down: 160, color: color3, word: word3.text!)
+        addBalloon(move: 60, down: 160, color: color1)
+        addBalloon(move: 180, down: 160, color: color2)
+        addBalloon(move: 310, down: 160, color: color3)
         score.text = String(gameScore)
     }
-    
-    // checks if word fits in balloon. - Asa and Michael
-    func checkWord() -> String {
-        var thing = test.getCurrentWord()
-        test.makeCurWordNextWord()
-        
-        while((thing.characters.count) > 5){
-            thing = test.addRandomWordAndGetValue()
-        }
-        
-        return thing
-    }
-    
     
     func updateStyle() {
         let temp = color1
@@ -98,25 +69,24 @@ class BalloonViewController: UIViewController {
         color2 = color3
         color3 = temp
         
-        word1.text = checkWord()
-        word2.text = checkWord()
-        word3.text = checkWord()
+        addBalloon(move: 60, down: 160, color: color1)
+        addBalloon(move: 180, down: 160, color: color2)
+        addBalloon(move: 310, down: 160, color: color3)
         
-        addBalloon(move: 60, down: 160, color: color1, word: word1.text!)
-        addBalloon(move: 185, down: 160, color: color2, word: word2.text!)
-        addBalloon(move: 310, down: 160, color: color3, word: word3.text!)
-        
+        word1.text = test.getCurrentWord()
+        word2.text = test.displayedWords[1]
+        word3.text = test.displayedWords[2]
     }
     
-    // adds a single balloon at x,y positions - Asa Jenkins and Jorge Gonzalez
-    func addBalloon(move: Int, down: Int, color: UIColor, word: String) {
-        drawBalloon(move: move, down: down, color: color, word: word)
+    // adds a single balloon at x,y positions - Asa
+    func addBalloon(move: Int, down: Int, color: UIColor) {
+        drawBalloon(move: move, down: down, color: color)
     }
     
     
-    // draws the balloon - Asa Jenkins and Jorge Gonzalez
-    func drawBalloon(move: Int, down: Int, color: UIColor, word: String) {
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: move,y: down), radius: CGFloat(50), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
+    // draws the balloon - Asa
+    func drawBalloon(move: Int, down: Int, color: UIColor) {
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: move,y: down), radius: CGFloat(45), startAngle: CGFloat(0), endAngle:CGFloat(M_PI * 2), clockwise: true)
         
         let label = CAShapeLayer()
         label.path = circlePath.cgPath
@@ -124,40 +94,22 @@ class BalloonViewController: UIViewController {
         label.fillColor =  color.cgColor
         label.strokeColor = color.cgColor
         label.lineWidth = 0.5
-        addText(circleLayer: label ,move: move, down: down, word: word)
         addHandle(circleLayer: label ,move: move, down: down, color: color) // add handle to label
         view.layer.addSublayer(label)
     }
     
-    // add text to layer - Asa Jenkins and Jorge Gonzalez
-    func addText(circleLayer: CAShapeLayer, move: Int, down: Int, word: String){
-        let txtLyr = CATextLayer()
-        txtLyr.bounds = CGRect(x:0,y: 0,width: 50,height: 25)
-        txtLyr.position = CGPoint(x:move,y: down)
-        txtLyr.font = UIFont(name: "Baskerville-Bold", size: 20.0)
-        txtLyr.fontSize = 16.0
-        txtLyr.alignmentMode = kCAAlignmentCenter
-        txtLyr.string = word
-        txtLyr.isWrapped = true
-        txtLyr.shadowColor = UIColor.black.cgColor
-        txtLyr.shadowRadius = 2.0
-        txtLyr.shadowOffset = CGSize(width:2,height: 2)
-        txtLyr.shadowOpacity = 1.0
-        circleLayer.addSublayer(txtLyr)
-    }
-    
-    // draws the handle - Asa Jenkins and Jorge Gonzalez
+    // draws the handle - Asa
     func addHandle(circleLayer: CAShapeLayer, move: Int, down: Int, color: UIColor){
         let trianglePath = UIBezierPath()
         
         //1 move the (top) point
-        trianglePath.move(to: CGPoint(x:move-1,y:down+40))
+        trianglePath.move(to: CGPoint(x:move-1,y:down+35))
         
         //2 add point (left)
-        trianglePath.addLine(to: CGPoint(x:move+15,y:down+70))
+        trianglePath.addLine(to: CGPoint(x:move+15,y:down+65))
         
         //3 add point (right)
-        trianglePath.addLine(to: CGPoint(x:move-15,y:down+70))
+        trianglePath.addLine(to: CGPoint(x:move-15,y:down+65))
         
         let handle = CAShapeLayer()
         
@@ -168,7 +120,7 @@ class BalloonViewController: UIViewController {
         circleLayer.addSublayer(handle)
     }
     
-    // returns a random color - Asa Jenkins and Jorge Gonzalez
+    // returns a random color - Asa
     func randomColor() -> UIColor {
         let red = CGFloat(drand48())
         let green = CGFloat(drand48())

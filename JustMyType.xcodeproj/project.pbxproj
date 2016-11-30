@@ -126,9 +126,6 @@
 		4953A1D11DEE2A0E00482015 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4953A1D01DEE2A0E00482015 /* AVFoundation.framework */; };
 		49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */; };
 		512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A2ACA1DAED26200B818D0 /* TypingTest.swift */; };
-		5147CC621DEE4828007243EB /* AntsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147CC611DEE4828007243EB /* AntsViewController.swift */; };
-		5147CC641DEE4863007243EB /* AntsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147CC631DEE4863007243EB /* AntsScene.swift */; };
-		5147CC661DEE48A7007243EB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5147CC651DEE48A7007243EB /* Default-568h@2x.png */; };
 		8C4487B91DD3D75100602565 /* BasketballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487B81DD3D75100602565 /* BasketballViewController.swift */; };
 		8C4487BB1DD3ECBA00602565 /* GamePlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */; };
 		8C7C19D51DD293CA00F2640A /* BasketBallScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */; };
@@ -307,9 +304,6 @@
 		4953A1D01DEE2A0E00482015 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardHelper.swift; sourceTree = "<group>"; };
 		512A2ACA1DAED26200B818D0 /* TypingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTest.swift; sourceTree = "<group>"; };
-		5147CC611DEE4828007243EB /* AntsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AntsViewController.swift; path = Views/AntsViewController.swift; sourceTree = "<group>"; };
-		5147CC631DEE4863007243EB /* AntsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntsScene.swift; sourceTree = SOURCE_ROOT; };
-		5147CC651DEE48A7007243EB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8C4487B81DD3D75100602565 /* BasketballViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketballViewController.swift; path = Views/BasketballViewController.swift; sourceTree = "<group>"; };
 		8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayScene.swift; sourceTree = "<group>"; };
 		8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasketBallScene.swift; path = ../BasketBallScene.swift; sourceTree = "<group>"; };
@@ -558,7 +552,6 @@
 		AE1DF8E61D972E7C00E578C2 = {
 			isa = PBXGroup;
 			children = (
-				5147CC651DEE48A7007243EB /* Default-568h@2x.png */,
 				AE1DF8F11D972E7C00E578C2 /* JustMyType */,
 				1130D0911DB69DDF00FBD541 /* JustMyTypeUnitTests */,
 				1130D09F1DB69E0400FBD541 /* JustMyTypeUITest */,
@@ -610,8 +603,6 @@
 			isa = PBXGroup;
 			children = (
 				CFB43D541DDBC26D007C7A90 /* BalloonViewController.swift */,
-				5147CC611DEE4828007243EB /* AntsViewController.swift */,
-				5147CC631DEE4863007243EB /* AntsScene.swift */,
 				8C7C19D41DD293CA00F2640A /* BasketBallScene.swift */,
 				8C4487B81DD3D75100602565 /* BasketballViewController.swift */,
 				8C4487BA1DD3ECBA00602565 /* GamePlayScene.swift */,
@@ -831,7 +822,6 @@
 				4953A1721DED109200482015 /* frame_11_delay-0.04s.gif in Resources */,
 				4953A1AF1DED109200482015 /* frame_72_delay-0.04s.gif in Resources */,
 				4953A16D1DED109200482015 /* frame_6_delay-0.04s.gif in Resources */,
-				5147CC661DEE48A7007243EB /* Default-568h@2x.png in Resources */,
 				4953A17E1DED109200482015 /* frame_23_delay-0.04s.gif in Resources */,
 				4953A1C71DED109200482015 /* frame_96_delay-0.04s.gif in Resources */,
 				4953A1AD1DED109200482015 /* frame_70_delay-0.04s.gif in Resources */,
@@ -966,10 +956,8 @@
 				49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */,
 				AE1DF9321D973A4100E578C2 /* UIColorExtensions.swift in Sources */,
 				4953A1CC1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift in Sources */,
-				5147CC641DEE4863007243EB /* AntsScene.swift in Sources */,
 				AE1982091DE8F83A005AD007 /* RacingGame.swift in Sources */,
 				4953A1031DECF2BF00482015 /* RacecarLeaderboardViewController.swift in Sources */,
-				5147CC621DEE4828007243EB /* AntsViewController.swift in Sources */,
 				CFB43D551DDBC26D007C7A90 /* BalloonViewController.swift in Sources */,
 				0FFD29191D988DF800CB28D6 /* RoundedButton.swift in Sources */,
 				AE1DF92C1D97390300E578C2 /* SinglePlayerMenuViewController.swift in Sources */,
