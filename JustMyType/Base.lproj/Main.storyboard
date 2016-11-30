@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wLs-Lw-lW5">
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wLs-Lw-lW5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+>>>>>>> master
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -758,7 +766,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frame_0_delay-0.04s.gif" translatesAutoresizingMaskIntoConstraints="NO" id="I9a-Ca-QRJ">
+<<<<<<< HEAD
                                 <frame key="frameInset" minY="64" width="375" height="243"/>
+=======
+                                <rect key="frame" x="0.0" y="64" width="417" height="243"/>
+>>>>>>> master
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNI-7C-DpZ">
@@ -767,6 +779,15 @@
                                 <state key="normal" title="Leaderboards"/>
                                 <connections>
                                     <segue destination="NvV-aq-1De" kind="show" id="eJM-4Y-DZA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDM-9f-Wjp">
+                                <rect key="frame" x="133" y="412" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Play Again"/>
+                                <connections>
+                                    <action selector="playAgain:" destination="CSx-EP-Fiz" eventType="touchUpInside" id="LTj-eL-u1O"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -886,7 +907,11 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dah-rT-G20" id="den-jF-IH0">
+<<<<<<< HEAD
                                     <frame key="frameInset" width="375" height="34"/>
+=======
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+>>>>>>> master
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -915,7 +940,11 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8CX-f3-QP6" id="k6x-HM-NyN">
+<<<<<<< HEAD
                                     <frame key="frameInset" width="375" height="34"/>
+=======
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+>>>>>>> master
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -944,7 +973,11 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sAL-WF-4fH" id="Jpe-7e-OoV">
+<<<<<<< HEAD
                                     <frame key="frameInset" width="375" height="34"/>
+=======
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+>>>>>>> master
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1043,8 +1076,8 @@
         <image name="stopwatch" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YZT-DR-3P5"/>
+        <segue reference="eJM-4Y-DZA"/>
         <segue reference="ZmE-st-gcl"/>
-        <segue reference="QpX-ZH-jUF"/>
+        <segue reference="YZT-DR-3P5"/>
     </inferredMetricsTieBreakers>
 </document>
