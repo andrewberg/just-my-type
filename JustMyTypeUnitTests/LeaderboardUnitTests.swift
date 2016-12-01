@@ -55,6 +55,38 @@ class LeaderboardUnitTests: XCTestCase {
     }
     
     // Andrew Berg
+    func testGetListBL() {
+        Leaderboard.sharedInstance.getLeaderboard(mode: "bl")
+        {(scores: [(name: String, score: Double)]) -> (Void) in
+            XCTAssert(scores.count > 0)
+        }
+    }
+    
+    // Andrew Berg
+    func testGetListBB() {
+        Leaderboard.sharedInstance.getLeaderboard(mode: "bb")
+        {(scores: [(name: String, score: Double)]) -> (Void) in
+            XCTAssert(scores.count > 0)
+        }
+    }
+    
+    // Andrew Berg
+    func testGetListAG() {
+        Leaderboard.sharedInstance.getLeaderboard(mode: "ag")
+        {(scores: [(name: String, score: Double)]) -> (Void) in
+            XCTAssert(scores.count > 0)
+        }
+    }
+    
+    // Andrew Berg
+    func testGetListRC() {
+        Leaderboard.sharedInstance.getLeaderboard(mode: "rc")
+        {(scores: [(name: String, score: Double)]) -> (Void) in
+            XCTAssert(scores.count > 0)
+        }
+    }
+    
+    // Andrew Berg
     func testResetTT() {
         Leaderboard.sharedInstance.addToArray(val: "tt", name: "bob", score: 40.0)
         Leaderboard.sharedInstance.resetArray(val: "tt")
@@ -74,6 +106,21 @@ class LeaderboardUnitTests: XCTestCase {
         Leaderboard.sharedInstance.resetArray(val: "bl")
         XCTAssert(Leaderboard.sharedInstance.blScores.count == 0)
     }
+    
+    // Andrew Berg
+    func testResetRC() {
+        Leaderboard.sharedInstance.addToArray(val: "rc", name: "bob", score: 40.0)
+        Leaderboard.sharedInstance.resetArray(val: "rc")
+        XCTAssert(Leaderboard.sharedInstance.rcScores.count == 0)
+    }
+    
+    // Andrew Berg
+    func testResetAG() {
+        Leaderboard.sharedInstance.addToArray(val: "ag", name: "bob", score: 40.0)
+        Leaderboard.sharedInstance.resetArray(val: "ag")
+        XCTAssert(Leaderboard.sharedInstance.agScores.count == 0)
+    }
+
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
