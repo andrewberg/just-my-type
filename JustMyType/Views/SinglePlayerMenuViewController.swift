@@ -15,6 +15,7 @@ class SinglePlayerMenuViewController: UIViewController {
     @IBOutlet weak var balloonsButton: RoundedButton!
     @IBOutlet weak var somethingButton: RoundedButton!
     @IBOutlet weak var carRacingButton: RoundedButton!
+    @IBOutlet weak var antsButton: RoundedButton!
     
     var buttonSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Button", ofType: "wav")!)
     var audioPlayer = AVAudioPlayer()
@@ -47,10 +48,12 @@ class SinglePlayerMenuViewController: UIViewController {
         somethingButton.backgroundColor = UIColor.seasonColorOne();
         balloonsButton.backgroundColor = UIColor.seasonColorTwo();
         carRacingButton.backgroundColor = UIColor.seasonColorThree();
+        antsButton.backgroundColor = UIColor.seasonColorFour();
         
         somethingButton.titleLabel?.textColor = UIColor.themeChosen();
         balloonsButton.titleLabel?.textColor = UIColor.themeChosen();
         carRacingButton.titleLabel?.textColor = UIColor.themeChosen();
+        antsButton.titleLabel?.textColor = UIColor.themeChosen();
 
     }
 

@@ -42,7 +42,7 @@ class LeaderboardMenuViewController: UIViewController {
         typingTestButton.backgroundColor = UIColor.seasonColorThree();
         basketballButton.backgroundColor = UIColor.seasonColorFour();
         carRacingButton.backgroundColor = UIColor.seasonColorTwo();
-        balloonGame.backgroundColor = UIColor.seasonColorFour();
+        balloonGame.backgroundColor = UIColor.seasonColorOne();
         antGameButton.backgroundColor = UIColor.seasonColorThree();
         
         carRacingButton.titleLabel?.textColor = UIColor.themeChosen();
