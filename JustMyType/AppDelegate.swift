@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         Leaderboard.sharedInstance.getLeaderboard(mode: "ag")
         {(scores: [(name: String, score: Double)]) -> (Void) in
-            print(scores)
         }
         return true
     }

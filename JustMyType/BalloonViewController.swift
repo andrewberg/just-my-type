@@ -36,6 +36,23 @@ class BalloonViewController: UIViewController {
         input.addTarget(self, action: #selector(self.textField(_:)), for: UIControlEvents.editingChanged)
     }
     
+    // andrew berg
+    @IBAction func resetGame(_ sender: Any) {
+        playAgain()
+    }
+
+    // andrew berg
+    func playAgain() {
+        gameOver = false
+        input.isEnabled = true
+        clock = 30
+        clockRunning = true
+        gameScore = 0
+        input.text = ""
+        score.text = "Score: " + String(gameScore)
+        timer.text = "Timer: " + String(clock)
+    }
+    
     @IBAction func textField(_ sender: Any) {
         if clockRunning && !gameOver {
             time.invalidate()

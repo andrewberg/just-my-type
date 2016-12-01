@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wLs-Lw-lW5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wLs-Lw-lW5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -634,7 +634,7 @@
             </objects>
             <point key="canvasLocation" x="1504.8" y="1945.2773613193406"/>
         </scene>
-        <!--Balloon View Controller-->
+        <!--Balloons-->
         <scene sceneID="d9m-h3-PbR">
             <objects>
                 <viewController id="3re-l7-3pq" customClass="BalloonViewController" customModule="JustMyType" customModuleProvider="target" sceneMemberID="viewController">
@@ -702,6 +702,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Balloons" id="wt4-Gw-r3z">
+                        <barButtonItem key="rightBarButtonItem" id="5Vx-gY-72h">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pya-gL-Cme">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetGame:" destination="3re-l7-3pq" eventType="touchUpInside" id="Kp2-e8-CjT"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="input" destination="Gut-k4-Kbq" id="jYU-ev-VfT"/>
                         <outlet property="score" destination="yXm-uj-mwc" id="4fv-B5-eJa"/>
@@ -715,7 +727,7 @@
             </objects>
             <point key="canvasLocation" x="188" y="2696.4017991004498"/>
         </scene>
-        <!--Basketball View Controller-->
+        <!--Basketball-->
         <scene sceneID="cgE-OV-LUj">
             <objects>
                 <viewController id="CSx-EP-Fiz" customClass="BasketballViewController" customModule="JustMyType" customModuleProvider="target" sceneMemberID="viewController">
@@ -771,15 +783,6 @@
                                     <segue destination="NvV-aq-1De" kind="show" id="eJM-4Y-DZA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDM-9f-Wjp">
-                                <rect key="frame" x="133" y="412" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Play Again"/>
-                                <connections>
-                                    <action selector="playAgain:" destination="CSx-EP-Fiz" eventType="touchUpInside" id="LTj-eL-u1O"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a word to start..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZi-UQ-qys">
                                 <rect key="frame" x="59" y="374" width="257" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -794,6 +797,19 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Basketball" id="0du-Nv-NbM">
+                        <barButtonItem key="rightBarButtonItem" id="qg9-Q2-Jih">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NDM-9f-Wjp">
+                                <rect key="frame" x="250" y="4" width="109" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="playAgain:" destination="CSx-EP-Fiz" eventType="touchUpInside" id="LTj-eL-u1O"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="gameAnimation" destination="I9a-Ca-QRJ" id="gfV-rG-Bfg"/>
@@ -907,7 +923,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rqa-2k-mWm" id="oDP-ou-Dl2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -936,7 +952,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dah-rT-G20" id="den-jF-IH0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="34"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -965,7 +981,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8CX-f3-QP6" id="k6x-HM-NyN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="34"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -994,7 +1010,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sAL-WF-4fH" id="Jpe-7e-OoV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="34"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1022,10 +1038,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="antsBack" translatesAutoresizingMaskIntoConstraints="NO" id="4mK-J0-aII" customClass="SKView">
-                                <rect key="frame" x="-450" y="-577" width="1200" height="1600"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a word to start" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJg-t4-BfS" userLabel="UserInput">
                                 <rect key="frame" x="85" y="370" width="205" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1076,19 +1088,21 @@
                                     <segue destination="ypB-HZ-KPS" kind="show" id="KYt-W1-BDF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU5-CH-7QB">
-                                <rect key="frame" x="280" y="79" width="71" height="30"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ant Game" id="PB0-Pe-jsZ">
+                        <barButtonItem key="rightBarButtonItem" id="Ml2-b8-uck">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fU5-CH-7QB">
+                                <rect key="frame" x="320" y="7" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play Again">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
+                                <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="playAgain:" destination="4Cr-cr-dDh" eventType="touchUpInside" id="csX-Aq-YjD"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="ant" destination="8GL-SP-33C" id="WSg-53-ddc"/>
                         <outlet property="ant2" destination="LQx-Ug-LZf" id="MRk-R8-Vwx"/>
@@ -1106,7 +1120,6 @@
     </scenes>
     <resources>
         <image name="ant" width="640" height="635"/>
-        <image name="antsBack" width="1200" height="1600"/>
         <image name="frame_0_delay-0.04s.gif" width="400" height="300"/>
         <image name="keyboard" width="128" height="128"/>
         <image name="shotClock" width="500" height="385"/>
