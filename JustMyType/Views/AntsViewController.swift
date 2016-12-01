@@ -28,7 +28,15 @@ class AntsViewController: UIViewController {
     @IBOutlet weak var ant2: UIImageView!
     //@IBOutlet weak var threeTimes: UILabel!
     //@IBOutlet weak var gameAnimation: UIImageView!
-    
+    // andrew berg
+    @IBAction func playAgain(_ sender: Any) {
+        self.viewDidLoad()
+        clock = 30
+        counter = 1
+        score = 0
+        userInput.isEnabled = true
+        userInput.text = ""
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -36,6 +44,8 @@ class AntsViewController: UIViewController {
         self.ant2.center.x += view.bounds.height
         
     }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         UIView.animate(withDuration: 1.0, delay: 0.5, options: [], animations: {
             self.ant.center.x -= self.view.bounds.height
@@ -126,7 +136,7 @@ class AntsViewController: UIViewController {
             userInput.isEnabled = false // set textfield to in-editable
             view.endEditing(true) // close keyboard
             clockRunning = false // reset clockRunning to false
-            Leaderboard.sharedInstance.enterScore(mode: "bb", name: Leaderboard.getUserName(), score: Double(score))
+            Leaderboard.sharedInstance.enterScore(mode: "ag", name: Leaderboard.getUserName(), score: Double(score))
         }
         
         

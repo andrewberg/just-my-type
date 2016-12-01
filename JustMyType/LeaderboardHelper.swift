@@ -13,6 +13,7 @@ enum GameMode: String {
     case basketball = "basketball"
     case ballon = "balloon"
     case racecar = "racecar"
+    case ant = "ant"
 }
 
 //var site = "http://127.0.0.1:5000"
@@ -28,6 +29,7 @@ class Leaderboard {
     var blScores:[(name: String, score: Double)]
     var bbScores:[(name: String, score: Double)]
     var rcScores:[(name: String, score: Double)]
+    var agScores:[(name: String, score: Double)]
     
     static let sharedInstance: Leaderboard = {
         let instance = Leaderboard()
@@ -39,6 +41,7 @@ class Leaderboard {
         blScores = []
         bbScores = []
         rcScores = []
+        agScores = []
     }
     
     // get username in userdefaults
@@ -70,6 +73,8 @@ class Leaderboard {
             return GameMode.basketball.rawValue
         case "rc":
             return GameMode.racecar.rawValue
+        case "ag":
+            return GameMode.ant.rawValue
         default:
             return GameMode.typingtest.rawValue
         }
@@ -116,6 +121,8 @@ class Leaderboard {
                             completionHandler(self.bbScores)
                         } else if (self.getMode(val: mode) == GameMode.racecar.rawValue) {
                             completionHandler(self.rcScores)
+                        } else if (self.getMode(val: mode) == GameMode.ant.rawValue) {
+                            completionHandler(self.agScores)
                         }
                         return
                     }
@@ -172,6 +179,8 @@ class Leaderboard {
             bbScores = []
         } else if (getMode(val: val) == GameMode.racecar.rawValue) {
             rcScores = []
+        } else if (getMode(val: val) == GameMode.ant.rawValue) {
+            agScores = []
         }
     }
     
@@ -185,6 +194,8 @@ class Leaderboard {
             bbScores.append((name: name, score: score))
         } else if (getMode(val: val) == GameMode.racecar.rawValue) {
             rcScores.append((name: name, score: score))
+        } else if (getMode(val: val) == GameMode.ant.rawValue) {
+            agScores.append((name: name, score: score))
         }
     }
 }

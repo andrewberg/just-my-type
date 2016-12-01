@@ -124,6 +124,7 @@
 		4953A1CC1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A1CB1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift */; };
 		4953A1CE1DEE23C100482015 /* BalloonLeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953A1CD1DEE23C100482015 /* BalloonLeaderboardTableViewController.swift */; };
 		4953A1D11DEE2A0E00482015 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4953A1D01DEE2A0E00482015 /* AVFoundation.framework */; };
+		496CA8161DEFB28300A3EFBE /* AntsLeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CA8151DEFB28300A3EFBE /* AntsLeaderboardTableViewController.swift */; };
 		49A28CF21DE6853D001C9343 /* LeaderboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */; };
 		512A2ACB1DAED26200B818D0 /* TypingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512A2ACA1DAED26200B818D0 /* TypingTest.swift */; };
 		51992DB11DEFA748007E5DF6 /* AntsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51992DB01DEFA748007E5DF6 /* AntsViewController.swift */; };
@@ -303,6 +304,7 @@
 		4953A1CB1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballLeaderboardTableViewController.swift; sourceTree = "<group>"; };
 		4953A1CD1DEE23C100482015 /* BalloonLeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonLeaderboardTableViewController.swift; sourceTree = "<group>"; };
 		4953A1D01DEE2A0E00482015 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		496CA8151DEFB28300A3EFBE /* AntsLeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntsLeaderboardTableViewController.swift; sourceTree = "<group>"; };
 		49A28CF11DE6853D001C9343 /* LeaderboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardHelper.swift; sourceTree = "<group>"; };
 		512A2ACA1DAED26200B818D0 /* TypingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingTest.swift; sourceTree = "<group>"; };
 		51992DB01DEFA748007E5DF6 /* AntsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AntsViewController.swift; path = Views/AntsViewController.swift; sourceTree = "<group>"; };
@@ -540,6 +542,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		496CA8171DEFB4EA00A3EFBE /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				0F13A0EA1DE27B1A00740910 /* Chill.wav */,
+				0FBC16F91DE4AADD008C7CBD /* Button.wav */,
+				0F13A0EC1DE2841C00740910 /* MusicHelper.swift */,
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
 		AE19820A1DE8F845005AD007 /* Games */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,6 +589,7 @@
 		AE1DF8F11D972E7C00E578C2 /* JustMyType */ = {
 			isa = PBXGroup;
 			children = (
+				496CA8171DEFB4EA00A3EFBE /* Music */,
 				4953A1CA1DED109700482015 /* BasketballGameAnimation */,
 				4953A1011DECA7BB00482015 /* Text */,
 				AE19820A1DE8F845005AD007 /* Games */,
@@ -588,11 +601,8 @@
 				AE1DF8F21D972E7C00E578C2 /* AppDelegate.swift */,
 				AE1DF8F41D972E7C00E578C2 /* GameScene.sks */,
 				AE1DF8F61D972E7C00E578C2 /* GameScene.swift */,
-				0F13A0EC1DE2841C00740910 /* MusicHelper.swift */,
 				AE1DF8FA1D972E7C00E578C2 /* Main.storyboard */,
 				512A2ACA1DAED26200B818D0 /* TypingTest.swift */,
-				0F13A0EA1DE27B1A00740910 /* Chill.wav */,
-				0FBC16F91DE4AADD008C7CBD /* Button.wav */,
 				AE1DF8FD1D972E7C00E578C2 /* Assets.xcassets */,
 				AE1DF8FF1D972E7C00E578C2 /* LaunchScreen.storyboard */,
 				AE1DF9021D972E7C00E578C2 /* Info.plist */,
@@ -619,6 +629,7 @@
 				4953A0F71DE7D02A00482015 /* HighscoresViewController.swift */,
 				4953A1CB1DED1D6300482015 /* BasketballLeaderboardTableViewController.swift */,
 				4953A1CD1DEE23C100482015 /* BalloonLeaderboardTableViewController.swift */,
+				496CA8151DEFB28300A3EFBE /* AntsLeaderboardTableViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -970,6 +981,7 @@
 				AE1DF8F91D972E7C00E578C2 /* GameViewController.swift in Sources */,
 				0F13A0ED1DE2841C00740910 /* MusicHelper.swift in Sources */,
 				4953A1CE1DEE23C100482015 /* BalloonLeaderboardTableViewController.swift in Sources */,
+				496CA8161DEFB28300A3EFBE /* AntsLeaderboardTableViewController.swift in Sources */,
 				CF3B79701DB6DF8F00A2B427 /* UIViewExtension.swift in Sources */,
 				8C7C19D51DD293CA00F2640A /* BasketBallScene.swift in Sources */,
 				AE1982101DE8FE2B005AD007 /* RacingGameViewController.swift in Sources */,
