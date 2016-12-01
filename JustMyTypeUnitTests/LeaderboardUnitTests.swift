@@ -32,8 +32,9 @@ class LeaderboardUnitTests: XCTestCase {
         let x = Leaderboard.getUserName()
         let y = "bob321"
         Leaderboard.setUserName(username: y)
-        XCTAssert(y == Leaderboard.getUserName())
+        let z = Leaderboard.getUserName()
         Leaderboard.setUserName(username: x)
+        XCTAssert(y == z)
     }
     
     // Andrew Berg
